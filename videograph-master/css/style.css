@@ -760,6 +760,8 @@ ol {
 }
 
 .counter__item.four__item {
+  background-image: url("../img/skills/Js.png");
+  background-size: 100% 100%;
   margin-top: -185px;
 }
 
@@ -772,20 +774,31 @@ ol {
   border-top: none;
 }
 
+.counter__item.third__item {
+  background-image: url("../img/skills/VueJs.png");
+  background-size: 100% 100%;
+}
+
+#third {
+  position: unset;
+  z-index: 2;
+}
+
 .counter__item.third__item:before {
+
   left: -65px;
   bottom: -317px;
 }
 
 .counter__item.five__item {
-
+  background-image: url("../img/skills/GitHub.png");
   background-size: 100% 100%;
 
 }
 
 .counter__item.six__item {
   margin-top: -185px;
-  background-image: url("");
+  background-image: url("../img/skills/Wordpress.png");
   background-size: 100% 100%;
 }
 
@@ -799,6 +812,8 @@ ol {
 }
 
 .counter__item.height__item {
+  background-image: url("../img/skills/jquery.png");
+  background-size: 100% 100%;
   margin-top: -185px;
 }
 
@@ -809,6 +824,11 @@ ol {
   border-bottom: 1px solid #333333;
   border-left: none;
   border-top: none;
+}
+
+.counter__item.seven__item {
+  background-image: url("../img/skills/MSSQL.png");
+  background-size: 100% 100%;
 }
 
 .counter__item.seven__item:before {
