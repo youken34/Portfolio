@@ -2098,13 +2098,42 @@ ol {
     margin-top: -210px;
   }
 
+  .counter__item.six__item {
+    margin-top: -210px;
+  }
+
+  .counter__item.height__item {
+    margin-top: -210px;
+  }
+
   .hero__slider.owl-carousel .owl-dots {
     max-width: 930px !important;
   }
 }
 
+@media only screen and (max-width: 991px) {
+  .counter__item.first__item {
+    background-image: url("../img/skills/php.png");
+  }
+
+  .counter__item.second__item {
+    background-image: url("../img/skills/Codeigniter2.jpg");
+  }
+
+  .counter__item.third__item {
+    background-image: url("../img/skills/VueJs.jpeg");
+    background-size: 100% 100%;
+  }
+
+  .counter__item.four__item {
+    background-image: url("../img/skills/js1.png");
+    background-size: 100% 100%;
+    background-color: white;
+  }
+}
+
 /* Tablet Device = 768px */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 765px) and (max-width: 991px) {
   .hero__slider.owl-carousel .owl-dots {
     max-width: 690px !important;
   }
@@ -2137,6 +2166,14 @@ ol {
     margin-top: 0;
   }
 
+  .counter__item.six__item {
+    margin-top: 0;
+  }
+
+  .counter__item.height__item {
+    margin-top: 0;
+  }
+
   .counter__item__text {
     -webkit-transform: rotate(0);
     -ms-transform: rotate(0);
@@ -2148,6 +2185,13 @@ ol {
     padding-top: 100px;
     padding-bottom: 70px;
   }
+
+  .counter2 {
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 70px;
+  }
+
 
 
   .team__item.team__item--second {
@@ -2230,6 +2274,12 @@ ol {
   }
 }
 
+@media only screen and (max-width: 575.5px) {
+  .counter__item.four__item {
+    background-image: url("https://www.seekpng.com/png/detail/80-803501_javascript-logo-logo-de-java-script-png.png");
+  }
+}
+
 /* Wide Mobile = 480px */
 @media only screen and (max-width: 767px) {
   .services__title {
@@ -2260,6 +2310,14 @@ ol {
     margin-top: 0;
   }
 
+  .counter__item.six__item {
+    margin-top: 0;
+  }
+
+  .counter__item.height__item {
+    margin-top: 0;
+  }
+
   .counter__item__text {
     -webkit-transform: rotate(0);
     -ms-transform: rotate(0);
@@ -2267,6 +2325,12 @@ ol {
   }
 
   .counter {
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 70px;
+  }
+
+  .counter2 {
     height: auto;
     padding-top: 100px;
     padding-bottom: 70px;
