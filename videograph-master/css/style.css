@@ -2111,7 +2111,7 @@ ol {
   }
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 992px) {
   .counter__item.first__item {
     background-image: url("../img/skills/php.png");
   }
@@ -2130,10 +2130,31 @@ ol {
     background-size: 100% 100%;
     background-color: white;
   }
+
+  .counter__item.five__item {
+    background-image: url("https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png");
+    background-size: 100% 100%;
+  }
+
+  .counter__item.six__item {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Wordpress-Logo.svg/2048px-Wordpress-Logo.svg.png");
+    background-color: white;
+  }
+
+  .counter__item.seven__item {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/5968/5968364.png");
+    background-color: white;
+  }
+
+  .counter__item.height__item {
+    background-image: url("../img/skills/jquery1.png");
+  }
 }
 
+
+
 /* Tablet Device = 768px */
-@media only screen and (min-width: 765px) and (max-width: 991px) {
+@media only screen and (min-width: 765px) and (max-width: 992px) {
   .hero__slider.owl-carousel .owl-dots {
     max-width: 690px !important;
   }
@@ -2183,12 +2204,10 @@ ol {
   .counter {
     height: auto;
     padding-top: 100px;
-    padding-bottom: 70px;
   }
 
   .counter2 {
     height: auto;
-    padding-top: 100px;
     padding-bottom: 70px;
   }
 
@@ -2274,14 +2293,15 @@ ol {
   }
 }
 
-@media only screen and (max-width: 575.5px) {
-  .counter__item.four__item {
-    background-image: url("https://www.seekpng.com/png/detail/80-803501_javascript-logo-logo-de-java-script-png.png");
-  }
-}
+
 
 /* Wide Mobile = 480px */
 @media only screen and (max-width: 767px) {
+
+  .counter__item.third__item {
+    background-image: url("../img/skills/VueJs2.jpeg");
+  }
+
   .services__title {
     margin-bottom: 50px;
   }
@@ -2327,12 +2347,10 @@ ol {
   .counter {
     height: auto;
     padding-top: 100px;
-    padding-bottom: 70px;
   }
 
   .counter2 {
     height: auto;
-    padding-top: 100px;
     padding-bottom: 70px;
   }
 
@@ -2473,6 +2491,34 @@ ol {
 
   .blog__details__quote {
     padding: 30px 45px 35px 35px;
+  }
+}
+
+@media only screen and (max-width: 575.5px) {
+  .counter__item.five__item {
+    background-image: url("https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png");
+    background-color: white;
+  }
+
+  .counter__item.four__item {
+    background-image: url("https://www.seekpng.com/png/detail/80-803501_javascript-logo-logo-de-java-script-png.png");
+  }
+
+  .counter__item.third__item {
+    background-image: url("../img/skills/VueJs.jpeg");
+  }
+
+  .counter__item.six__item {
+    background-image: url("https://s.w.org/style/images/about/WordPress-logotype-alternative.png");
+    background-color: white;
+  }
+
+  .counter__item.seven__item {
+    background-image: url("https://www.numerama.com/wp-content/uploads/2016/03/sql-server.jpg");
+  }
+
+  .counter__item.height__item {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsCyIYTQ9WZArxnLetO3GO9w1i3xGOS362jOEr9FXjzkEZpt5cXM7gXMJYXUqqaYTg6xI&usqp=CAU");
   }
 }
 
