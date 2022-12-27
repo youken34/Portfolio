@@ -127,6 +127,14 @@ ol {
   color: white;
 }
 
+.header__nav__social .afa {
+  margin-bottom: 50px;
+}
+
+.afa:hover {
+  border-bottom: 1px solid white;
+}
+
 /*---------------------
   Helper CSS
 -----------------------*/
@@ -651,9 +659,9 @@ ol {
   bottom: -300px;
   width: 100%;
   padding: 25px 30px 20px;
-  -webkit-transition: all, 0.5s;
+  /* -webkit-transition: all, 0.5s;
   -o-transition: all, 0.5s;
-  transition: all, 0.5s;
+  transition: all, 0.5s; */
 }
 
 .work__item__hover h4 {
@@ -2561,4 +2569,11 @@ ol {
   .blog__details__quote {
     padding: 30px 40px 35px 35px;
   }
+}
+
+/* Modified */
+
+/* Experiences */
+.col-lg-12 {
+  margin-bottom: 60px;
 }
