@@ -184,6 +184,7 @@ ol {
   background-position: top center;
   margin-left: -10px;
   border-radius: 20px;
+  box-shadow: -5px 5px 20px 0px rgba(0, 0, 0, 0.75);
 }
 
 .spad {
@@ -870,6 +871,7 @@ ol {
 -----------------------*/
 .team {
   padding-bottom: 90px;
+  border-radius: 0px;
 }
 
 .section-title.team__title {
@@ -878,7 +880,7 @@ ol {
 
 .team__item {
   height: 390px;
-  width: 280px;
+  /* width: 280px; */
   position: relative;
   overflow: hidden;
 }
@@ -2127,8 +2129,9 @@ ol {
 
   .team__item {
     height: 300px;
-    width: 215px;
+    /* width: 215px; */
   }
+
 }
 
 @media only screen and (max-width: 992px) {
@@ -2176,7 +2179,13 @@ ol {
 /* Tablet Device = 768px */
 @media only screen and (min-width: 765px) and (max-width: 992px) {
 
+  .col-lg-3 .col-md-6 {
+    padding-right: 0px;
+  }
 
+  .marg2 .marg4 {
+    padding-right: 0px;
+  }
 
   .hero__slider.owl-carousel .owl-dots {
     max-width: 690px !important;
@@ -2234,7 +2243,9 @@ ol {
     padding-bottom: 70px;
   }
 
-
+  .team__item {
+    height: 525px;
+  }
 
   .team__item.team__item--second {
     margin-top: 0;
@@ -2587,8 +2598,4 @@ ol {
 /* Experiences */
 .col-lg-12 {
   margin-bottom: 60px;
-}
-
-.col-lg-3 {
-  padding-left: 5px;
 }
