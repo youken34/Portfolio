@@ -885,9 +885,11 @@ ol {
   overflow: hidden;
 }
 
-.team__item:hover .team__item__text {
+.team__item:hover .team__item__text,
+.team__item:hover .sanofi {
   bottom: 0;
 }
+
 
 .team__item.team__item--second {
   margin-top: -60px;
@@ -901,7 +903,8 @@ ol {
   margin-top: -180px;
 }
 
-.team__item__text {
+.team__item__text,
+.sanofi {
   text-align: center;
   position: absolute;
   left: 0;
@@ -925,7 +928,24 @@ ol {
   z-index: -1;
 }
 
-.team__item__text h4 {
+.sanofi:before {
+  border: 0px solid transparent;
+  position: absolute;
+  left: 0;
+  top: 28px;
+  height: 100%;
+  width: 100%;
+  background: url(../img/team/team-hover.png);
+  content: "";
+  z-index: -1;
+  border-radius: 0px;
+  border-top: transparent;
+  outline: none;
+  display: block;
+}
+
+.team__item__text h4,
+.sanofi h4 {
   font-size: 22px;
   color: #ffffff;
   font-weight: 700;
@@ -933,7 +953,13 @@ ol {
   margin-bottom: 10px;
 }
 
-.team__item__text p {
+.team__item__text h4:hover,
+.sanofi h4:hover {
+  text-decoration: underline;
+}
+
+.team__item__text p,
+.sanofi p {
   color: #ffffff;
   font-weight: 300px;
   margin-bottom: 12px;
