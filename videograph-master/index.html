@@ -26,12 +26,63 @@
     <link href='https://css.gg/smartphone.css' rel='stylesheet'>
 </head>
 
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
+<head>
 
+</head>
+
+<body onload="alert('');">
+
+
+    <script>
+        var ALERT_TITLE = "This project is still in progress";
+        var ALERT_BUTTON_TEXT = "Ok";
+
+        if (document.getElementById) {
+            window.alert = function (txt) {
+                createCustomAlert(txt);
+            }
+        }
+
+        function createCustomAlert(txt) {
+            d = document;
+
+            if (d.getElementById("modalContainer")) return;
+
+            mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
+            mObj.id = "modalContainer";
+            mObj.style.height = d.documentElement.scrollHeight + "px";
+
+            alertObj = mObj.appendChild(d.createElement("div"));
+            alertObj.id = "alertBox";
+            if (d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
+            alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth) / 2 + "px";
+            alertObj.style.visiblity = "visible";
+
+            h1 = alertObj.appendChild(d.createElement("h1"));
+            h1.appendChild(d.createTextNode(ALERT_TITLE));
+
+            msg = alertObj.appendChild(d.createElement("p"));
+            //msg.appendChild(d.createTextNode(txt));
+            msg.innerHTML = txt;
+
+            btn = alertObj.appendChild(d.createElement("a"));
+            btn.id = "closeBtn";
+            btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
+            btn.href = "#";
+            btn.focus();
+            btn.onclick = function () {
+                document.body.style.display = "block";
+                removeCustomAlert(); return false;
+            }
+
+            alertObj.style.display = "block";
+
+        }
+
+        function removeCustomAlert() {
+            document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
+        }
+    </script>
     <!-- Header Section Begin -->
     <header class="header">
         <div class="container">
@@ -68,9 +119,9 @@
             <div id="mobile-menu-wrap"></div>
         </div>
     </header>
-    <!-- Header End -->
+    <!--Header End-- >
 
-    <!-- Hero Section Begin -->
+    < !--Hero Section Begin-->
     <section class="hero">
         <div class="hero__slider owl-carousel">
             <div class="hero__item set-bg" data-setbg="img/hero/application.png">
@@ -114,9 +165,9 @@
             </div>
         </div>
     </section>
-    <!-- Hero Section End -->
+    <!--Hero Section End-->
 
-    <!-- Services Section Begin -->
+    <!--Services Section Begin-->
     <section class="services spad">
         <div class="container">
             <div class="row">
@@ -179,9 +230,9 @@
             </div>
         </div>
     </section>
-    <!-- Services Section End -->
+    <!--Services Section End-->
 
-    <!-- Work Section Begin -->
+    <!--Work Section Begin-->
     <section class="work">
         <div class="work__gallery">
             <div class="grid-sizer">
@@ -248,9 +299,9 @@
             </a>
         </div>
     </section>
-    <!-- Work Section End -->
+    <!--Work Section End-->
 
-    <!-- Counter Section Begin -->
+    <!--Counter Section Begin-->
     <section class="counter">
         <div class="container">
             <div class="counter__content">
@@ -315,10 +366,10 @@
             </div>
         </div>
     </section>
-    <!-- Counter Section End -->
+    <!--Counter Section End-->
 
-    <!-- Team Section Begin -->
-    <section class="team spad set-bg" data-setbg="img/team-bg.jpg">
+    <!--Team Section Begin-->
+    <section class="team spad  set-bg" data-setbg="img/team-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -330,7 +381,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="team__item set-bg" data-setbg="img/experiences/SciencesU.jpg">
+                    <div id="sciencesU" class="team__item set-bg" data-setbg="img/experiences/SciencesU.jpg">
                         <div class="team__item__text">
                             <a href="https://www.sciences-u-lyon.fr/" class="afa">
                                 <h4>Sciences U Lyon</h4>
@@ -343,7 +394,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 marg2">
-                    <div class="team__item team__item--second set-bg" data-setbg="img/experiences/ucla.jpg">
+                    <div id="ucla" class="team__item team__item--second set-bg" data-setbg="img/experiences/ucla.jpg">
                         <div class="team__item__text">
                             <a href="https://www.ucla.edu/" class="afa">
                                 <h4>UCLA</h4>
@@ -356,7 +407,8 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="team__item team__item--third set-bg" data-setbg="img/experiences/implid.jpg">
+                    <div id="implid" class="team__item team__item--third set-bg"
+                        data-setbg="img/experiences/implid.jpg">
                         <div class="team__item__text">
                             <a href="https://www.implid.com/" class="afa">
                                 <h4>Implid</h4>
@@ -369,7 +421,8 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 marg4">
-                    <div class="team__item team__item--four set-bg" data-setbg="img/experiences/sanofi.jpg">
+                    <div id="sanofiPasteur" class="team__item team__item--four set-bg"
+                        data-setbg="img/experiences/sanofi.jpg">
                         <div class="sanofi">
                             <a href="https://www.sanofi.us/" class="afa">
                                 <h4>Sanofi Pasteur</h4>
@@ -389,9 +442,9 @@
             </div>
         </div>
     </section>
-    <!-- Team Section End -->
+    <!--Team Section End-->
 
-    <!-- Latest Blog Section Begin -->
+    <!--Latest Blog Section Begin-->
     <section class="latest spad">
         <div class="container">
             <div class="row">
@@ -492,9 +545,9 @@
             </div>
         </div>
     </section>
-    <!-- Latest Blog Section End -->
+    <!--Latest Blog Section End-->
 
-    <!-- Call To Action Section Begin -->
+    <!--Call To Action Section Begin-->
     <section class="callto spad set-bg" data-setbg="img/callto-bg.jpg">
         <div class="container">
             <div class="row">
@@ -508,9 +561,9 @@
             </div>
         </div>
     </section>
-    <!-- Call To Action Section End -->
+    <!--Call To Action Section End-->
 
-    <!-- Footer Section Begin -->
+    <!--Footer Section Begin-->
     <footer class="footer">
         <div class="container">
             <div class="footer__top">
@@ -536,7 +589,8 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="footer__option__item">
                             <h5>About us</h5>
-                            <p>Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service
+                            <p>Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning,
+                                full-service
                                 production company specializing.</p>
                             <a href="#" class="read__more">Read more <span class="arrow_right"></span></a>
                         </div>
@@ -584,7 +638,8 @@
                                 document.write(new Date().getFullYear());
                             </script>
                             All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                aria-hidden="true"></i> by < a href="https://colorlib.com" target="_blank"> Colorlib
+                            </>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
@@ -592,9 +647,9 @@
             </div>
         </div>
     </footer>
-    <!-- Footer Section End -->
+    <!--Footer Section End-->
 
-    <!-- Js Plugins -->
+    <!--Js Plugins-->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
