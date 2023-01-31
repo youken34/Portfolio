@@ -113,9 +113,7 @@ nav {
 }
 
 /* Code ajouté */
-.whiteZ {
-  background-color: #bdcaff;
-}
+
 
 .whiteY {
   text-align: center;
@@ -731,17 +729,26 @@ code span {
 #audi {
   background-color: white;
   background-position: center;
-  background-size: 100% 70%;
+  background-size: 80% 60%;
 }
 
 #gsbWeb {
   background-position: center;
-  background-size: 90% 90%;
+  background-size: 70% 70%;
+  background-color: #DBE4F7;
 }
 
 #gsbApp {
   background-position: center;
-  background-size: 90% 90%;
+  background-size: 70% 70%;
+  background-color: #DBE4F7;
+}
+
+#portfolio {}
+
+#matchApp {
+  background-color: #DBE4F7;
+  background-position: 50% 40%;
 }
 
 .work {
@@ -938,10 +945,7 @@ code span {
   background-size: 100% 100%;
 }
 
-#third {
-  position: unset;
-  z-index: 2;
-}
+
 
 .counter__item.third__item:before {
 
@@ -1014,9 +1018,30 @@ code span {
   margin-bottom: 0;
 }
 
+#third {
+  position: unset;
+  z-index: 2;
+}
+
 /*---------------------
   Team
 -----------------------*/
+#sanofiPasteur {
+  background-size: 75% 40%;
+  background-position: center;
+  background-color: #FFF;
+}
+
+#ucla {
+  background-size: 90% 100%;
+  background-color: #017DC3;
+}
+
+#implid {
+  background-size: 90% 100%;
+  background-color: #012F3C;
+}
+
 .team {
   padding-bottom: 90px;
   border-radius: 0px;
@@ -2264,6 +2289,9 @@ code span {
 /* Medium Device = 1200px */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 
+  #audi {
+    background-size: 90% 50%;
+  }
 
   .header__nav__menu {
     margin-right: 25px;
@@ -2372,6 +2400,12 @@ code span {
     background-position: center;
     background-size: contain;
     background-color: #012F3C;
+  }
+
+  #ucla {
+    background-size: 80%;
+    background-color: #017DC3;
+    background-position: center;
   }
 
   .col-lg-3 .col-md-6 {
@@ -2542,6 +2576,12 @@ code span {
     background-position: center;
     background-size: contain;
     background-color: #012F3C;
+  }
+
+  #ucla {
+    background-size: 80%;
+    background-color: #017DC3;
+    background-position: center;
   }
 
   .counter__item.third__item {
@@ -2741,6 +2781,12 @@ code span {
     background-size: 90% 35%;
   }
 
+  #gsbWeb {
+    background-size: 70% 35%;
+  }
+
+
+
   .counter__item.five__item {
     background-image: url("https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png");
     background-color: white;
@@ -2771,18 +2817,18 @@ code span {
     background-size: cover;
   }
 
-  .team {
-    padding-left: 20px;
-  }
+
 
   #sciencesU {
     background-color: white;
     background-position: center;
+    background-size: 65%;
   }
 
   #ucla {
     background-color: #017DC3;
     background-position: center;
+    background-size: 65%;
   }
 
   #implid {
@@ -2791,8 +2837,12 @@ code span {
   }
 
   #sanofiPasteur {
-    background-position: 100% 20%;
+    background-size: 50% 55%;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center;
   }
+
 }
 
 /* Small Device = 320px */
