@@ -975,7 +975,7 @@ code span {
 }
 
 .counter__item.height__item {
-  background-image: url("../img/skills/jquery.png");
+  background-image: url("../img/skills/java.png");
   background-size: 100% 100%;
   margin-top: -185px;
 }
@@ -1026,6 +1026,25 @@ code span {
 /*---------------------
   Team
 -----------------------*/
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  /* position: relative; */
+  width: 262.5px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
 #sanofiPasteur {
   background-size: 75% 40%;
   background-position: center;
@@ -1037,10 +1056,47 @@ code span {
   background-color: #017DC3;
 }
 
+#implid-back {
+  background-color: #ffffff;
+  transform: rotateY(180deg);
+}
+
+#sanofiPasteur-back {
+  background-color: #ffffff;
+  transform: rotateY(180deg);
+}
+
+#sciencesU-back {
+  background-color: #ffffff;
+  transform: rotateY(180deg);
+}
+
+#ucla-back {
+  background-color: #017DC3;
+  transform: rotateY(180deg);
+}
+
 #implid {
   background-size: 90% 100%;
   background-color: #012F3C;
 }
+
+#ucla,
+#ucla-back,
+#sciencesU,
+#sciencesU-back,
+#implid,
+#implid-back,
+#sanofiPasteur,
+#sanofiPasteur-back {
+  position: absolute;
+  width: 262.5px;
+  height: 390px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+
 
 .team {
   padding-bottom: 90px;
@@ -2376,7 +2432,7 @@ code span {
   }
 
   .counter__item.height__item {
-    background-image: url("../img/skills/jquery1.png");
+    background-image: url("../img/skills/java-resp.png");
   }
 }
 

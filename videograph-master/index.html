@@ -192,8 +192,7 @@
                 <div class="grid-sizer">
                 </div>
                 <a href="https://projet-gsb-cyb.000webhostapp.com/">
-                    <div class="work__item wide__item set-bg whiteZ" id="gsbWeb"
-                        data-setbg="https://eliottadl.files.wordpress.com/2017/04/gsb.png">
+                    <div class="work__item wide__item set-bg whiteZ" id="gsbWeb" data-setbg="img/Projects/gsbWeb.png">
                         <div class="work__item__hover">
                             <h4>Projet GSB (Website)</h4>
                             <ul>
@@ -204,8 +203,7 @@
                     </div>
                 </a>
                 <a href="https://audiproject.000webhostapp.com/">
-                    <div class="work__item large__item set-bg" id="audi"
-                        data-setbg="https://audimediacenter-a.akamaihd.net/system/production/media/1282/images/bde751ee18fe149036c6b47d7595f6784f8901f8/AL090142_full.jpg?1581961854">
+                    <div class="work__item large__item set-bg" id="audi" data-setbg="img/Projects/audi.jpg">
 
                         <div class="work__item__hover">
                             <h4>Audi website</h4>
@@ -218,7 +216,7 @@
                 </a>
                 <a href="https://github.com/youken34/VueApp">
                     <div class="work__item wide__item set-bg whiteZ" id="matchApp"
-                        data-setbg="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Cirila-%D0%9C-majuskla.svg/640px-Cirila-%D0%9C-majuskla.svg.png">
+                        data-setbg="img/Projects/matchApp.png">
                         <div class="work__item__hover">
                             <h4>Matching App</h4>
                             <ul>
@@ -228,8 +226,7 @@
                         </div>
                     </div>
                 </a>
-                <div class="work__item wide__item set-bg whiteZ" id="gsbApp"
-                    data-setbg="https://baptiste-bisson.com/wp-content/uploads/2016/04/Logo-gsb.png">
+                <div class="work__item wide__item set-bg whiteZ" id="gsbApp" data-setbg="img/Projects/gsbApp.png">
                     <div class="work__item__hover">
                         <h4>Projet GSB (Application)</h4>
                         <ul>
@@ -240,7 +237,7 @@
                 </div>
                 <a href="https://esgi.sciences-ulyon.fr/SIO-BONAL/">
                     <div class="work__item wide__item set-bg whiteZ" id="portfolio"
-                        data-setbg="http://school.mangoanimate.com/wp-content/uploads/2021/01/Top-10-Video-Resume-Templates-to-Make-Impressive-Video-CV.png">
+                        data-setbg="img/Projects/portfolio.png">
 
                         <div class="work__item__hover">
                             <h4>Portfolio (French)</h4>
@@ -266,6 +263,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="counter__item second__item">
                                 <div class="counter__item__text">
@@ -316,10 +314,12 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </section>
+
         <!--Counter Section End-->
 
         <!--Team Section Begin-->
@@ -335,56 +335,117 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div id="sciencesU" class="team__item set-bg" data-setbg="img/experiences/SciencesU.jpg">
-                            <div class="team__item__text">
-                                <a href="https://www.sciences-u-lyon.fr/" class="afa">
-                                    <h4>Sciences U Lyon</h4>
-                                </a>
-                                <p>University</p>
-                                <div class="team__item__social">
-                                    <i class="fa fa-solid fa-graduation-cap"></i>
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div id="sciencesU" class="team__item set-bg"
+                                    data-setbg="img/experiences/SciencesU.jpg">
+                                    <div class="team__item__text">
+                                        <a href="https://www.sciences-u-lyon.fr/" class="afa">
+                                            <h4>Sciences U Lyon</h4>
+                                        </a>
+                                        <p>University</p>
+                                        <div class="team__item__social">
+                                            <i class="fa fa-solid fa-graduation-cap"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="sciencesU-back" class="team__item set-bg">
+                                    <div class="team__item__text">
+                                        <a href="https://www.sciences-u-lyon.fr/" class="afa">
+                                            <h4>Sciences U Lyon</h4>
+                                        </a>
+                                        <p>University</p>
+                                        <div class="team__item__social">
+                                            <i class="fa fa-solid fa-graduation-cap"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 marg2">
-                        <div id="ucla" class="team__item team__item--second set-bg"
-                            data-setbg="img/experiences/ucla.jpg">
-                            <div class="team__item__text">
-                                <a href="https://www.ucla.edu/" class="afa">
-                                    <h4>UCLA</h4>
-                                </a>
-                                <p>University</p>
-                                <div class="team__item__social">
-                                    <i class="fa fa-solid fa-graduation-cap"></i>
+                    <div class="col-lg-3 col-md-6 col-sm-6 marg2" onclick="flip()" id="flip">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div id="ucla" class="team__item team__item--second set-bg"
+                                    data-setbg="img/experiences/ucla.jpg">
+                                    <div class="team__item__text">
+                                        <a href="https://www.ucla.edu/" class="afa">
+                                            <h4>UCLA</h4>
+                                        </a>
+                                        <p>University</p>
+                                        <div class="team__item__social">
+                                            <i class="fa fa-solid fa-graduation-cap"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="ucla-back" class="team__item team__item--second set-bg">
+                                    <div class="team__item__text">
+                                        <a href="https://www.ucla.edu/" class="afa">
+                                            <h4>UCLA</h4>
+                                        </a>
+                                        <p>University</p>
+                                        <div class="team__item__social">
+                                            <i class="fa fa-solid fa-graduation-cap"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div id="implid" class="team__item team__item--third set-bg"
-                            data-setbg="img/experiences/implid.jpg">
-                            <div class="team__item__text">
-                                <a href="https://www.implid.com/" class="afa">
-                                    <h4>Implid</h4>
-                                </a>
-                                <p>Accounting firm company</p>
-                                <div class="team__item__social">
-                                    <i class="fa fa-sharp fa-solid fa-scale-balanced"></i>
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div id="implid" class="team__item team__item--third set-bg"
+                                    data-setbg="img/experiences/implid.jpg">
+                                    <div class="team__item__text">
+                                        <a href="https://www.implid.com/" class="afa">
+                                            <h4>Implid</h4>
+                                        </a>
+                                        <p>Accounting firm company</p>
+                                        <div class="team__item__social">
+                                            <i class="fa fa-sharp fa-solid fa-scale-balanced"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="implid-back" class="team__item team__item--third set-bg">
+                                    <div class="team__item__text">
+                                        <a href="https://www.implid.com/" class="afa">
+                                            <h4>Implid</h4>
+                                        </a>
+                                        <p>Accounting firm company</p>
+                                        <div class="team__item__social">
+                                            <i class="fa fa-sharp fa-solid fa-scale-balanced"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6 marg4">
-                        <div id="sanofiPasteur" class="team__item team__item--four set-bg"
-                            data-setbg="img/experiences/sanofi.png">
-                            <div class="sanofi">
-                                <a href="https://www.sanofi.us/" class="afa">
-                                    <h4>Sanofi Pasteur</h4>
-                                </a>
-                                <p>Vaccines and pharmaceuticals company</p>
-                                <div class="team__item__social">
-                                    <i class="fa fa-solid fa-syringe"></i>
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div id="sanofiPasteur-back" class="team__item team__item--four set-bg"
+                                    data-setbg="img/experiences/sanofi.png">
+                                    <div class="sanofi">
+                                        <a href="https://www.sanofi.us/" class="afa">
+                                            <h4>Sanofi Pasteur</h4>
+                                        </a>
+                                        <p>Vaccines and pharmaceuticals company</p>
+                                        <div class="team__item__social">
+                                            <i class="fa fa-solid fa-syringe"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="sanofiPasteur" class="team__item team__item--four set-bg">
+                                    <div class="sanofi">
+                                        <a href="https://www.sanofi.us/" class="afa">
+                                            <h4>Sanofi Pasteur</h4>
+                                        </a>
+                                        <p>Vaccines and pharmaceuticals company</p>
+                                        <div class="team__item__social">
+                                            <i class="fa fa-solid fa-syringe"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -51,3 +51,15 @@ function removeCustomAlert() {
     document.getElementsByTagName("nav")[2].style.filter = "blur(0px)";
     document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
 }
+
+// var flipped = false
+// function flip() {
+//     if (flipped == false) {
+//         document.getElementById("flip").style.transform = "rotateY(180deg)";
+//     }
+//     else {
+//         document.getElementsByClassName("flip-card-inner").style.transform = "rotateY(180deg)";
+//     }
+//     flip = !flip;
+//     console.log("test");
+// }
