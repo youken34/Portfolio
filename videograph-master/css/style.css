@@ -1057,7 +1057,7 @@ code span {
 }
 
 #implid-back {
-  background-color: #ffffff;
+  background-color: #012F3C;
   transform: rotateY(180deg);
 }
 
@@ -1116,6 +1116,21 @@ code span {
   height: 390px;
   position: relative;
   overflow: hidden;
+}
+
+.team__item h2 {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.team__item hr {
+  border-top: 2px solid #000;
+}
+
+.team__item ul li {
+  font-size: 15px;
+  padding-left: 15px;
 }
 
 .team__item:hover .team__item__text,
