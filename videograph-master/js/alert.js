@@ -52,14 +52,25 @@ function removeCustomAlert() {
     document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
 }
 
-// var flipped = false
-// function flip() {
-//     if (flipped == false) {
-//         document.getElementById("flip").style.transform = "rotateY(180deg)";
-//     }
-//     else {
-//         document.getElementsByClassName("flip-card-inner").style.transform = "rotateY(180deg)";
-//     }
-//     flip = !flip;
-//     console.log("test");
-// }
+
+function display(string) {
+    var ElementDisplayed = "";
+    switch (string) {
+        case "s":
+            ElementDisplayed = document.getElementsByClassName('sanofi');
+            hide(ElementDisplayed);
+            return;
+        case 'i':
+            ElementDisplayed = document.getElementById('implid-back');
+            ElementDisplayed = ElementDisplayed.getElementsByClassName('team__item__text');
+            hide(ElementDisplayed);
+            return;
+    }
+
+}
+
+function hide(ElementDisplayed) {
+    for (var i = 0; i < ElementDisplayed.length; i++) {
+        ElementDisplayed[i].style.display = 'none';
+    }
+}

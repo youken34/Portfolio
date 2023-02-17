@@ -319,6 +319,39 @@
                 </div>
             </div>
         </section>
+        <section class="counter2">
+            <div class="container">
+                <div class="counter__content">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="counter__item five__item">
+                                <div class="counter__item__text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="counter__item six__item">
+                                <div class="counter__item__text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="counter__item seven__item">
+                                <div class="counter__item__text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="counter__item height__item">
+                                <div class="counter__item__text">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!--Counter Section End-->
 
@@ -334,7 +367,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-3 col-md-6 col-sm-6 centered">
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div id="sciencesU" class="team__item set-bg"
@@ -365,7 +398,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 marg2" onclick="flip()" id="flip">
+                    <div class="col-lg-3 col-md-6 col-sm-6 marg2 centered" onclick="flip()" id="flip">
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div id="ucla" class="team__item team__item--second set-bg"
@@ -374,6 +407,14 @@
                                     </div>
                                 </div>
                                 <div id="ucla-back" class="team__item team__item--second set-bg">
+                                    <h2>University of California, Los Angeles</h2>
+                                    <hr>
+                                    <ul>
+                                        <li>Java / JavaFX</li>
+                                        <li>MSSQL</li>
+                                        <li>C# & ASP.Net</li>
+                                        <li>Adobe Software : Photoshop, Dreamever...</li>
+                                    </ul>
                                     <div class="team__item__text">
                                         <a href="https://www.ucla.edu/" class="afa">
                                             <h4>UCLA</h4>
@@ -387,7 +428,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-3 col-md-6 col-sm-6 centered">
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div id="implid" class="team__item team__item--third set-bg"
@@ -396,35 +437,55 @@
                                     </div>
                                 </div>
                                 <div id="implid-back" class="team__item team__item--third set-bg">
+                                    <h2>Implid (Accounting Firm)</h2>
+                                    <h3>Technician Helpdesk</h3>
+                                    <hr>
+                                    <ul>
+                                        <li>User assistance : solving configuration and access issues, hardware
+                                            problems</li>
+                                        <li>Inventory management : take stock of the internal
+                                            inventory, renewal of guaranteed parts</li>
+                                        <li>Moving computer equipments</li>
+                                        <li>Arrival/departure of employees</li>
+                                    </ul>
                                     <div class="team__item__text">
                                         <a href="https://www.implid.com/" class="afa">
                                             <h4>Implid</h4>
                                         </a>
                                         <p>Accounting firm company</p>
                                         <div class="team__item__social">
-                                            <i class="fa fa-sharp fa-solid fa-scale-balanced"></i>
+                                            <button onclick="display('i')"><i class="fa fa-solid fa-xmark"></i></button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 marg4">
+                    <div class="col-lg-3 col-md-6 col-sm-6 marg4 centered">
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div id="sanofiPasteur" class="team__item team__item--four set-bg"
                                     data-setbg="img/experiences/sanofi.png">
-                                    <div class="sanofi">
-                                    </div>
                                 </div>
                                 <div id="sanofiPasteur-back" class="team__item team__item--four set-bg">
+                                    <h2>Sanofi (Healthcare company)</h2>
+                                    <h3>Digital tools project assistant</h3>
+                                    <hr>
+                                    <ul>
+                                        <li>User assistance on internal tools (Sharepoint, Meridian PowerWeb)</li>
+                                        <li>Redesigning of the Sanofi engineering intranet part</li>
+                                        <li>Administration & Management of the users access to
+                                            Meridian PowerWeb and engineering intranet part</li>
+                                        <li>Workflow management and file/data processing</li>
+                                        <li>International communication (FR, US, IN, CA)</li>
+                                    </ul>
                                     <div class="sanofi">
                                         <a href="https://www.sanofi.us/" class="afa">
                                             <h4>Sanofi Pasteur</h4>
                                         </a>
                                         <p>Vaccines and pharmaceuticals company</p>
                                         <div class="team__item__social">
-                                            <i class="fa fa-solid fa-syringe"></i>
+                                            <button onclick="display('s')"><i class="fa fa-solid fa-xmark"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -630,14 +691,14 @@
                     <div class="row">
                         <div class="col-lg-12 text-center">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            <p class="footer__copyright__text">Copyright &copy;
+                            <!-- <p class="footer__copyright__text">Copyright &copy;
                                 <script>
                                     document.write(new Date().getFullYear());
                                 </script>
                                 All rights reserved | This template is made with <i class="fa fa-heart-o"
                                     aria-hidden="true"></i> by < a href="https://colorlib.com" target="_blank"> Colorlib
                                 </>
-                            </p>
+                            </p> -->
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </div>
                     </div>
