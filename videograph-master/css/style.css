@@ -362,7 +362,7 @@ nav {
   text-align: center;
   position: relative;
   width: 300px;
-  height: 200px;
+  height: 250px;
   margin-top: 200px;
   border-radius: 30px;
   background-color: #dccbff;
@@ -392,7 +392,7 @@ nav {
 }
 
 #alertBox img {
-  height: 150px;
+  height: 200px;
   width: 100%;
 }
 
@@ -907,13 +907,14 @@ code span {
 .counter__item.first__item {
   background-image: url("../img/skills/php.gif");
   background-size: 100% 100%;
-
+  background-repeat: no-repeat;
 }
 
 .counter__item.second__item {
   margin-top: -185px;
   background-image: url("../img/skills/Codeigniter.png");
   background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .counter__item.second__item:before {
@@ -929,6 +930,9 @@ code span {
   background-image: url("../img/skills/Js.png");
   background-size: 100% 100%;
   margin-top: -185px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #F6F6F6;
 }
 
 .counter__item.four__item:before {
@@ -943,23 +947,27 @@ code span {
 .counter__item.third__item {
   background-image: url("../img/skills/VueJs.png");
   background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 
 
 .counter__item.third__item:before {
-
   left: -65px;
   bottom: -317px;
 }
 
 .counter__item.five__item {
+  background-position: center;
+  background-repeat: no-repeat;
   background-image: url("../img/skills/GitHub.png");
   background-size: 100% 100%;
+  background-color: white;
 
 }
 
 .counter__item.six__item {
+  background-repeat: no-repeat;
   margin-top: -185px;
   background-image: url("../img/skills/Wordpress.png");
   background-size: 100% 100%;
@@ -975,9 +983,12 @@ code span {
 }
 
 .counter__item.height__item {
+  background-repeat: no-repeat;
   background-image: url("../img/skills/java.png");
   background-size: 100% 100%;
   margin-top: -185px;
+  background-color: #070C19;
+  background-position: center;
 }
 
 .counter__item.height__item:before {
@@ -990,6 +1001,7 @@ code span {
 }
 
 .counter__item.seven__item {
+  background-repeat: no-repeat;
   background-image: url("../img/skills/MSSQL.png");
   background-size: 100% 100%;
 }
@@ -2483,21 +2495,25 @@ ul li::before {
 
   .counter__item.third__item {
     background-image: url("../img/skills/VueJs.jpeg");
+    background-color: #FFF;
+    background-position: center;
     background-size: 100% 100%;
   }
 
   .counter__item.four__item {
+    background-size: 65% 85%;
     background-image: url("../img/skills/js1.png");
-    background-size: 100% 100%;
-    background-color: white;
   }
 
   .counter__item.five__item {
-    background-image: url("https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png");
-    background-size: 100% 100%;
+    background-size: 100% 70%;
+    background-position: center;
+    background-image: url("https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png");
   }
 
   .counter__item.six__item {
+    background-size: 70% 85%;
+    background-position: center;
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Wordpress-Logo.svg/2048px-Wordpress-Logo.svg.png");
     background-color: white;
   }
@@ -2505,6 +2521,8 @@ ul li::before {
   .counter__item.seven__item {
     background-image: url("https://cdn-icons-png.flaticon.com/512/5968/5968364.png");
     background-color: white;
+    background-size: 50% 75%;
+    background-position: center;
   }
 
   .counter__item.height__item {
@@ -2516,6 +2534,10 @@ ul li::before {
 
 /* Tablet Device = 768px */
 @media only screen and (min-width: 765px) and (max-width: 992px) {
+
+  .whiteY {
+    margin: 0 auto;
+  }
 
   .team>.container {
     padding-left: 58px;
@@ -2614,7 +2636,7 @@ ul li::before {
 
   .counter2 {
     height: auto;
-    padding-bottom: 70px;
+    padding-bottom: 0px;
   }
 
   .team__item {
@@ -2705,6 +2727,10 @@ ul li::before {
 
 /* Wide Mobile = 480px */
 @media only screen and (max-width: 767px) {
+  .whiteY {
+    margin: 0 auto;
+  }
+
   .team>.container {
     padding-left: 0px;
   }
@@ -2743,6 +2769,7 @@ ul li::before {
 
   .counter__item.third__item {
     background-image: url("../img/skills/VueJs2.jpeg");
+
   }
 
   .services__title {
@@ -2794,7 +2821,7 @@ ul li::before {
 
   .counter2 {
     height: auto;
-    padding-bottom: 70px;
+    padding-bottom: 0px;
   }
 
   .team__item.team__item--second {
@@ -2933,18 +2960,8 @@ ul li::before {
   }
 }
 
-@media only screen and (max-width: 575.5px) {
+@media only screen and (min-width: 480px) and (max-width: 575.5px) {
 
-
-
-  .centered {
-    margin: auto;
-    width: 290px;
-  }
-
-  .container {
-    margin: auto;
-  }
 
   #audi {
     background-size: 90% 35%;
@@ -2953,20 +2970,34 @@ ul li::before {
   #gsbWeb {
     background-size: 70% 35%;
   }
+}
 
-
-
-  .counter__item.five__item {
-    background-image: url("https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png");
-    background-color: white;
-  }
+@media only screen and (max-width: 575.5px) {
 
   .counter__item.four__item {
+    background-size: 100% 80%;
     background-image: url("https://www.seekpng.com/png/detail/80-803501_javascript-logo-logo-de-java-script-png.png");
   }
 
+  .centered {
+    margin: auto;
+    width: 290px;
+  }
+
+
+  .container {
+    margin: auto;
+  }
+
+  .counter__item.five__item {
+    background-size: 80% 80%;
+    background-image: url("https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png");
+  }
+
+
   .counter__item.third__item {
     background-image: url("../img/skills/VueJs.jpeg");
+    background-size: 65% 100%;
   }
 
   .counter__item.six__item {
@@ -2975,11 +3006,12 @@ ul li::before {
   }
 
   .counter__item.seven__item {
+    background-size: 75% 75%;
     background-image: url("https://www.numerama.com/wp-content/uploads/2016/03/sql-server.jpg");
   }
 
   .counter__item.height__item {
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsCyIYTQ9WZArxnLetO3GO9w1i3xGOS362jOEr9FXjzkEZpt5cXM7gXMJYXUqqaYTg6xI&usqp=CAU");
+    background-size: 55% 100%;
   }
 
   .set-bg {
@@ -3006,7 +3038,7 @@ ul li::before {
   }
 
   #sanofiPasteur {
-    background-size: 50% 55%;
+    background-size: 75% 50%;
     background-color: #ffffff;
     background-repeat: no-repeat;
     background-position: center;
@@ -3016,6 +3048,20 @@ ul li::before {
 
 /* Small Device = 320px */
 @media only screen and (max-width: 479px) {
+
+  #gsbApp {
+    background-size: 55% 35%;
+  }
+
+  #audi {
+    background-size: 55% 35%;
+  }
+
+  #gsbWeb {
+    background-size: 55% 35%;
+  }
+
+
   .hero__text h2 {
     font-size: 30px;
     line-height: 40px;
