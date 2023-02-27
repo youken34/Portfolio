@@ -864,7 +864,7 @@ code span {
 
 .counter2 {
   background: #100028;
-  height: 446px;
+  height: 445px;
 }
 
 .counter__content {
@@ -982,6 +982,17 @@ code span {
   border-top: none;
 }
 
+.counter__item.seven__item {
+  background-repeat: no-repeat;
+  background-image: url("../img/skills/MSSQL.png");
+  background-size: 100% 100%;
+}
+
+.counter__item.seven__item:before {
+  left: -65px;
+  bottom: -317px;
+}
+
 .counter__item.height__item {
   background-repeat: no-repeat;
   background-image: url("../img/skills/java.png");
@@ -1000,16 +1011,61 @@ code span {
   border-top: none;
 }
 
-.counter__item.seven__item {
+
+.counter__item.nine__item {
+  background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../img/skills/MSSQL.png");
+  background-image: url("../img/skills/.Net.png");
   background-size: 100% 100%;
 }
 
-.counter__item.seven__item:before {
+.counter__item.ten__item {
+  background-position: center;
+  margin-top: -185px;
+  background-repeat: no-repeat;
+  background-image: url("../img/skills/adobeCloud.png");
+  background-size: 100% 100%;
+}
+
+.counter__item.ten__item:before {
+  left: -316px;
+  bottom: -65px;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: none;
+  border-top: none;
+}
+
+.counter__item.eleven__item {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../img/skills/flutter.png");
+  background-size: 100% 100%;
+}
+
+.counter__item.eleven__item:before {
   left: -65px;
   bottom: -317px;
 }
+
+.counter__item.twelve__item {
+  background-position: center;
+  margin-top: -185px;
+  background-repeat: no-repeat;
+  background-image: url("../img/skills/filmora.png");
+  background-size: 100% 100%;
+}
+
+.counter__item.twelve__item:before {
+  left: -380px;
+  bottom: -380px;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: none;
+  border-top: none;
+}
+
+
 
 .counter__item__text {
   -webkit-transform: rotate(-45deg);
@@ -1063,7 +1119,7 @@ ul {
   list-style: none;
 }
 
-ul li::before {
+.centered:not(:nth-child(3)) ul li::before {
   content: "\2022";
   /* Add content: \2022 is the CSS Code/unicode for a bullet */
   color: rgb(2, 2, 2);
@@ -1078,7 +1134,7 @@ ul li::before {
   /* Also needed for space (tweak if needed) */
 }
 
-#implid ul li::before {
+.centered:nth-child(3) ul li::before {
   content: "\2022";
   /* Add content: \2022 is the CSS Code/unicode for a bullet */
   color: rgb(255, 255, 255);
@@ -2435,6 +2491,10 @@ ul li::before {
     background-size: 90% 50%;
   }
 
+  .flip-card {
+    scale: 0.8;
+  }
+
   .header__nav__menu {
     margin-right: 25px;
   }
@@ -2447,6 +2507,18 @@ ul li::before {
     padding-left: 25px;
   }
 
+  .team>.container {
+    padding-left: 58px;
+  }
+
+  .counter {
+    padding-top: 420px;
+  }
+
+  .counter2 {
+    height: 420px;
+  }
+
   .counter__item::before {
     display: none;
   }
@@ -2455,23 +2527,16 @@ ul li::before {
     padding: 0px 145px 0 50px;
   }
 
-  .counter__item.second__item {
+  .counter__item.second__item,
+  .counter__item.four__item,
+  .counter__item.six__item,
+  .counter__item.height__item,
+  .counter__item.ten__item,
+  .counter__item.twelve__item {
     margin-top: -210px;
   }
 
-  .counter__item.four__item {
-    margin-top: -210px;
-  }
-
-  .counter__item.six__item {
-    margin-top: -210px;
-  }
-
-  .counter__item.height__item {
-    margin-top: -210px;
-  }
-
-  .hero__slider.owl-carousel .owl-dots {
+  ** .hero__slider.owl-carousel .owl-dots {
     max-width: 930px !important;
   }
 
@@ -2506,13 +2571,13 @@ ul li::before {
   }
 
   .counter__item.five__item {
-    background-size: 100% 70%;
+    background-size: 120% 65%;
     background-position: center;
     background-image: url("https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png");
   }
 
   .counter__item.six__item {
-    background-size: 70% 85%;
+    background-size: 85% 80%;
     background-position: center;
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Wordpress-Logo.svg/2048px-Wordpress-Logo.svg.png");
     background-color: white;
@@ -2521,12 +2586,36 @@ ul li::before {
   .counter__item.seven__item {
     background-image: url("https://cdn-icons-png.flaticon.com/512/5968/5968364.png");
     background-color: white;
-    background-size: 50% 75%;
+    background-size: 70% 80%;
     background-position: center;
   }
 
   .counter__item.height__item {
     background-image: url("../img/skills/java-resp.png");
+  }
+
+  .counter__item.nine__item {
+    background-image: url("../img/skills/.NetResponsive.png");
+    background-color: #5027D5;
+    background-size: 80% 100%;
+  }
+
+  .counter__item.ten__item {
+    background-image: url("../img/skills/adobeCloudResp.png");
+    background-color: #000317;
+    background-size: 185% 100%;
+  }
+
+  .counter__item.eleven__item {
+    background-image: url("../img/skills/flutterResponsive.png");
+    background-color: #ffffff;
+    background-size: 80% 60%;
+  }
+
+  .counter__item.twelve__item {
+    background-image: url("../img/skills/filmoraResponsive.png");
+    background-color: #ffffff;
+    background-size: 80% 60%;
   }
 }
 
@@ -2607,19 +2696,14 @@ ul li::before {
     padding: 0;
   }
 
-  .counter__item.second__item {
-    margin-top: 0;
-  }
-
-  .counter__item.four__item {
-    margin-top: 0;
-  }
-
-  .counter__item.six__item {
-    margin-top: 0;
-  }
-
-  .counter__item.height__item {
+  .counter__item.second__item,
+  .counter__item.four__item,
+  .counter__item.six__item,
+  .counter__item.height__item,
+  .counter__item.nine__item,
+  .counter__item.ten__item,
+  .counter__item.eleven__item,
+  .counter__item.twelve__item {
     margin-top: 0;
   }
 
@@ -2792,19 +2876,14 @@ ul li::before {
     padding: 0;
   }
 
-  .counter__item.second__item {
-    margin-top: 0;
-  }
-
-  .counter__item.four__item {
-    margin-top: 0;
-  }
-
-  .counter__item.six__item {
-    margin-top: 0;
-  }
-
-  .counter__item.height__item {
+  .counter__item.second__item,
+  .counter__item.four__item,
+  .counter__item.six__item,
+  .counter__item.height__item,
+  .counter__item.nine__item,
+  .counter__item.ten__item,
+  .counter__item.eleven__item,
+  .counter__item.twelve__item {
     margin-top: 0;
   }
 
@@ -2989,15 +3068,21 @@ ul li::before {
     margin: auto;
   }
 
-  .counter__item.five__item {
-    background-size: 80% 80%;
-    background-image: url("https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png");
+  .counter__item.second__item {
+    background-size: 50% 80%;
+    background-color: #070705;
+    background-position: center;
   }
 
 
   .counter__item.third__item {
     background-image: url("../img/skills/VueJs.jpeg");
     background-size: 65% 100%;
+  }
+
+  .counter__item.five__item {
+    background-size: 80% 80%;
+    background-image: url("https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png");
   }
 
   .counter__item.six__item {
@@ -3012,6 +3097,22 @@ ul li::before {
 
   .counter__item.height__item {
     background-size: 55% 100%;
+  }
+
+  .counter__item.nine__item {
+    background-size: 60% 120%;
+  }
+
+  .counter__item.ten__item {
+    background-size: 100% 100%;
+  }
+
+  .counter__item.eleven__item {
+    background-size: 65% 70%;
+  }
+
+  .counter__item.twelve__item {
+    background-size: 50% 65%;
   }
 
   .set-bg {
