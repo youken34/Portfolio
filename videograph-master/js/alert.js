@@ -46,9 +46,11 @@ function createCustomAlert(txt) {
 }
 
 function removeCustomAlert() {
+    console.log("ok");
     nav = document.getElementsByTagName("nav")[0].style.filter = "blur(0px)";
-    document.getElementsByTagName("nav")[1].style.filter = "blur(0px)";
-    document.getElementsByTagName("nav")[2].style.filter = "blur(0px)";
+    for (let i = 0; i < document.getElementsByTagName("nav").length; i++) { // loop through each element
+        document.getElementsByTagName("nav")[i].style.filter = "blur(0px)";
+    }
     document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
 }
 

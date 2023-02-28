@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
-<body>
+<body onload="removeCustomAlert();">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.html">Côme Bonal</a>
                     </div>
                 </div>
                 <div class="col-lg-10">
@@ -44,12 +44,10 @@
                         <nav class="header__nav__menu mobile-menu">
                             <ul>
                                 <li><a href="./index.html">Home</a></li>
-                                <li><a href="./about.html">About</a></li>
                                 <li><a href="./portfolio.html">Portfolio</a></li>
                                 <li class="active"><a href="./services.html">Services</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
-                                        <li><a href="./about.html">About</a></li>
                                         <li><a href="./portfolio.html">Portfolio</a></li>
                                         <li><a href="./blog.html">Blog</a></li>
                                         <li><a href="./blog-details.html">Blog Details</a></li>
@@ -293,6 +291,7 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/alert.js"></script>
 </body>
 
 </html>

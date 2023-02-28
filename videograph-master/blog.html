@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
-<body>
+<body onload="removeCustomAlert();">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.html">Côme Bonal</a>
                     </div>
                 </div>
                 <div class="col-lg-10">
@@ -44,12 +44,10 @@
                         <nav class="header__nav__menu mobile-menu">
                             <ul>
                                 <li><a href="./index.html">Home</a></li>
-                                <li><a href="./about.html">About</a></li>
                                 <li><a href="./portfolio.html">Portfolio</a></li>
                                 <li class="active"><a href="./services.html">Services</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
-                                        <li><a href="./about.html">About</a></li>
                                         <li><a href="./portfolio.html">Portfolio</a></li>
                                         <li><a href="./blog.html">Blog</a></li>
                                         <li><a href="./blog-details.html">Blog Details</a></li>
@@ -59,11 +57,14 @@
                             </ul>
                         </nav>
                         <div class="header__nav__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            <a href="#" class="afa"><i class="fa fa-facebook"></i></a>
+                            <a href="https://esgi.sciences-ulyon.fr/SIO-BONAL/" class="afa"><i
+                                    class="fa fa-wordpress"></i></a>
+                            <a href="https://github.com/youken34" class="afa"><i class="fa fa-github"></i></a>
+                            <a href="https://www.instagram.com/comebonal/" class="afa"><i
+                                    class="fa fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/c%C3%B4me-bonal-a620b11ab/" class="afa"><i
+                                    class="fa fa-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
@@ -311,6 +312,7 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/alert.js"></script>
 </body>
 
 </html>

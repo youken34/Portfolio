@@ -108,9 +108,9 @@ ol {
   margin: 0;
 }
 
-nav {
+/* nav {
   filter: blur(4px);
-}
+} */
 
 /* Code ajouté */
 
@@ -905,7 +905,7 @@ code span {
 }
 
 .counter__item.first__item {
-  background-image: url("../img/skills/php.gif");
+  background-image: url("../img/skills/php.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -998,7 +998,7 @@ code span {
   background-image: url("../img/skills/java.png");
   background-size: 100% 100%;
   margin-top: -185px;
-  background-color: #070C19;
+  background-color: #ffffff;
   background-position: center;
 }
 
@@ -1369,10 +1369,134 @@ ul {
   margin-bottom: 0;
 }
 
-.blog__item.latest__item:hover {
+.blog__item.latest__item p {
+  font-weight: 400;
+}
+
+.blog__item.chatgpt:hover {
   border: 1px solid #222222 !important;
-  background: url(../img/blog/blog-1.jpg);
-  background-size: cover;
+  background: url(../img/technologies/chatGPT.png);
+  background-size: 80% 40%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #11A281;
+}
+
+.blog__item.chatgpt:hover p,
+.blog__item.chatgpt:hover h4,
+.blog__item.chatgpt:hover li,
+.blog__item.chatgpt:hover span,
+.blog__item.chatgpt:hover a {
+  color: #000;
+}
+
+
+.blog__item.eclipse:hover {
+  border: 1px solid #222222 !important;
+  background: url(../img/technologies/eclipse.png);
+  background-size: 70% 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000000;
+}
+
+.blog__item.eclipse:hover p,
+.blog__item.eclipse:hover li,
+.blog__item.eclipse:hover span,
+.blog__item.eclipse:hover a {
+  color: #ffffff;
+}
+
+.blog__item.webhost:hover {
+  border: 1px solid #222222 !important;
+  background: url(../img/technologies/webhost.png);
+  background-size: 70% 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #eea2a2;
+}
+
+.blog__item.webhost:hover p,
+.blog__item.webhost:hover h4,
+.blog__item.webhost:hover li,
+.blog__item.webhost:hover span,
+.blog__item.webhost:hover a {
+  color: #000000;
+  /* add a stroke to the text */
+}
+
+.blog__item.github:hover {
+  border: 1px solid #222222 !important;
+  background: url(../img/technologies/github.png);
+  background-size: 70% 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000000;
+}
+
+.blog__item.github:hover p,
+.blog__item.github:hover h4,
+.blog__item.github:hover li,
+.blog__item.github:hover span,
+.blog__item.github:hover a {
+  color: #ffffff;
+}
+
+.blog__item.vsc:hover {
+  border: 1px solid #222222 !important;
+  background: url(../img/technologies/vsc.png);
+  background-size: 60% 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000000;
+}
+
+.blog__item.vsc:hover p,
+.blog__item.vsc:hover h4,
+.blog__item.vsc:hover li,
+.blog__item.vsc:hover span,
+.blog__item.vsc:hover a {
+  color: #ffffff;
+}
+
+
+
+.blog__item.filmora:hover {
+  border: 1px solid #222222 !important;
+  background: url(../img/technologies//filmora.png);
+  background-size: 60% 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #073042;
+}
+
+.blog__item.filmora p {
+  font-weight: 600;
+}
+
+.blog__item.filmora:hover p,
+.blog__item.filmora:hover h4,
+.blog__item.filmora:hover li,
+.blog__item.filmora:hover span,
+.blog__item.filmora:hover a {
+  color: #000000;
+}
+
+.blog__item.bootstrap:hover {
+  border: 1px solid #222222 !important;
+  background: url(../img/technologies//bootstrap.jpeg);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #563D7C;
+}
+
+.blog__item.bootstrap:hover p,
+.blog__item.bootstrap:hover h4,
+.blog__item.bootstrap:hover li,
+.blog__item.bootstrap:hover span,
+.blog__item.bootstrap:hover a {
+  color: #000000;
 }
 
 .latest__slider.owl-carousel .owl-item .col-lg-4 {
@@ -2481,11 +2605,17 @@ ul {
     max-width: 1170px;
   }
 
+  body {
+    overflow-x: hidden;
+  }
 
 }
 
 /* Medium Device = 1200px */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+  body {
+    overflow-x: hidden;
+  }
 
   #audi {
     background-size: 90% 50%;
@@ -2508,7 +2638,8 @@ ul {
   }
 
   .team>.container {
-    padding-left: 58px;
+    padding-left: 15px;
+    padding-right: 90px;
   }
 
   .counter {
@@ -2545,17 +2676,46 @@ ul {
     /* width: 215px; */
   }
 
+  .blog__item.chatgpt:hover {
+    background-size: 80% 50%;
+  }
+
+  .blog__item.eclipse:hover {
+    background-size: 65% 50%;
+  }
+
+  .blog__item.webhost:hover {
+    background-size: 100% 80%;
+  }
+
+  .blog__item.github:hover {
+    background-size: 80% 65%;
+  }
+
+  .blog__item.vsc:hover {
+    background-size: 60% 40%;
+  }
+
+  .blog__item.filmora:hover {
+    background-size: 100% 55%;
+  }
+
 }
 
 @media only screen and (max-width: 992px) {
 
 
   .counter__item.first__item {
-    background-image: url("../img/skills/php.png");
+    background-image: url("../img/skills/phpResp.png");
+    background-color: #FFFFFF;
+    background-position: center;
+    background-size: 150% 190%;
+
   }
 
   .counter__item.second__item {
     background-image: url("../img/skills/Codeigniter2.jpg");
+    background-color: #FFFFFF;
   }
 
   .counter__item.third__item {
@@ -2571,13 +2731,13 @@ ul {
   }
 
   .counter__item.five__item {
-    background-size: 120% 65%;
+    background-size: 95% 65%;
     background-position: center;
     background-image: url("https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png");
   }
 
   .counter__item.six__item {
-    background-size: 85% 80%;
+    background-size: 70% 80%;
     background-position: center;
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Wordpress-Logo.svg/2048px-Wordpress-Logo.svg.png");
     background-color: white;
@@ -2586,23 +2746,25 @@ ul {
   .counter__item.seven__item {
     background-image: url("https://cdn-icons-png.flaticon.com/512/5968/5968364.png");
     background-color: white;
-    background-size: 70% 80%;
+    background-size: 55% 80%;
     background-position: center;
   }
 
   .counter__item.height__item {
     background-image: url("../img/skills/java-resp.png");
+    background-size: 150% 190%;
+
   }
 
   .counter__item.nine__item {
     background-image: url("../img/skills/.NetResponsive.png");
-    background-color: #5027D5;
+    background-color: #FFFFFF;
     background-size: 80% 100%;
   }
 
   .counter__item.ten__item {
     background-image: url("../img/skills/adobeCloudResp.png");
-    background-color: #000317;
+    background-color: #FFFFFF;
     background-size: 185% 100%;
   }
 
@@ -2619,7 +2781,36 @@ ul {
   }
 }
 
+@media screen and (max-width: 765px) {
 
+  .blog__item.chatgpt:hover {
+    background-size: 60% 50%;
+  }
+
+  .blog__item.eclipse:hover {
+    background-size: 80% 70%;
+  }
+
+  .blog__item.webhost:hover {
+    background-size: 50% 70%;
+  }
+
+  .blog__item.github:hover {
+    background-size: 50% 70%;
+  }
+
+  .blog__item.vsc:hover {
+    background-size: 40% 50%;
+  }
+
+  .blog__item.filmora:hover {
+    background-size: 50% 55%;
+  }
+
+  .blog__item.bootstrap:hover {
+    background-size: 50% 70%;
+  }
+}
 
 /* Tablet Device = 768px */
 @media only screen and (min-width: 765px) and (max-width: 992px) {
@@ -2811,6 +3002,11 @@ ul {
 
 /* Wide Mobile = 480px */
 @media only screen and (max-width: 767px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
   .whiteY {
     margin: 0 auto;
   }
@@ -3053,6 +3249,10 @@ ul {
 
 @media only screen and (max-width: 575.5px) {
 
+  .counter__item.first__item {
+    background-size: 130% 250%;
+  }
+
   .counter__item.four__item {
     background-size: 100% 80%;
     background-image: url("https://www.seekpng.com/png/detail/80-803501_javascript-logo-logo-de-java-script-png.png");
@@ -3070,7 +3270,6 @@ ul {
 
   .counter__item.second__item {
     background-size: 50% 80%;
-    background-color: #070705;
     background-position: center;
   }
 
@@ -3096,7 +3295,7 @@ ul {
   }
 
   .counter__item.height__item {
-    background-size: 55% 100%;
+    background-size: 100% 200%;
   }
 
   .counter__item.nine__item {
