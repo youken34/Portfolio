@@ -25,7 +25,7 @@ function createCustomAlert(txt) {
 
     h1 = alertObj.appendChild(d.createElement("h1"));
     h1.appendChild(d.createTextNode(ALERT_TITLE));
-    alertObj.innerHTML += "<image src='https://media.tenor.com/EYX1u_zeHXYAAAAM/loading-progress-bar.gif'></image>";
+    alertObj.innerHTML += "<image src='/Portfolio/videograph-master/img/Photoshop/loading-GIF.gif'></image>";
 
     msg = alertObj.appendChild(d.createElement("p"));
     //msg.appendChild(d.createTextNode(txt));
