@@ -83,36 +83,41 @@ function fill() {
 
 function redirection() {
     window.location.href = "/Portfolio/videograph-master/portfolio.html";
+
+
 }
 
 function grow(image, numberFlex) {
-    const body = document.body;
-    var flex = document.getElementsByClassName("flex")[numberFlex];
-    switch (image) {
-        case 'clean':
-            var clicked = false;
-            var element = document.getElementById('clean');
-            if (element.style.transform === 'scale(1)') {
-                undo();
-                element.style.transform = 'scale(2)';
-                element.style.zIndex = "2";
-            } else {
-                element.style.transform = 'scale(1)';
-                element.style.zIndex = "1";
-            }
-            break;
-        case 'castel':
-            var element = document.getElementById('castel');
-            if (element.style.transform === 'scale(1)') {
-                undo();
-                element.style.transform = 'scale(2)';
-                element.style.zIndex = "2";
-            } else {
-                element.style.transform = 'scale(1)';
-                element.style.zIndex = "1";
-            }
-            break;
 
+    if (window.innerWidth > 992) {
+        const body = document.body;
+        var flex = document.getElementsByClassName("flex")[numberFlex];
+        switch (image) {
+            case 'clean':
+                var clicked = false;
+                var element = document.getElementById('clean');
+                if (element.style.transform === 'scale(1)') {
+                    undo();
+                    element.style.transform = 'scale(2)';
+                    element.style.zIndex = "2";
+                } else {
+                    element.style.transform = 'scale(1)';
+                    element.style.zIndex = "1";
+                }
+                break;
+            case 'castel':
+                var element = document.getElementById('castel');
+                if (element.style.transform === 'scale(1)') {
+                    undo();
+                    element.style.transform = 'scale(2)';
+                    element.style.zIndex = "2";
+                } else {
+                    element.style.transform = 'scale(1)';
+                    element.style.zIndex = "1";
+                }
+                break;
+
+        }
     }
 }
 
