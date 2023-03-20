@@ -87,6 +87,10 @@ function redirection() {
 
 }
 
+window.addEventListener('resize', function () {
+    undo();
+});
+
 function grow(image, numberFlex) {
 
     if (window.innerWidth > 992) {
@@ -98,7 +102,7 @@ function grow(image, numberFlex) {
                 var element = document.getElementById('clean');
                 if (element.style.transform === 'scale(1)') {
                     undo();
-                    element.style.transform = 'scale(2)';
+                    element.style.transform = 'scale(1.7)';
                     element.style.zIndex = "2";
                 } else {
                     element.style.transform = 'scale(1)';
@@ -109,7 +113,7 @@ function grow(image, numberFlex) {
                 var element = document.getElementById('castel');
                 if (element.style.transform === 'scale(1)') {
                     undo();
-                    element.style.transform = 'scale(2)';
+                    element.style.transform = 'scale(1.7)';
                     element.style.zIndex = "2";
                 } else {
                     element.style.transform = 'scale(1)';

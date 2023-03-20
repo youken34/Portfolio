@@ -108,9 +108,9 @@ ol {
   margin: 0;
 }
 
-nav {
+/* nav {
   filter: blur(4px);
-}
+} */
 
 .blur {
   filter: blur(5px);
@@ -879,6 +879,7 @@ code span {
 -----------------------*/
 
 #Skills {
+  border: inset 1px solid #00bfe7;
   z-index: 10;
   margin-top: -215px;
   position: absolute;
@@ -892,13 +893,17 @@ code span {
   padding-top: 250px;
 }
 
+.counter2 {
+  background: #100028;
+}
+
 .counter>.container,
 .counter2>.container {
   scale: 0.8;
 }
 
-.counter2 {
-  background: #100028;
+#counter2 {
+  padding-bottom: 450px;
 }
 
 .counter__content {
@@ -1258,7 +1263,7 @@ ul {
 .team {
   margin-top: -100px;
   margin-bottom: -100px;
-  padding-bottom: 90px;
+  padding-bottom: 125px;
   border-radius: 0px;
   background-clip: padding-box;
   -webkit-clip-path: polygon(0 9%, 100% 0, 100% 91%, 0% 100%);
@@ -2010,9 +2015,7 @@ ul {
   margin-bottom: 45px;
 }
 
-.services__item:hover .services__item__icon:after {
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
+.services__item__icon:hover::after {
   transform: rotate(45deg);
 }
 
@@ -2774,7 +2777,9 @@ ul {
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
 @media only screen and (max-width: 1300px) {
-
+  #counter2 {
+    padding-bottom: 400px;
+  }
 
 
   .d-flex {
@@ -2941,6 +2946,9 @@ ul {
 }
 
 @media only screen and (max-width: 992px) {
+  #counter2 {
+    padding-bottom: 100px;
+  }
 
   .team {
     -webkit-clip-path: polygon(0 3%, 100% 0, 100% 97%, 0% 100%);
