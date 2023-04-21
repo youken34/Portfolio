@@ -2809,7 +2809,7 @@ ul {
   }
 
   .creation {
-    bottom: 365px;
+    margin-top: -80px;
   }
 }
 
@@ -3512,7 +3512,6 @@ ul {
 
   .creation {
     scale: 0.9;
-    bottom: 395px;
   }
 }
 
@@ -3642,9 +3641,7 @@ ul {
     border: none;
   }
 
-  .creation {
-    bottom: 530px;
-  }
+
 
   #sciencesU {
     background-color: white;
