@@ -749,7 +749,7 @@ code span {
   Work
 -----------------------*/
 #audi {
-  background-color: white;
+  background-color: #000;
   background-position: center;
   background-size: 85% 60%;
 }
@@ -757,15 +757,22 @@ code span {
 #gsbWeb {
   background-position: center;
   background-size: 70% 70%;
-  background-color: #DBE4F7;
+  background-color: #02172f;
 }
 
 
 
 #gsbApp {
+  background-position: 50% 45%;
+  background-size: 70% 90%;
+  background-color: #02172f;
   background-position: center;
-  background-size: 70% 70%;
-  background-color: #DBE4F7;
+}
+
+#portfolio {
+  background-color: #02172f;
+  background-size: 70% 100%;
+  background-position: center;
 }
 
 #portfolio:hover {
@@ -773,7 +780,8 @@ code span {
 }
 
 #matchApp {
-  background-color: #DBE4F7;
+  background-size: 70% 70%;
+  background-color: #02172f;
   background-position: 50% 40%;
 }
 
@@ -1586,6 +1594,7 @@ ul {
   width: 200px;
   z-index: 2;
   animation-fill-mode: forwards;
+  margin-top: 55px;
   /* keep the styles at the end of the animation */
   overflow: hidden;
 
@@ -2811,6 +2820,10 @@ ul {
   .creation {
     margin-top: -80px;
   }
+
+  #gsbApp {
+    background-size: 85% 90%;
+  }
 }
 
 
@@ -2934,13 +2947,20 @@ ul {
     background-size: 90% 50%;
   }
 
-  #gsbWeb,
-  #gsbApp {
+  #gsbWeb {
     background-size: 75% 55%;
   }
 
   #Skills {
     margin-top: -165px;
+  }
+
+  #portfolio {
+    background-size: 80% 100%;
+  }
+
+  #gsbApp {
+    background-size: 95% 90%;
   }
 
 }
@@ -3043,52 +3063,13 @@ ul {
   .counter__item.eleven__item {
     background-image: url("../img/skills/flutterResponsive.png");
     background-color: #ffffff;
-    background-size: 80% 60%;
+    background-size: 100% 70%;
   }
 
   .counter__item.twelve__item {
     background-image: url("../img/skills/filmoraResponsive.png");
     background-color: #ffffff;
     background-size: 80% 60%;
-  }
-}
-
-
-
-@media screen and (max-width: 765px) {
-
-  .blog__item.chatgpt:hover {
-    background-size: 60% 50%;
-  }
-
-  .blog__item.eclipse:hover {
-    background-size: 80% 70%;
-  }
-
-  .blog__item.webhost:hover {
-    background-size: 50% 70%;
-  }
-
-  .blog__item.github:hover {
-    background-size: 50% 70%;
-  }
-
-  .blog__item.vsc:hover {
-    background-size: 40% 50%;
-  }
-
-  .blog__item.filmora:hover {
-    background-size: 50% 55%;
-  }
-
-  .blog__item.bootstrap:hover {
-    background-size: 50% 70%;
-  }
-
-  .callto_one,
-  .callto_two {
-    width: 85%;
-
   }
 }
 
@@ -3112,15 +3093,23 @@ ul {
   }
 
   #audi {
-    background-size: 110% 45%;
+    background-size: 90% 45%;
   }
 
   #gsbWeb {
-    background-size: 85% 55%;
+    background-size: 75% 45%;
   }
 
   #gsbApp {
-    background-size: 90% 45%;
+    background-size: 100% 80%;
+  }
+
+  #matchApp {
+    background-size: 80% 50%;
+  }
+
+  #portfolio {
+    background-size: 70% 75%;
   }
 
   #implid {
@@ -3277,9 +3266,48 @@ ul {
 
 }
 
+@media screen and (max-width: 765px) {
+
+  .blog__item.chatgpt:hover {
+    background-size: 60% 50%;
+  }
+
+  .blog__item.eclipse:hover {
+    background-size: 80% 70%;
+  }
+
+  .blog__item.webhost:hover {
+    background-size: 50% 70%;
+  }
+
+  .blog__item.github:hover {
+    background-size: 50% 70%;
+  }
+
+  .blog__item.vsc:hover {
+    background-size: 40% 50%;
+  }
+
+  .blog__item.filmora:hover {
+    background-size: 50% 55%;
+  }
+
+  .blog__item.bootstrap:hover {
+    background-size: 50% 70%;
+  }
+
+  .callto_one,
+  .callto_two {
+    width: 85%;
+
+  }
+}
 
 
-/* Wide Mobile = 480px */
+
+
+
+
 @media only screen and (max-width: 765px) {
 
   body {
@@ -3311,7 +3339,11 @@ ul {
   }
 
   #gsbApp {
-    background-size: 80% 55%;
+    background-size: 90% 80%;
+  }
+
+  #portfolio {
+    background-size: 70% 80%;
   }
 
   #implid {
@@ -3517,11 +3549,20 @@ ul {
 
 @media only screen and (min-width: 575.5px) and (max-width: 680px) {
   #audi {
-    background-size: 100% 50%;
+    background-size: 90% 40%;
   }
+
+  #matchApp {
+    background-size: 75% 55%;
+  }
+
+  #portfolio {
+    background-size: 70% 65%;
+  }
+
 }
 
-
+/* Wide Mobile = 480px */
 @media only screen and (min-width: 480px) and (max-width: 575.5px) {
 
 
@@ -3529,9 +3570,7 @@ ul {
     background-size: 90% 35%;
   }
 
-  #gsbWeb {
-    background-size: 80% 45%;
-  }
+
 }
 
 @media only screen and (max-width: 575.5px) {
@@ -3667,8 +3706,20 @@ ul {
     background-position: center;
   }
 
+  #gsbWeb {
+    background-size: 80% 45%;
+  }
+
   #gsbApp {
-    background-size: 90% 50%;
+    background-size: 100% 75%;
+  }
+
+  #portfolio {
+    background-size: 65% 65%;
+  }
+
+  #matchApp {
+    background-size: 80% 55%;
   }
 
   #Skills {
