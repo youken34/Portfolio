@@ -3570,7 +3570,13 @@ ul {
     background-size: 90% 35%;
   }
 
+  #gsbApp {
+    background-size: 100% 75%;
+  }
 
+  #portfolio {
+    background-size: 65% 65%;
+  }
 }
 
 @media only screen and (max-width: 575.5px) {
@@ -3680,8 +3686,6 @@ ul {
     border: none;
   }
 
-
-
   #sciencesU {
     background-color: white;
     background-position: center;
@@ -3710,14 +3714,6 @@ ul {
     background-size: 80% 45%;
   }
 
-  #gsbApp {
-    background-size: 100% 75%;
-  }
-
-  #portfolio {
-    background-size: 65% 65%;
-  }
-
   #matchApp {
     background-size: 80% 55%;
   }
@@ -3734,7 +3730,7 @@ ul {
 @media only screen and (max-width: 479px) {
 
   #gsbApp {
-    background-size: 80% 60%;
+    background-size: 80% 80%;
   }
 
   #audi {
