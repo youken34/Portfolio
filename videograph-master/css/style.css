@@ -776,7 +776,7 @@ code span {
 }
 
 #portfolio:hover {
-  cursor: not-allowed;
+  cursor: pointer;
 }
 
 #matchApp {
