@@ -3768,6 +3768,9 @@ ul {
     background-size: 65% 50%;
   }
 
+  .counter__item.four__item {
+    background-size: 95% 65%;
+  }
 
   .counter__item.second__item {
     background-size: 65% 80%;
