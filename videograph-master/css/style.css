@@ -3000,9 +3000,6 @@ ul {
 }
 
 @media only screen and (max-width: 992px) {
-  #counter2 {
-    padding-bottom: 100px;
-  }
 
   .team {
     -webkit-clip-path: polygon(0 3%, 100% 0, 100% 97%, 0% 100%);
@@ -3017,7 +3014,6 @@ ul {
     width: 75%;
   }
 
-
   .counter {
     padding-top: 30px;
   }
@@ -3025,10 +3021,6 @@ ul {
   .counter,
   .counter2 {
     margin-bottom: -115px;
-  }
-
-  #Skills {
-    margin-top: 7px;
   }
 
   .counter__item.first__item {
@@ -3048,7 +3040,7 @@ ul {
     background-image: url("../img/skills/VueJs.jpeg");
     background-color: #FFF;
     background-position: center;
-    background-size: 100% 80%;
+    background-size: 75% 80%;
   }
 
   .counter__item.four__item {
@@ -3103,7 +3095,15 @@ ul {
   .counter__item.twelve__item {
     background-image: url("../img/skills/filmoraResponsive.png");
     background-color: #ffffff;
-    background-size: 80% 60%;
+    background-size: 80% 46%;
+  }
+
+  #counter2 {
+    padding-bottom: 100px;
+  }
+
+  #Skills {
+    margin-top: 7px;
   }
 }
 
@@ -3601,6 +3601,11 @@ ul {
   #portfolio {
     background-size: 80% 50%;
   }
+
+  .counter__item.four__item {
+    background-size: contain;
+  }
+
 }
 
 @media only screen and (max-width: 575.5px) {
@@ -3684,7 +3689,7 @@ ul {
   }
 
   .counter__item.nine__item {
-    background-size: 60% 120%;
+    background-size: contain !important;
   }
 
   .counter__item.ten__item {
@@ -3739,7 +3744,7 @@ ul {
   }
 
   #matchApp {
-    background-size: 80% 55%;
+    background-size: 60% 60%;
   }
 
   #Skills {
