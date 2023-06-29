@@ -3040,7 +3040,7 @@ ul {
     background-image: url("../img/skills/VueJs.jpeg");
     background-color: #FFF;
     background-position: center;
-    background-size: 75% 80%;
+    background-size: 90% 80%;
   }
 
   .counter__item.four__item {
@@ -3049,7 +3049,7 @@ ul {
   }
 
   .counter__item.five__item {
-    background-size: 95% 65%;
+    background-size: 95% 55%;
     background-position: center;
     background-image: url("https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo.png");
   }
@@ -3095,7 +3095,7 @@ ul {
   .counter__item.twelve__item {
     background-image: url("../img/skills/filmoraResponsive.png");
     background-color: #ffffff;
-    background-size: 80% 46%;
+    background-size: 80% 60%;
   }
 
   #counter2 {
@@ -3744,7 +3744,7 @@ ul {
   }
 
   #matchApp {
-    background-size: 60% 60%;
+    background-size: 80% 50%;
   }
 
   #Skills {
@@ -3772,6 +3772,10 @@ ul {
 
   #gsbWeb {
     background-size: 65% 50%;
+  }
+
+  #matchApp {
+    background-size: 70% 70%;
   }
 
   #portfolio {
