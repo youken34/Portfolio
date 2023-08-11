@@ -1,3 +1,15 @@
+/* General time-saving fuctions */
+function $(element) {
+    return document.getElementById(element)
+}
+
+function firstClass(element) {
+    return document.getElementsByClassName(element)[0]
+}
+
+
+/* Alert functions */
+
 var ALERT_TITLE = "This project is still in progress";
 var ALERT_BUTTON_TEXT = "Ok";
 
@@ -83,13 +95,14 @@ function fill() {
 
 function redirection() {
     window.location.href = "/Portfolio/videograph-master/portfolio.html";
-
-
 }
 
 window.addEventListener('resize', function () {
     undo();
 });
+
+/* Adobe zoom functions */
+
 
 function grow(image, numberFlex) {
 
@@ -143,3 +156,50 @@ function hideAll(numberFlex) {
 
 
 }
+
+
+/* Main page title animation */
+
+function titleAnimation() {
+    const viewportWidth = document.documentElement.clientWidth;
+    var limitPixels = []
+    switch (true) {
+        case viewportWidth >= 1000:
+            limitPixels = [1300, 1850]
+            break;
+        case viewportWidth >= 750:
+            limitPixels = [1725, 2525]
+            break;
+        case viewportWidth >= 559:
+            limitPixels = [1800, 2825]
+            break;
+        case viewportWidth >= 465:
+            limitPixels = [2020, 3050]
+            break;
+        default:
+            limitPixels = [2020, 3980]
+            break
+    }
+    if (this.window.scrollY >= limitPixels[0]) {
+        $('projects').classList.add("animate")
+        if (this.window.scrollY >= limitPixels[1]) {
+            $('skills').classList.add("animate")
+        }
+        else {
+            $('skills').classList.remove("animate")
+        }
+    }
+    else {
+        $('projects').classList.remove("animate")
+    }
+}
+
+window.addEventListener("scroll", function () {
+    titleAnimation()
+})
+window.addEventListener("load", function () {
+    titleAnimation()
+})
+
+
+

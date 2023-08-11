@@ -28,6 +28,12 @@
 /* Template default CSS
 /*----------------------------------------*/
 
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   height: 100%;
@@ -133,24 +139,7 @@ img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost
 /* Code ajouté */
 
 
-.whiteY {
-  border: 2px solid #00bfe7;
-  /* #630082 */
-  padding: 10px 2px 10px 2px;
-  text-align: center;
-  width: 300px;
-  cursor: pointer;
-  box-shadow: inset 0 0 0 0 #630082;
-  color: white;
-  margin: 0 -.25rem;
-  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-}
 
-.whiteY:hover {
-  box-shadow: inset 300px 0 0 0 #54b3d6;
-  ;
-  color: white;
-}
 
 .header__nav__social .afa {
   margin-bottom: 50px;
@@ -751,10 +740,61 @@ code span {
 /*---------------------
   Work
 -----------------------*/
+
+#projects,
+#skils {
+  position: relative;
+  padding: 10px 2px 10px 2px;
+  text-align: center;
+  width: 300px;
+  cursor: pointer;
+  color: white;
+  margin: 0 -.25rem;
+}
+
+#projects::before,
+#skills::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 30%;
+  height: 6px;
+  background-color: #00bfe7;
+  z-index: 2;
+  animation: slideOut 0.5s ease forwards;
+}
+
+#projects.animate::before,
+#skills.animate::before {
+  animation: slideIn 0.5s ease forwards;
+}
+
+
+
+@keyframes slideIn {
+  to {
+    width: 100%;
+    background-color: #630082;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    width: 100%;
+    background-color: #630082;
+  }
+
+  to {
+    width: 30%;
+    background-color: #00bfe7;
+  }
+}
+
 #audi {
   background-color: #000;
   background-position: center;
-  background-size: 85% 60%;
+  background-size: 65% 50%;
 }
 
 #gsbWeb {
@@ -762,7 +802,6 @@ code span {
   background-size: 70% 70%;
   background-color: #02172f;
 }
-
 
 
 #gsbApp {
@@ -785,6 +824,8 @@ code span {
   background-color: #02172f;
   background-position: 50% 40%;
 }
+
+
 
 .work {
   overflow: hidden;
@@ -887,8 +928,11 @@ code span {
   Counter
 -----------------------*/
 
-#Skills {
-  border: inset 1px solid #00bfe7;
+#skills {
+  color: #fff;
+  width: 300px;
+  text-align: center;
+  margin-inline: 0 auto;
   z-index: 10;
   margin-top: -215px;
   position: absolute;
@@ -906,13 +950,15 @@ code span {
   background: #100028;
 }
 
+
+
 .counter>.container,
 .counter2>.container {
   scale: 0.8;
 }
 
 #counter2 {
-  padding-bottom: 450px;
+  padding-bottom: 465px;
 }
 
 .counter__content {
@@ -2816,6 +2862,12 @@ ul {
   }
 }
 
+@media screen and (max-width: 1380px) {
+  #audi {
+    background-size: contain !important;
+  }
+}
+
 @media only screen and (max-width: 1300px) {
 
 
@@ -2882,6 +2934,13 @@ ul {
 
 }
 
+@media screen and (min-width: 992px) {
+
+  .counter>.container,
+  .counter2>.container {
+    padding-top: 55px;
+  }
+}
 
 
 /* Medium Device = 1200px */
@@ -2980,15 +3039,12 @@ ul {
     background-size: 100% 55%;
   }
 
-  #audi {
-    background-size: 90% 50%;
-  }
 
   #gsbWeb {
     background-size: 75% 55%;
   }
 
-  #Skills {
+  #skills {
     margin-top: -165px;
   }
 
@@ -3102,7 +3158,7 @@ ul {
     padding-bottom: 100px;
   }
 
-  #Skills {
+  #skills {
     margin-top: 7px;
   }
 }
@@ -3110,7 +3166,7 @@ ul {
 /* Tablet Device = 768px */
 @media only screen and (min-width: 765px) and (max-width: 992px) {
 
-  .whiteY {
+  #projects {
     margin: 0 auto;
   }
 
@@ -3126,9 +3182,6 @@ ul {
     margin-bottom: 90px;
   }
 
-  #audi {
-    background-size: 90% 45%;
-  }
 
   #gsbWeb {
     background-size: 75% 45%;
@@ -3304,7 +3357,7 @@ ul {
     overflow-x: hidden;
   }
 
-  .whiteY {
+  #projects {
     margin: 0 auto;
   }
 
@@ -3354,9 +3407,7 @@ ul {
     margin-bottom: 100px;
   }
 
-  #audi {
-    background-size: 85% 50%;
-  }
+
 
   #gsbWeb {
     background-size: 75% 55%;
@@ -3572,9 +3623,7 @@ ul {
 }
 
 @media only screen and (min-width: 575.5px) and (max-width: 680px) {
-  #audi {
-    background-size: 90% 40%;
-  }
+
 
   #matchApp {
     background-size: 75% 55%;
@@ -3590,9 +3639,7 @@ ul {
 @media only screen and (min-width: 480px) and (max-width: 575.5px) {
 
 
-  #audi {
-    background-size: 90% 35%;
-  }
+
 
   #gsbApp {
     background-size: 100% 65%;
@@ -3747,7 +3794,7 @@ ul {
     background-size: 80% 50%;
   }
 
-  #Skills {
+  #skills {
     margin-top: 40px;
   }
 
@@ -3766,9 +3813,6 @@ ul {
     background-size: 80% 80%;
   }
 
-  #audi {
-    background-size: 55% 35%;
-  }
 
   #gsbWeb {
     background-size: 65% 50%;
