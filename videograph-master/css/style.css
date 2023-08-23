@@ -715,9 +715,9 @@ code span {
 
 .hero__text h2 {
   color: #ffffff;
-  font-size: 60px;
+  font-size: 25px;
   font-weight: 700;
-  line-height: 70px;
+  line-height: 35px;
   text-transform: uppercase;
   margin-bottom: 38px;
   position: relative;
@@ -3563,8 +3563,8 @@ ul {
   }
 
   .hero__text h2 {
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 20px;
+    line-height: 30px;
   }
 
   .grid-sizer {

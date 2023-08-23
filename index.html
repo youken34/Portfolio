@@ -44,12 +44,6 @@
                 <div class="col-lg-2">
                     <div class="header__logo">
                         <a href="./index.html">Côme Bonal</a>
-                        <!-- <a
-                            href="javascript:window.open('http://localhost:3000/Portfolio/index.html', '','width=420,height=1300')">Open!
-                        </a> -->
-                        <!-- <a
-                            href="javascript:window.open('https://portfoliocome.000webhostapp.com/', '','width=414,height=765')">Open!
-                        </a> -->
                     </div>
                 </div>
                 <div class="col-lg-10">
@@ -83,42 +77,18 @@
     </header>
     <!--Header End-- >
 
+        
+
     < !--Hero Section Begin-->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero__slider owl-carousel">
-            <div class="hero__item set-bg" data-setbg="/Portfolio/videograph-master/img/hero/application.png">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <span>For Development and video editing</span>
-                                <h2>Application Development</h2>
-                                <a href="#" class="primary-btn">See my resume</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="hero__item set-bg" data-setbg="/Portfolio/videograph-master/img/hero/website.png">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                <span>For Development and video editing</span>
-                                <h2>Website Development</h2>
-                                <a href="#" class="primary-btn">See my resume</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero__item set-bg" data-setbg="/Portfolio/videograph-master/img/hero/hero-1.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="hero__text">
-                                <span>For Development and video editing</span>
-                                <h2>Images and Video editing</h2>
+                                <span>For Development and media design</span>
+                                <h2>Website / Application development, Images and Video editing</h2>
                                 <a href="#" class="primary-btn">See my resume</a>
                             </div>
                         </div>
@@ -130,7 +100,7 @@
     <!--Hero Section End-->
 
     <!--Services Section Begin-->
-    <section class="services spad">
+    <section class="services spad" id="services">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
@@ -139,7 +109,8 @@
                             <span>My services</span>
                             <h2>My technical skills</h2>
                         </div>
-                        <p>I am a entry-level programmer who is used to work both in team or alone with over 3 years
+                        <p>I am a entry-level full-stack developer who is used to work both in team or alone with over 3
+                            years
                             of prior programming experience on various projects.</p>
                         <a href="#" class="primary-btn">View all services</a>
                     </div>
@@ -724,7 +695,21 @@
     <script src="/Portfolio/videograph-master/js/main.js"></script>
     <script src="https://kit.fontawesome.com/84394d25e2.js" crossorigin="anonymous"></script>
     <script src="/Portfolio/videograph-master/js/alert.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script>
+        VANTA.NET({
+            el: "#", // Replace with your element's ID
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 300.00, // Adjust the minimum height
+            minWidth: 300.00, // Adjust the minimum width
+            scale: 0.50, // Adjust the scale
+            color: 0x838dff,
+            scaleMobile: 0.75, // Adjust the scale on mobile
+        })
+    </script>
 </body>
 
 </html>
