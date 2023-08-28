@@ -17,7 +17,6 @@
 
 
     <!-- Css Styles -->
-    <!-- Css Styles -->
     <link rel="stylesheet" href="/Portfolio/videograph-master/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="/Portfolio/videograph-master/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="/Portfolio/videograph-master/css/fontawesome.min.css" type="text/css">
@@ -80,9 +79,9 @@
         
 
     < !--Hero Section Begin-->
-    <section class="hero" id="hero">
+    <section class="hero">
         <div class="hero__slider owl-carousel">
-            <div class="hero__item set-bg" data-setbg="/Portfolio/videograph-master/img/hero/website.png">
+            <div class="hero__item set-bg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
@@ -96,6 +95,7 @@
                 </div>
             </div>
         </div>
+        <div id="hero"></div>
     </section>
     <!--Hero Section End-->
 
@@ -664,22 +664,6 @@
                     </div>
                 </div>
             </div>
-            <div class="footer__copyright">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <!-- <p class="footer__copyright__text">Copyright &copy;
-                                    <script>
-                                        document.write(new Date().getFullYear());
-                                    </script>
-                                    All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                        aria-hidden="true"></i> by < a href="https://colorlib.com" target="_blank"> Colorlib
-                                    </>
-                                </p> -->
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </div>
-                </div>
-            </div>
         </div>
     </footer>
     <!--Footer Section End-->
@@ -697,17 +681,20 @@
     <script src="/Portfolio/videograph-master/js/alert.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script type="module" src="/Portfolio/videograph-master/js/three.js"></script>
+    <script src="three.r134.min.js"></script>
+    <script src="vanta.waves.min.js"></script>
     <script>
-        VANTA.NET({
-            el: "#c", // Replace with your element's ID
+        VANTA.WAVES({
+            el: "#hero",
             mouseControls: true,
             touchControls: true,
             gyroControls: false,
-            minHeight: 300.00, // Adjust the minimum height
-            minWidth: 300.00, // Adjust the minimum width
-            scale: 0.50, // Adjust the scale
-            color: 0x838dff,
-            scaleMobile: 0.75, // Adjust the scale on mobile
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x20a10
         })
     </script>
 </body>

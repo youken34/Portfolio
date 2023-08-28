@@ -636,6 +636,10 @@ code span {
 /*---------------------
   Hero
 -----------------------*/
+.hero__slider {
+  position: absolute;
+}
+
 .hero__slider.owl-carousel .owl-item.active .hero__text span {
   top: 0;
   opacity: 1;
@@ -735,6 +739,14 @@ code span {
   -webkit-transition: all, 0.7s;
   -o-transition: all, 0.7s;
   transition: all, 0.7s;
+}
+
+#hero {
+  padding-bottom: -20px;
+  padding-top: 50px;
+  padding-left: 180px;
+  position: relative;
+  background-image: linear-gradient(to bottom, #290066, #1f0556, #170847, #130637, #100028);
 }
 
 /*---------------------
