@@ -4,7 +4,7 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 
 const mainScene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
-  93,
+  75,
   window.innerWidth / 600,
   0.1,
   1000
@@ -34,6 +34,7 @@ new GLTFLoader().load(
     // Add directional light
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(-1, 2, 1);
+    directionalLight.intensity = 2;
     mainScene.add(directionalLight);
 
     const animate = () => {

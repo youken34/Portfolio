@@ -721,9 +721,9 @@ code span {
 
 .hero__text h2 {
   color: #ffffff;
-  font-size: 25px;
+  font-size: 60px;
   font-weight: 700;
-  line-height: 35px;
+  line-height: 70px;
   text-transform: uppercase;
   margin-bottom: 38px;
   position: relative;
@@ -3879,11 +3879,6 @@ ul {
 
   .counter__item.twelve__item {
     background-size: 75% 75%;
-  }
-
-  .hero__text h2 {
-    font-size: 30px;
-    line-height: 40px;
   }
 
   .grid-sizer {
