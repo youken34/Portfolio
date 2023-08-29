@@ -636,6 +636,7 @@ code span {
 /*---------------------
   Hero
 -----------------------*/
+
 .hero__slider {
   position: absolute;
   z-index: 1;
@@ -743,6 +744,7 @@ code span {
 }
 
 #hero {
+  overflow: visible;
   z-index: 9;
   position: relative;
   /* background-image: linear-gradient(to bottom, #290066, #1f0556, #170847, #130637, #100028); */
@@ -751,8 +753,8 @@ code span {
 #hero canvas {
   overflow: visible;
   position: absolute;
-  /* padding-top: 150px; */
-  left: 250px;
+  margin-top: 95px;
+  left: 325px;
   z-index: 10;
 }
 

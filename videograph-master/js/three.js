@@ -4,7 +4,7 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 
 const mainScene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
-  75,
+  93,
   window.innerWidth / 600,
   0.1,
   1000
