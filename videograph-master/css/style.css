@@ -638,6 +638,7 @@ code span {
 -----------------------*/
 .hero__slider {
   position: absolute;
+  z-index: 1;
 }
 
 .hero__slider.owl-carousel .owl-item.active .hero__text span {
@@ -742,12 +743,20 @@ code span {
 }
 
 #hero {
-  padding-bottom: -20px;
-  padding-top: 50px;
-  padding-left: 180px;
+  z-index: 9;
   position: relative;
-  background-image: linear-gradient(to bottom, #290066, #1f0556, #170847, #130637, #100028);
+  /* background-image: linear-gradient(to bottom, #290066, #1f0556, #170847, #130637, #100028); */
 }
+
+#hero canvas {
+  overflow: visible;
+  position: absolute;
+  /* padding-top: 150px; */
+  left: 250px;
+  z-index: 10;
+}
+
+
 
 /*---------------------
   Work
@@ -2072,7 +2081,7 @@ ul {
 .services {
   background: #100028;
   padding-bottom: 60px;
-  padding-top: 110px;
+  padding-top: 760px;
 }
 
 .services__title p {

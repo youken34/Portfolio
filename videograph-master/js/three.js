@@ -5,13 +5,13 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 const mainScene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
   75,
-  window.innerWidth / window.innerHeight,
+  window.innerWidth / 600,
   0.1,
   1000
 );
 
 const renderer = new THREE.WebGLRenderer({ alpha: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(window.innerWidth, 684);
 document.getElementById("hero").appendChild(renderer.domElement);
 
 let gltfObject; // Declare a variable to hold the loaded GLTF object
@@ -51,6 +51,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.05;
 controls.enableZoom = false; // Disable zoom
+controls.enablePan = false; // Disable panning
 
 const rotateSpeed = 0.005; // Adjust the rotation speed as needed
 
