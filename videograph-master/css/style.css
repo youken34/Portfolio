@@ -206,7 +206,7 @@ img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost
 }
 
 .spad {
-  padding-top: 100px;
+  padding-top: 85px;
   padding-bottom: 100px;
 }
 
@@ -639,7 +639,7 @@ code span {
 
 .hero__slider {
   position: absolute;
-  z-index: 1;
+  z-index: 11;
 }
 
 .hero__slider.owl-carousel .owl-item.active .hero__text span {
@@ -661,7 +661,7 @@ code span {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 45px;
+  bottom: 115px;
   width: 100%;
   max-width: 1140px;
   margin: 0 auto;
@@ -701,7 +701,7 @@ code span {
 
 .hero__item {
   height: 684px;
-  padding-top: 255px;
+  padding-top: 200px;
 }
 
 .hero__text span {
@@ -3678,6 +3678,13 @@ ul {
     background-size: contain;
   }
 
+}
+
+/* 3D item */
+@media all and (max-width: 1180px) {
+  #hero canvas {
+    display: none !important;
+  }
 }
 
 @media only screen and (max-width: 575.5px) {
