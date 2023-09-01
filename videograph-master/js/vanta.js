@@ -62,8 +62,3 @@ thirdButton.addEventListener("click", function () {
     baseColor: 0x110131,
   });
 });
-
-if (firstThreeButtons[0].classList.contains("active")) {
-} else if (firstThreeButtons[1].classList.contains("active")) {
-} else if (firstThreeButtons[2].classList.contains("active")) {
-}

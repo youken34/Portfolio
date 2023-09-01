@@ -11,7 +11,7 @@ const camera = new THREE.PerspectiveCamera(
 );
 
 const renderer = new THREE.WebGLRenderer({ alpha: true });
-renderer.setSize(window.innerWidth, 684);
+renderer.setSize(window.innerWidth, 589);
 document.getElementById("hero").appendChild(renderer.domElement);
 
 let gltfObject; // Declare a variable to hold the loaded GLTF object

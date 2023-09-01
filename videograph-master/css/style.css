@@ -744,6 +744,7 @@ code span {
 }
 
 #hero {
+  height: 589px;
   overflow: visible;
   z-index: 9;
   position: relative;
@@ -751,6 +752,8 @@ code span {
 }
 
 #hero canvas {
+  height: 100% !important;
+  width: 100% !important;
   overflow: visible;
   position: absolute;
   margin-top: 95px;
@@ -2083,7 +2086,6 @@ ul {
 .services {
   background: #100028;
   padding-bottom: 60px;
-  padding-top: 760px;
 }
 
 .services__title p {
