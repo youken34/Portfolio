@@ -13,10 +13,6 @@ const loadingManager = new THREE.LoadingManager();
 
 const progressBar = document.getElementById("progress-bar");
 
-loadingManager.onStart = function (url, loaded, total) {
-  console.log("startedd ! ");
-};
-
 loadingManager.onProgress = function (url, loaded, total) {
   progressBar.value = (loaded / total) * 100;
 };
@@ -33,7 +29,6 @@ loader.setDRACOLoader(dracoLoader);
 
 const mainScene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(70, 2.56, 0.1, 1000);
-console.log(window.innerWidth / 600);
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(1228.8, 565.6);
 document.getElementById("hero").appendChild(renderer.domElement);
@@ -62,7 +57,7 @@ loader.load(
     mainScene.add(directionalLight);
   },
   function (xhr) {
-    console.log((xhr.loaded / xhr.total) * 100 + "loaded");
+    // console.log((xhr.loaded / xhr.total) * 100 + "loaded");
   },
   function (error) {
     console.log(error);

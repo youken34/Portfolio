@@ -750,7 +750,7 @@ label {
 
 .progress-bar-container {
   position: absolute;
-  left: 28.5%;
+  left: 45%;
   /* transform: translate(-50%, -50%); */
   height: 100%;
   display: flex;
@@ -777,7 +777,7 @@ label {
   width: 100% !important; */
   position: absolute;
   margin-top: 95px;
-  left: 28.5%;
+  left: 45%;
   z-index: 10;
 }
 
@@ -2876,6 +2876,25 @@ ul {
 }
 
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
+@media all and (max-width: 1843px) {
+
+  .progress-bar-container,
+  #hero canvas {
+    left: 28.5%;
+  }
+}
+
+
+@media all and (min-width: 1550px) {
+
+  #gsbWeb,
+  #matchApp,
+  #audi {
+    background-size: contain;
+  }
+}
+
+
 /* portfolio section */
 @media only screen and (max-width: 1450px) and (min-width: 1160px) {
   #portfolio {
@@ -2911,7 +2930,7 @@ ul {
 
   .progress-bar-container,
   #hero canvas {
-    left: 23%;
+    left: 22%;
   }
 
   #audi {
