@@ -13,12 +13,17 @@ const loadingManager = new THREE.LoadingManager();
 
 const progressBar = document.getElementById("progress-bar");
 
+loadingManager.onStart = function (url, loaded, total) {
+  console.log("startedd ! ");
+};
+
 loadingManager.onProgress = function (url, loaded, total) {
   progressBar.value = (loaded / total) * 100;
 };
 
 const progressBarContainer = document.querySelector(".progress-bar-container");
-
+const windowWidth = window.innerWidth * 0.8;
+progressBarContainer.style.width = windowWidth.toString() + "px";
 loadingManager.onLoad = function () {
   progressBarContainer.style.display = "none";
 };
@@ -29,14 +34,14 @@ loader.setDRACOLoader(dracoLoader);
 
 const mainScene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
-  75,
+  70,
   window.innerWidth / 600,
   0.1,
   1000
 );
 
 const renderer = new THREE.WebGLRenderer({ alpha: true });
-renderer.setSize(window.innerWidth, 589);
+renderer.setSize(window.innerWidth * 0.8, window.innerHeight * 0.8);
 document.getElementById("hero").appendChild(renderer.domElement);
 
 let gltfObject; // Declare a variable to hold the loaded GLTF object
