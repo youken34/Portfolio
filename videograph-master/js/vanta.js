@@ -11,7 +11,7 @@ var animation = VANTA.NET({
   minWidth: 200.0,
   scale: 1.0,
   scaleMobile: 1.0,
-  color: 0x27481,
+  color: 0x00bfe7,
   backgroundColor: 0x100028,
   points: 14.0,
 });
@@ -27,7 +27,7 @@ firstButton.addEventListener("click", function () {
     minWidth: 200.0,
     scale: 1.0,
     scaleMobile: 1.0,
-    color: 0x27481,
+    color: 0x00bfe7,
     backgroundColor: 0x100028,
     points: 14.0,
   });

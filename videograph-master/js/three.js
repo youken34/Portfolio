@@ -1,6 +1,19 @@
 import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
 import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
+import { DRACOLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/DRACOLoader.js"; // Check the path
+
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath(
+  "https://www.gstatic.com/draco/versioned/decoders/1.5.6/"
+);
+dracoLoader.preload();
+
+const loadingManager = new THREE.LoadingManager();
+
+const loader = new GLTFLoader(loadingManager);
+
+loader.setDRACOLoader(dracoLoader);
 
 const mainScene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -16,7 +29,7 @@ document.getElementById("hero").appendChild(renderer.domElement);
 
 let gltfObject; // Declare a variable to hold the loaded GLTF object
 
-new GLTFLoader().load(
+loader.load(
   "/Portfolio/videograph-master/gltf/laptop.glb",
   function (gltf) {
     gltfObject = gltf.scene; // Store the loaded object for later access
@@ -36,14 +49,12 @@ new GLTFLoader().load(
     directionalLight.position.set(-1, 2, 1);
     directionalLight.intensity = 2;
     mainScene.add(directionalLight);
-
-    const animate = () => {
-      requestAnimationFrame(animate);
-      controls.update();
-      renderer.render(mainScene, camera);
-    };
-
-    animate();
+  },
+  function (xhr) {
+    console.log((xhr.loaded / xhr.total) * 100 + "loaded");
+  },
+  function (error) {
+    console.log(error);
   }
   // Progress and error handlers...
 );
