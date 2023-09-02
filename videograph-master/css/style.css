@@ -2908,6 +2908,12 @@ ul {
 }
 
 @media screen and (max-width: 1380px) {
+
+  .progress-bar-container,
+  #hero canvas {
+    left: 23%;
+  }
+
   #audi {
     background-size: contain !important;
   }
