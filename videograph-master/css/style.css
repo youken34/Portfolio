@@ -646,6 +646,7 @@ label {
 }
 
 .hero__slider {
+  height: 100%;
   position: absolute;
   z-index: 11;
 }
@@ -669,17 +670,17 @@ label {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 15%;
+  top: 90%;
   width: 100%;
   max-width: 1140px;
-  margin: 0 auto;
+  margin-left: 15%;
 }
 
 .hero__slider.owl-carousel .owl-dots button {
   color: #adadad;
-  font-size: 18px;
+  font-size: calc(1vw * 1.2);
   font-family: "Play", sans-serif;
-  margin-right: 16px;
+  margin-right: calc(1vw * 0.9);
   position: relative;
   display: inline-block;
 }
