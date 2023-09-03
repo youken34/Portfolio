@@ -641,6 +641,10 @@ label {
   font-size: 2rem;
 }
 
+.hero {
+  aspect-ratio: auto 1899 / 810;
+}
+
 .hero__slider {
   position: absolute;
   z-index: 11;
@@ -665,7 +669,7 @@ label {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 115px;
+  bottom: 15%;
   width: 100%;
   max-width: 1140px;
   margin: 0 auto;
@@ -705,13 +709,18 @@ label {
 
 .hero__item {
   height: 684px;
-  padding-top: 200px;
+  padding-top: 15%;
+}
+
+.hero__item .container {
+  margin-left: 15%;
 }
 
 .hero__text span {
+  padding-left: 10px;
   color: #ffffff;
   display: block;
-  font-size: 15px;
+  font-size: calc(1vw * 0.8);
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 18px;
@@ -725,9 +734,9 @@ label {
 
 .hero__text h2 {
   color: #ffffff;
-  font-size: 60px;
+  font-size: calc(1vw * 3.5);
   font-weight: 700;
-  line-height: 70px;
+  line-height: calc(1vw * 3.5);
   text-transform: uppercase;
   margin-bottom: 38px;
   position: relative;
@@ -750,8 +759,8 @@ label {
 
 .progress-bar-container {
   position: absolute;
-  left: 45%;
-  /* transform: translate(-50%, -50%); */
+  left: 28.5%;
+  width: 85%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -766,18 +775,19 @@ label {
 }
 
 #hero {
-  height: 589px;
+  aspect-ratio: auto 1899 / 810;
+  height: 100%;
   z-index: 9;
   position: relative;
   /* background-image: linear-gradient(to bottom, #290066, #1f0556, #170847, #130637, #100028); */
 }
 
 #hero canvas {
-  /* height: 100% !important;
-  width: 100% !important; */
+  height: 85% !important;
+  width: 85% !important;
   position: absolute;
-  margin-top: 95px;
-  left: 45%;
+  top: 15%;
+  left: 28.5%;
   z-index: 10;
 }
 
@@ -2876,14 +2886,6 @@ ul {
 }
 
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
-@media all and (max-width: 1843px) {
-
-  .progress-bar-container,
-  #hero canvas {
-    left: 28.5%;
-  }
-}
-
 
 @media all and (min-width: 1550px) {
 
@@ -2935,6 +2937,10 @@ ul {
 
   #audi {
     background-size: contain !important;
+  }
+
+  #hero {
+    height: 589px;
   }
 }
 

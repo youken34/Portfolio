@@ -18,7 +18,6 @@ loadingManager.onProgress = function (url, loaded, total) {
 };
 
 const progressBarContainer = document.querySelector(".progress-bar-container");
-progressBarContainer.style.width = "1228.8px";
 loadingManager.onLoad = function () {
   progressBarContainer.style.display = "none";
 };
