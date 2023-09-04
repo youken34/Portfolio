@@ -2944,6 +2944,51 @@ ul {
   }
 }
 
+@media all and (max-width: 1550px) {
+  .hero__item {
+    padding-top: 200px;
+  }
+
+  .hero__text span {
+    padding-left: 0px;
+    font-size: 15px;
+  }
+
+  .header__logo a {
+    font-size: 15px;
+  }
+
+  .hero__text h2 {
+    max-width: 100%;
+  }
+
+  .primary-btn {
+    padding: 14px 32px 12px;
+    font-size: 15px;
+  }
+
+  .primary-btn:before {
+    border-left: 2px solid #00bfe7;
+    border-top: 2px solid #00bfe7;
+  }
+
+  .primary-btn:after {
+    border-right: 2px solid #00bfe7;
+    border-bottom: 2px solid #00bfe7;
+  }
+
+  .primary-btn:before,
+  .primary-btn:before {
+    height: 30px;
+    width: 30px;
+  }
+
+  .hero__slider.owl-carousel .owl-dots button {
+    font-size: 18px;
+    margin-right: 16px;
+  }
+
+}
 
 /* portfolio section */
 @media only screen and (max-width: 1450px) and (min-width: 1160px) {
@@ -3780,7 +3825,16 @@ ul {
 }
 
 /* 3D item */
+
+@media all and (min-width: 1180px) {
+  .hero__text h2 {
+    max-width: 50%;
+  }
+}
+
 @media all and (max-width: 1180px) {
+
+
 
   #progress-bar,
   .progress-bar-container,
