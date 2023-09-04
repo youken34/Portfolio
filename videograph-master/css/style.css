@@ -2944,6 +2944,8 @@ ul {
   }
 }
 
+
+/* Setting fixed value for smaller device than mine (1550px) */
 @media all and (max-width: 1550px) {
   .hero__item {
     padding-top: 200px;
@@ -2986,6 +2988,29 @@ ul {
   .hero__slider.owl-carousel .owl-dots button {
     font-size: 18px;
     margin-right: 16px;
+  }
+
+  .header__nav__menu {
+    margin-right: 45px;
+  }
+
+  .header__nav__social {
+    padding-left: 50px;
+  }
+
+  .header__nav__menu ul li {
+    margin-right: 45px;
+  }
+
+  .header__logo a {
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  .header__nav__option .header__nav__menu ul li a,
+  .header__nav__option .header__nav__social a i,
+  .header__nav__option .header__nav__social a i img {
+    font-size: 12px;
   }
 
 }
