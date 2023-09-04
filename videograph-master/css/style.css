@@ -188,8 +188,6 @@ img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
-  /* margin-left: -10px;
-  border-radius: 20px; */
   box-shadow: -5px 5px 20px 0px rgba(0, 0, 0, 0.75);
 }
 
@@ -214,10 +212,11 @@ img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost
 /* buttons */
 .primary-btn {
   display: inline-block;
-  font-size: 15px;
+  font-size: calc(1vw * 1);
   font-family: "Play", sans-serif;
   font-weight: 700;
-  padding: 14px 32px 12px;
+  padding-inline: calc(1vw * 2.5);
+  padding-block: calc(1vw * 1);
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -225,24 +224,23 @@ img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost
   z-index: 1;
 }
 
-.primary-btn:hover:before {
+.primary-btn:hover:before,
+.primary-btn:hover:after,
+.services__title .primary-btn:hover:before,
+.services__title .primary-btn:hover:after {
   height: 100%;
   width: 100%;
 }
 
-.primary-btn:hover:after {
-  height: 100%;
-  width: 100%;
-}
 
 .primary-btn:before {
   position: absolute;
   left: 0;
   top: 0;
-  height: 30px;
-  width: 30px;
-  border-left: 2px solid #00bfe7;
-  border-top: 2px solid #00bfe7;
+  height: calc(1vw * 2);
+  width: calc(1vw * 2);
+  border-left: calc(1vw * 0.15) solid #00bfe7;
+  border-top: calc(1vw * 0.15) solid #00bfe7;
   content: "";
   z-index: -1;
   -webkit-transition: all, 0.7s;
@@ -254,10 +252,10 @@ img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost
   position: absolute;
   right: 0;
   bottom: 0;
-  height: 30px;
-  width: 30px;
-  border-right: 2px solid #00bfe7;
-  border-bottom: 2px solid #00bfe7;
+  height: calc(1vw * 2);
+  width: calc(1vw * 2);
+  border-right: calc(1vw * 0.15) solid #00bfe7;
+  border-bottom: calc(1vw * 0.15) solid #00bfe7;
   content: "";
   z-index: -1;
   -webkit-transition: all, 0.7s;
@@ -278,6 +276,28 @@ img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost
   padding: 14px 34px 12px;
   width: 100%;
 }
+
+.services__title .primary-btn {
+  padding: 14px 32px 12px;
+  font-size: 15px;
+}
+
+.services__title .primary-btn:before,
+.services__title .primary-btn:after {
+  height: 30px;
+  width: 30px;
+}
+
+.services__title .primary-btn:before {
+  border-left: 2px solid #00bfe7;
+  border-top: 2px solid #00bfe7;
+}
+
+.services__title .primary-btn:after {
+  border-right: 2px solid #00bfe7;
+  border-bottom: 2px solid #00bfe7;
+}
+
 
 /* Preloder */
 #preloder {
@@ -650,6 +670,11 @@ code span {
   display: none;
 }
 
+.owl-stage-outer,
+.owl-stage {
+  height: 100%;
+}
+
 /*---------------------
   Hero
 -----------------------*/
@@ -735,6 +760,7 @@ label {
 }
 
 .hero__text span {
+  width: 100%;
   padding-left: 10px;
   color: #ffffff;
   display: block;
@@ -751,6 +777,7 @@ label {
 }
 
 .hero__text h2 {
+  max-width: 50%;
   color: #ffffff;
   font-size: calc(1vw * 3.5);
   font-weight: 700;
