@@ -746,6 +746,12 @@ pre code {
     padding-left: 15px
 }
 
+.col-lg-10 {
+    display: grid;
+    align-items: center;
+    height: 100%;
+}
+
 .col {
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
