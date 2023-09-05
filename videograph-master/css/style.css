@@ -31,7 +31,6 @@
 
 html,
 body {
-
   height: 100%;
   font-family: "Josefin Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -40,7 +39,7 @@ body {
 
 
 * {
-  margin: 0
+  margin: 0;
 }
 
 h1,
@@ -758,7 +757,7 @@ label {
 }
 
 .hero__text span {
-  width: 100%;
+  width: 99%;
   padding-left: 10px;
   color: #ffffff;
   display: block;
@@ -2981,7 +2980,7 @@ ul {
   }
 
   .primary-btn:before,
-  .primary-btn:before {
+  .primary-btn:after {
     height: 30px;
     width: 30px;
   }
@@ -3608,33 +3607,6 @@ ul {
     margin-bottom: 100px;
   }
 
-
-
-  #gsbWeb {
-    background-size: 75% 55%;
-  }
-
-  #gsbApp {
-    background-size: 90% 80%;
-  }
-
-  #portfolio {
-    background-size: 80% 60%;
-  }
-
-  #implid {
-    background-position: center;
-    background-size: contain;
-    background-color: #012F3C;
-  }
-
-  #ucla {
-    background-size: 80%;
-    background-color: #017DC3;
-    background-position: center;
-  }
-
-
   .counter__item.third__item {
     background-image: url("../img/skills/VueJs2.jpeg");
 
@@ -3766,6 +3738,7 @@ ul {
   .hero__text h2 {
     font-size: 20px;
     line-height: 30px;
+    padding: 0px;
   }
 
   .grid-sizer {
@@ -3821,6 +3794,31 @@ ul {
   .creation {
     scale: 0.9;
   }
+
+  #gsbWeb {
+    background-size: 75% 55%;
+  }
+
+  #gsbApp {
+    background-size: 90% 80%;
+  }
+
+  #portfolio {
+    background-size: 80% 60%;
+  }
+
+  #implid {
+    background-position: center;
+    background-size: contain;
+    background-color: #012F3C;
+  }
+
+  #ucla {
+    background-size: 80%;
+    background-color: #017DC3;
+    background-position: center;
+  }
+
 }
 
 @media only screen and (min-width: 575.5px) and (max-width: 680px) {
@@ -4116,7 +4114,7 @@ ul {
   }
 }
 
-@media only screen and (max-width: 410px) {
+@media only screen and (max-width: 415px) {
 
   .counter__item.seven__item {
     background-size: 90% 65%;
@@ -4125,11 +4123,19 @@ ul {
   #portfolio {
     background-size: 85% 60%;
   }
+
+  .hero__item .container {
+    margin-left: 5%
+  }
+
 }
 
-/* Modified */
+@media all and (max-width: 380px) {
+  .hero__text h2 {
+    max-width: 90%;
+  }
 
-/* Experiences */
-.col-lg-12 {
-  margin-bottom: 60px;
+  .hero__text span {
+    width: 85%;
+  }
 }
