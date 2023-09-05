@@ -3140,6 +3140,7 @@ ul {
   .counter2>.container {
     padding-top: 55px;
   }
+
 }
 
 
@@ -3256,6 +3257,11 @@ ul {
 }
 
 @media only screen and (max-width: 992px) {
+
+  .hero__slider.owl-carousel .owl-dots {
+    width: 85%;
+  }
+
 
   .team {
     -webkit-clip-path: polygon(0 3%, 100% 0, 100% 97%, 0% 100%);
