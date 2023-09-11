@@ -892,13 +892,22 @@ label {
 #audi {
   background-color: #000;
   background-position: center;
-  background-size: 65% 50%;
+  background-size: 70% 50%;
+}
+
+#audi:hover {
+  background-size: 70% 60%;
 }
 
 #gsbWeb {
   background-position: center;
-  background-size: 70% 70%;
+  background-size: 65% 65%;
   background-color: #02172f;
+}
+
+#gsbWeb:hover,
+#matchApp:hover {
+  background-size: 55% 80%;
 }
 
 
@@ -935,14 +944,14 @@ label {
 }
 
 .work__item {
+
   cursor: pointer;
-  height: 311px !important;
+  height: 311px;
   width: calc(16.67% - 10px);
   margin-right: 10px;
   margin-bottom: 10px;
   float: left;
   position: relative;
-  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -955,17 +964,26 @@ label {
 }
 
 .work__item:hover .work__item__hover {
-  bottom: 0;
+  bottom: -100px;
+  z-index: 1;
+}
+
+.work__item.wide__item:hover {
+  height: 211px !important;
 }
 
 .work__item.large__item {
-  height: 633px !important;
+  height: 633px;
   width: calc(33.33% - 10px);
+}
+
+.work__item.large__item:hover {
+  height: 533px;
 }
 
 .work__item.wide__item {
   width: calc(33.33% - 10px);
-  height: 311px !important;
+  height: 311px;
 }
 
 .work__item .play-btn {
@@ -985,7 +1003,11 @@ label {
 }
 
 .work__item__hover {
-  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  height: 100px;
+  background: #fff;
   position: absolute;
   left: 0;
   bottom: -300px;
@@ -995,11 +1017,12 @@ label {
 
 .work__item__hover h4 {
   font-size: 22px;
-  color: #ffffff;
+  color: #000000;
   font-weight: 700;
 }
 
 .work__item__hover ul li {
+  font-weight: 700;
   color: #adadad;
   list-style: none;
   font-size: 16px;
@@ -2936,7 +2959,10 @@ ul {
 
   #gsbWeb,
   #matchApp,
-  #audi {
+  #audi,
+  #gsbWeb:hover,
+  #matchApp:hover,
+  #audi:hover {
     background-size: contain;
   }
 
@@ -3065,6 +3091,13 @@ ul {
     background-size: contain !important;
   }
 
+  #gsbWeb {
+    background-size: 75% 65%;
+  }
+
+  #gsbWeb:hover {
+    background-size: 55% 70%;
+  }
 
 }
 
@@ -3833,11 +3866,6 @@ ul {
   #matchApp {
     background-size: 75% 55%;
   }
-
-  #portfolio {
-    background-size: 85% 60% !important;
-  }
-
 }
 
 /* Wide Mobile = 480px */
