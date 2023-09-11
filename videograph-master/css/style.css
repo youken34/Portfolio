@@ -901,14 +901,10 @@ label {
 
 #gsbWeb {
   background-position: center;
-  background-size: 65% 65%;
   background-color: #02172f;
+  background-size: contain;
 }
 
-#gsbWeb:hover,
-#matchApp:hover {
-  background-size: 55% 80%;
-}
 
 
 #gsbApp {
@@ -927,7 +923,7 @@ label {
 }
 
 #matchApp {
-  background-size: 70% 70%;
+  background-size: contain;
   background-color: #02172f;
   background-position: 50% 40%;
 }
@@ -2957,15 +2953,10 @@ ul {
     height: calc(1vw * 6.9);
   }
 
-  #gsbWeb,
-  #matchApp,
   #audi,
-  #gsbWeb:hover,
-  #matchApp:hover,
   #audi:hover {
     background-size: contain;
   }
-
 
 }
 
@@ -3091,13 +3082,13 @@ ul {
     background-size: contain !important;
   }
 
-  #gsbWeb {
+  /* #gsbWeb {
     background-size: 75% 65%;
-  }
+  } 
 
   #gsbWeb:hover {
     background-size: 55% 70%;
-  }
+  }*/
 
 }
 
@@ -3274,9 +3265,10 @@ ul {
   }
 
 
-  #gsbWeb {
-    background-size: 75% 55%;
-  }
+  /* #gsbWeb {
+    background-size: contain;
+  } */
+
 
   #skills {
     margin-top: -165px;
@@ -3422,17 +3414,17 @@ ul {
   }
 
 
-  #gsbWeb {
+  /* #gsbWeb {
     background-size: 75% 45%;
-  }
+  } */
 
   #gsbApp {
     background-size: 100% 80%;
   }
 
-  #matchApp {
+  /* #matchApp {
     background-size: 80% 50%;
-  }
+  } */
 
 
   #implid {
@@ -3834,9 +3826,9 @@ ul {
     scale: 0.9;
   }
 
-  #gsbWeb {
+  /* #gsbWeb {
     background-size: 75% 55%;
-  }
+  } */
 
   #gsbApp {
     background-size: 90% 80%;
@@ -3860,13 +3852,13 @@ ul {
 
 }
 
-@media only screen and (min-width: 575.5px) and (max-width: 680px) {
+/* @media only screen and (min-width: 575.5px) and (max-width: 680px) {
 
 
   #matchApp {
     background-size: 75% 55%;
   }
-}
+} */
 
 /* Wide Mobile = 480px */
 @media only screen and (min-width: 480px) and (max-width: 575.5px) {
@@ -4042,13 +4034,13 @@ ul {
     background-position: center;
   }
 
-  #gsbWeb {
+  /* #gsbWeb {
     background-size: 80% 45%;
-  }
+  } */
 
-  #matchApp {
+  /* #matchApp {
     background-size: 80% 50%;
-  }
+  } */
 
   #skills {
     margin-top: 40px;
@@ -4069,14 +4061,13 @@ ul {
     background-size: 80% 80%;
   }
 
-
-  #gsbWeb {
+  /* #gsbWeb {
     background-size: 65% 50%;
-  }
+  } */
 
-  #matchApp {
+  /* #matchApp {
     background-size: 70% 70%;
-  }
+  } */
 
   #portfolio {
     background-size: 90% 80%;
