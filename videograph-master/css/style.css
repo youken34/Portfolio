@@ -909,6 +909,7 @@ label {
 }
 
 #gsbWeb {
+  cursor: not-allowed;
   background-position: center;
   background-color: #02172f;
   background-size: contain;
@@ -1014,7 +1015,7 @@ label {
   background: #fff;
   position: absolute;
   left: 0;
-  bottom: -300px;
+  bottom: -200px;
   width: 100%;
   padding: 25px 30px 20px;
 }
@@ -2962,13 +2963,7 @@ ul {
     background-size: contain !important;
   }
 
-  /* #gsbWeb {
-    background-size: 75% 65%;
-  } 
 
-  #gsbWeb:hover {
-    background-size: 55% 70%;
-  }*/
 
 }
 
