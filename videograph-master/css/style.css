@@ -838,16 +838,25 @@ label {
 /*---------------------
   Work
 -----------------------*/
+#skills {
+  margin-top: -220px;
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#projects {
+  position: relative;
+}
 
 #projects,
-#skils {
-  position: relative;
+#skills {
   padding: 10px 2px 10px 2px;
   text-align: center;
   width: 300px;
   cursor: pointer;
   color: white;
-  margin: 0 -.25rem;
 }
 
 #projects::before,
@@ -940,7 +949,7 @@ label {
 }
 
 .work__item {
-
+  transition: 0.5s;
   cursor: pointer;
   height: 311px;
   width: calc(16.67% - 10px);
@@ -961,7 +970,6 @@ label {
 
 .work__item:hover .work__item__hover {
   bottom: -100px;
-  z-index: 1;
 }
 
 .work__item.wide__item:hover {
@@ -1044,18 +1052,6 @@ label {
 /*---------------------
   Counter
 -----------------------*/
-
-#skills {
-  color: #fff;
-  width: 300px;
-  text-align: center;
-  margin-inline: 0 auto;
-  z-index: 10;
-  margin-top: -215px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 .counter {
   background: #100028;
@@ -3397,10 +3393,6 @@ ul {
 /* Tablet Device = 768px */
 @media only screen and (min-width: 765px) and (max-width: 992px) {
 
-  #projects {
-    margin: 0 auto;
-  }
-
   .team>.container {
     padding-left: 58px;
   }
@@ -3414,18 +3406,10 @@ ul {
   }
 
 
-  /* #gsbWeb {
-    background-size: 75% 45%;
-  } */
 
   #gsbApp {
     background-size: 100% 80%;
   }
-
-  /* #matchApp {
-    background-size: 80% 50%;
-  } */
-
 
   #implid {
     background-position: center;
@@ -3437,6 +3421,11 @@ ul {
     background-size: 80%;
     background-color: #017DC3;
     background-position: center;
+  }
+
+  #projects {
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
 
@@ -3586,10 +3575,6 @@ ul {
 
   body {
     overflow-x: hidden;
-  }
-
-  #projects {
-    margin: 0 auto;
   }
 
   .blog__item.chatgpt:hover {
@@ -3826,10 +3811,6 @@ ul {
     scale: 0.9;
   }
 
-  /* #gsbWeb {
-    background-size: 75% 55%;
-  } */
-
   #gsbApp {
     background-size: 90% 80%;
   }
@@ -3850,15 +3831,13 @@ ul {
     background-position: center;
   }
 
+  #projects {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
 }
 
-/* @media only screen and (min-width: 575.5px) and (max-width: 680px) {
-
-
-  #matchApp {
-    background-size: 75% 55%;
-  }
-} */
 
 /* Wide Mobile = 480px */
 @media only screen and (min-width: 480px) and (max-width: 575.5px) {
@@ -4034,13 +4013,6 @@ ul {
     background-position: center;
   }
 
-  /* #gsbWeb {
-    background-size: 80% 45%;
-  } */
-
-  /* #matchApp {
-    background-size: 80% 50%;
-  } */
 
   #skills {
     margin-top: 40px;
@@ -4056,22 +4028,6 @@ ul {
 
 /* Small Device = 320px */
 @media only screen and (max-width: 479px) {
-
-  #gsbApp {
-    background-size: 80% 80%;
-  }
-
-  /* #gsbWeb {
-    background-size: 65% 50%;
-  } */
-
-  /* #matchApp {
-    background-size: 70% 70%;
-  } */
-
-  #portfolio {
-    background-size: 90% 80%;
-  }
 
   .counter__item.four__item {
     background-size: 95% 65%;
@@ -4137,6 +4093,15 @@ ul {
   .blog__details__quote {
     padding: 30px 40px 35px 35px;
   }
+
+  #gsbApp {
+    background-size: 80% 80%;
+  }
+
+  #portfolio {
+    background-size: 90% 80%;
+  }
+
 }
 
 @media only screen and (max-width: 415px) {
@@ -4162,5 +4127,14 @@ ul {
 
   .hero__text span {
     width: 85%;
+  }
+
+  .work__item__hover {
+    padding: 25px 5px 10px;
+  }
+
+  #projects,
+  #skills {
+    width: 235px !important;
   }
 }
