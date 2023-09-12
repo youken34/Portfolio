@@ -112,7 +112,7 @@
     margin: 0,
     items: 3,
     dots: true,
-    dotsEach: 2,
+    dotsEach: 3,
     smartSpeed: 1200,
     autoHeight: false,
     autoplay: true,
@@ -127,6 +127,14 @@
         items: 1,
       },
     },
+  });
+
+  $(".owl-dots > button").on("click", function () {
+    $(".owl-carousel").trigger("stop.owl.autoplay");
+    var carousel = $(".owl-carousel").data("owl.carousel");
+    carousel.settings.autoplay = false;
+    carousel.options.autoplay = false;
+    $(".owl-carousel").trigger("refresh.owl.carousel");
   });
 
   /*------------------
