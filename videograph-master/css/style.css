@@ -944,7 +944,7 @@ label {
 
 .work {
   padding-top: 35px;
-  padding-bottom: 150px;
+  padding-bottom: 95px;
   overflow: hidden;
   background: #100028;
 }
@@ -1648,16 +1648,18 @@ ul {
 .team {
   margin-top: -100px;
   margin-bottom: -100px;
-  padding-bottom: 125px;
+  padding-bottom: 185px;
   border-radius: 0px;
   background-clip: padding-box;
-  -webkit-clip-path: polygon(0 9%, 100% 0, 100% 91%, 0% 100%);
-  clip-path: polygon(0 9%, 100% 0, 100% 91%, 0% 100%);
+  clip-path: polygon(0 12%, 100% 6%, 100% 88%, 0 94%);
+  padding-top: 125px;
+  background-image: url(../img/team-bg.jpg) !important;
 }
 
 
 .team__background {
-  background-size: auto;
+  position: relative;
+  background-color: #100028;
 }
 
 .section-title.team__title {
@@ -3349,12 +3351,20 @@ ul {
     width: 85%;
   }
 
+  .work {
+    padding-bottom: 50px;
+  }
 
   .team {
-    -webkit-clip-path: polygon(0 3%, 100% 0, 100% 97%, 0% 100%);
-    clip-path: polygon(0 3%, 100% 0, 100% 97%, 0% 100%);
+    clip-path: polygon(0 9%, 100% 6%, 100% 91%, 0 94%);
     margin-top: -50px;
     margin-bottom: -50px;
+    padding-top: 175px;
+    background-image: url(../img/team-bg-resp.jpg) !important;
+  }
+
+  .team>.container>.row:first-of-type {
+    height: 150px;
   }
 
 
@@ -3877,9 +3887,6 @@ ul {
 /* Wide Mobile = 480px */
 @media only screen and (min-width: 480px) and (max-width: 575.5px) {
 
-
-
-
   #gsbApp {
     background-size: 100% 65%;
   }
@@ -3926,10 +3933,12 @@ ul {
   }
 
   .team {
-    -webkit-clip-path: polygon(0 2%, 100% 0, 100% 98%, 0% 100%);
-    clip-path: polygon(0 2%, 100% 0, 100% 98%, 0% 100%);
     margin-top: -45px;
     margin-bottom: -45px;
+  }
+
+  .team.spad {
+    padding-top: 225px;
   }
 
   .team .container .row:first-of-type {
@@ -4043,7 +4052,6 @@ ul {
   }
 
   #sanofiPasteur {
-    background-size: 75% 50%;
     background-color: #ffffff;
     background-repeat: no-repeat;
     background-position: center;
@@ -4066,6 +4074,10 @@ ul {
 
 /* Small Device = 320px */
 @media only screen and (max-width: 479px) {
+
+  /* .container-image {
+    overflow-y: scroll !important;
+  } */
 
   .counter__item.four__item {
     background-size: 95% 65%;

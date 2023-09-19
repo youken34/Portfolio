@@ -97,3 +97,25 @@ function handleScrollUp() {
 }
 
 $("counter").onwheel = slideByScroll;
+
+$("counter").addEventListener("touchstart", function (e) {
+  startY = e.touches[0].clientY;
+});
+
+$("counter").addEventListener("touchmove", function (e) {
+  if (startY === null) {
+    return;
+  }
+
+  var deltaY = e.touches[0].clientY - startY;
+
+  if (deltaY > 50) {
+    // You can adjust this threshold
+    handleScrollUp();
+    startY = null;
+  } else if (deltaY < -50) {
+    // You can adjust this threshold
+    handleScrollDown();
+    startY = null;
+  }
+});
