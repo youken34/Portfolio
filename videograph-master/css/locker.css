@@ -1,5 +1,5 @@
 .btn-lock {
-    right: calc(2.8vw);
+    /* right: calc(2.8vw); */
     scale: 0.8;
     z-index: 3;
     position: relative;
@@ -20,6 +20,8 @@
 }
 
 .btn-lock svg {
+    top: calc(1vw);
+    position: absolute;
     fill: none;
     transform: translate3d(0, 0, 0);
 }
@@ -35,7 +37,7 @@
 
 .btn-lock svg .lock {
     stroke: #fff;
-    stroke-width: calc(0.25vw);
+    stroke-width: 4px;
     stroke-linejoin: round;
     stroke-linecap: round;
     stroke-dasharray: 36;
@@ -54,6 +56,12 @@
     transform: rotate(8deg);
     transform-origin: 14px 20px;
     transition: all 0.2s ease;
+}
+
+#inpLock1,
+#inpLock2,
+#inpLock3 {
+    display: none;
 }
 
 #inpLock1:checked+label,

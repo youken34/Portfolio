@@ -1140,6 +1140,7 @@ label {
 }
 
 .dot__container {
+  top: calc(-0.5vw);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -1151,38 +1152,41 @@ label {
 }
 
 .slide {
+  justify-content: space-between;
+  height: calc(5vw);
+  width: calc(19vw);
+  right: calc(1.6vw);
+  display: flex;
   position: relative;
   align-self: flex-start;
 }
 
-.slide:first-of-type .dot {
+/* .slide:first-of-type .dot {
   background-color: #fff;
   border: calc(1vw * 0.3) solid #00bfe7;
-}
+} */
 
 /* .dot {
   height: calc(1vw * 1);
   width: calc(1vw * 1);
 } */
 
-.dot:hover {
-  cursor: pointer;
+
+
+.slide:first-of-type .btn-lock::after {
+  width: var(--after-width, calc(8.77vw));
 }
 
-.slide:first-of-type .dot::after {
-  width: var(--after-width, calc(7.77vw));
-}
-
-.dot::after {
+.btn-lock::after {
   transition-timing-function: ease-out;
   transition-delay: var(--transition-delay, 0.5s);
   transition-duration: 0.5s;
   width: var(--after-width, 0px);
   display: block;
-  top: calc(0.2vw);
+  top: calc(2vw);
   z-index: 2;
   position: absolute;
-  right: calc(0.6vw);
+  right: calc(3.6vw);
   content: "";
   background-color: #00bfe7;
   height: calc(0.2vw);
@@ -1190,14 +1194,16 @@ label {
 
 
 .preview {
+  display: flex;
+  align-items: center;
   font-size: calc(1vw * 1.4);
   width: calc(1vw * 13);
   color: #fff;
   z-index: 2;
   cursor: pointer;
   font-style: italic;
-  transform: translateY(calc(-2vw));
-  margin-left: calc(2vw * 2);
+  /* transform: translateY(calc(-4vw));
+  margin-left: calc(2vw * 2); */
   position: relative;
   padding: 0;
 }
@@ -1214,7 +1220,7 @@ label {
   display: flex;
   overflow: hidden;
   width: calc(2vw * 17);
-  height: calc(2vw * 10);
+  height: calc(2vw * 11);
   position: absolute;
   right: 25%;
   top: calc(4.3vw);
