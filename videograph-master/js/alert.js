@@ -2,7 +2,6 @@
 function $(element) {
   return document.getElementById(element);
 }
-
 function firstClass(element) {
   return document.getElementsByClassName(element)[0];
 }
@@ -195,3 +194,16 @@ window.addEventListener("scroll", function () {
 window.addEventListener("load", function () {
   titleAnimation();
 });
+
+// window.addEventListener("scroll", function () {
+//   var pixelsScrolled = window.scrollY;
+//   var surplus;
+//   switch (true) {
+//     case pixelsScrolled >= 1925:
+//       surplus = (pixelsScrolled - 1925) / 4;
+//       console.log(surplus);
+//       var rotationAngle = 45 + surplus;
+//       $("four__item").style.transform = `rotate(${rotationAngle.toFixed()}deg)`;
+//       break;
+//   }
+// });

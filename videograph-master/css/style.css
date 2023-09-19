@@ -27,7 +27,7 @@
 /*----------------------------------------*/
 /* Template default CSS
 /*----------------------------------------*/
-
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap');
 
 html,
 body {
@@ -847,6 +847,8 @@ label {
 }
 
 #projects {
+  margin-inline: auto;
+  margin-bottom: 40px;
   position: relative;
 }
 
@@ -941,6 +943,8 @@ label {
 
 
 .work {
+  padding-top: 35px;
+  padding-bottom: 150px;
   overflow: hidden;
   background: #100028;
 }
@@ -1049,6 +1053,218 @@ label {
 .work__item__hover ul li:last-child:after {
   display: none;
 }
+
+
+/*---------------------
+  New Counter
+-----------------------*/
+
+
+#counter {
+  position: relative;
+  width: 100%;
+}
+
+/* Image properties */
+
+.container-image {
+  height: calc(45.5vw);
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+
+.carousel-image {
+  flex-direction: column;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  transition: transform 1s ease;
+}
+
+
+
+.carousel-image::after {
+  transition: 1s;
+  content: "";
+  position: absolute;
+  z-index: 1;
+  transform: var(--after-transform, translateY(0%));
+  right: calc(-40vw);
+  bottom: 15%;
+  width: calc(5vw);
+  height: 100%;
+  box-shadow: calc(-15vw) 0 calc(5vw) 60vw rgb(0 0 0 / 70%);
+}
+
+
+.image__slide {
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  height: calc(1vw * 46);
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.image__slide:nth-child(2) {
+  object-position: 0% 43%;
+}
+
+/* Timeline section */
+
+.timeline {
+  top: 0;
+  z-index: 3;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  right: 20%;
+  position: absolute;
+  height: calc(45.5vw);
+  width: calc(0.5vw);
+  background-color: #ffffff;
+}
+
+.timeline::before {
+  transition: height 0.5s ease-in;
+  content: "";
+  position: absolute;
+  background-color: #00bfe7;
+  z-index: 2;
+  height: var(--before-height, calc(12vw));
+  width: calc(0.5vw);
+  top: 0;
+}
+
+.dot__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  right: calc(0.2vw);
+  width: calc(15vw);
+  height: calc(26vw);
+
+}
+
+.slide {
+  position: relative;
+  align-self: flex-start;
+}
+
+.slide:first-of-type .dot {
+  background-color: #fff;
+  border: calc(1vw * 0.3) solid #00bfe7;
+}
+
+.dot {
+  position: relative;
+  z-index: 3;
+  background-color: #00bfe7;
+  border: calc(1vw * 0.3) solid #fff;
+  border-radius: 50%;
+  height: calc(1vw * 1);
+  width: calc(1vw * 1);
+}
+
+.dot:hover {
+  cursor: pointer;
+}
+
+.slide:first-of-type .dot::after {
+  width: var(--after-width, calc(7.77vw));
+}
+
+.dot::after {
+  transition-timing-function: ease-out;
+  transition-delay: var(--transition-delay, 0.5s);
+  transition-duration: 0.5s;
+  width: var(--after-width, 0px);
+  display: block;
+  top: calc(0.2vw);
+  z-index: 2;
+  position: absolute;
+  right: calc(0.6vw);
+  content: "";
+  background-color: #00bfe7;
+  height: calc(0.2vw);
+}
+
+
+.preview {
+  font-size: calc(1vw * 1.4);
+  width: calc(1vw * 13);
+  color: #fff;
+  z-index: 2;
+  cursor: pointer;
+  font-style: italic;
+  transform: translateY(calc(-2vw));
+  margin-left: calc(2vw * 2);
+  position: relative;
+  padding: 0;
+}
+
+.preview.active {
+  color: #00bfe7;
+}
+
+
+/* Text / carousel section */
+
+.carousel {
+  transition: transform 1s ease;
+  display: flex;
+  overflow: hidden;
+  width: calc(2vw * 17);
+  height: calc(2vw * 10);
+  position: absolute;
+  right: 25%;
+  top: calc(4.3vw);
+}
+
+.text {
+  width: 90%;
+  border: calc(1vw * 0.2) solid #00bfe7;
+  padding: calc(1vw * 1);
+  background-color: #1F1F1F;
+  z-index: 2;
+  opacity: 1;
+  border-radius: calc(1vw * 1);
+  position: absolute;
+  color: #ffffff;
+  transform: translateY(220%);
+  transition: transform 1s ease;
+}
+
+.text.active {
+  z-index: 3;
+  transform: translateY(0);
+}
+
+.text .title {
+  margin-bottom: calc(1vw);
+  color: #00bfe7;
+  font-size: calc(1vw * 2.05);
+  font-family: Jost;
+  font-weight: 700;
+}
+
+.text .description {
+  margin-bottom: 0;
+  line-height: calc(1.5vw);
+  border-top: calc(0.2vw) solid #00bfe7;
+  font-size: calc(1vw * 1.05);
+  font-family: Jost;
+  padding-left: calc(0.5vw * 1.05);
+  padding-top: calc(1vw * 1.05);
+  width: 90%;
+  font-weight: 400;
+}
+
+
 
 /*---------------------
   Counter
@@ -1294,7 +1510,7 @@ label {
   margin-bottom: 0;
 }
 
-#third {
+#third__item {
   position: unset;
   z-index: 2;
 }
@@ -3231,6 +3447,10 @@ ul {
     background-size: 80% 60%;
   }
 
+  /* .timeline::before {
+    height: var(--before-height, calc(11vw));
+  } */
+
   #counter2 {
     padding-bottom: 100px;
   }
@@ -3273,10 +3493,6 @@ ul {
     background-position: center;
   }
 
-  #projects {
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
 
 
   .col-lg-3 .col-md-6 {
@@ -3653,10 +3869,7 @@ ul {
     background-position: center;
   }
 
-  #projects {
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+
 
 }
 
@@ -3703,6 +3916,7 @@ ul {
     display: none !important;
   }
 }
+
 
 @media only screen and (max-width: 575.5px) {
 
@@ -3847,6 +4061,8 @@ ul {
 
 
 }
+
+
 
 /* Small Device = 320px */
 @media only screen and (max-width: 479px) {
