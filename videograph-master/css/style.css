@@ -1160,15 +1160,10 @@ label {
   border: calc(1vw * 0.3) solid #00bfe7;
 }
 
-.dot {
-  position: relative;
-  z-index: 3;
-  background-color: #00bfe7;
-  border: calc(1vw * 0.3) solid #fff;
-  border-radius: 50%;
+/* .dot {
   height: calc(1vw * 1);
   width: calc(1vw * 1);
-}
+} */
 
 .dot:hover {
   cursor: pointer;

@@ -6,11 +6,13 @@ function $(element) {
   return document.getElementById(element);
 }
 
-function reset(dots, text, preview, dotContainer) {
-  Array.from(dots).forEach((element) => {
-    element.style.backgroundColor = "#00bfe7";
-    element.style.border = "calc(1vw * 0.3) solid #fff";
-  });
+window.addEventListener("DOMContentLoaded", function () {
+  Array.from(all("inpLock")).forEach((element, index, array) =>
+    index != 0 ? (element.checked = true) : (element.checked = false)
+  );
+});
+
+function reset(text, preview, dotContainer) {
   Array.from(text).forEach((element) => {
     if (element.classList.contains("active")) {
       element.classList.remove("active");
@@ -26,10 +28,17 @@ function reset(dots, text, preview, dotContainer) {
     element.style.setProperty("--transition-delay", "0s");
   });
 }
+
 var currentSlide = 0;
+
+function lockAnimation(number) {
+  Array.from(all("inpLock")).forEach((element, index, array) =>
+    index <= number ? (element.checked = false) : (element.checked = true)
+  );
+}
+
 function slide(number) {
   currentSlide = number;
-  const dots = all("dot");
   const dotContainer = all("slide");
   var carouselImage = all("carousel-image")[0];
   var timeline = all("timeline")[0];
@@ -37,10 +46,9 @@ function slide(number) {
   var text = all("text");
   var preview = all("preview");
 
-  reset(dots, text, preview, dotContainer);
+  reset(text, preview, dotContainer);
+  lockAnimation(currentSlide);
 
-  dots[number].style.backgroundColor = "#fff";
-  dots[number].style.border = "calc(1vw * 0.3) solid #00bfe7";
   dotContainer[number].style.setProperty("--after-width", "calc(7.77vw)");
   dotContainer[number].style.setProperty("--transition-delay", "0.5s");
 
@@ -110,11 +118,9 @@ $("counter").addEventListener("touchmove", function (e) {
   var deltaY = e.touches[0].clientY - startY;
 
   if (deltaY > 50) {
-    // You can adjust this threshold
     handleScrollUp();
     startY = null;
   } else if (deltaY < -50) {
-    // You can adjust this threshold
     handleScrollDown();
     startY = null;
   }
