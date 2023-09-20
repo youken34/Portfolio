@@ -1,4 +1,6 @@
 .btn-lock {
+    padding-left: calc(1.01vw);
+    border: calc(0.2vw) solid #fff;
     /* right: calc(2.8vw); */
     scale: 0.8;
     z-index: 3;
@@ -10,7 +12,6 @@
     width: calc(4.15vw);
     height: calc(4.15vw);
     box-sizing: border-box;
-    padding-left: calc(1.2vw);
     /* 18px */
     padding-top: calc(0.75vw);
     /* 12px */
@@ -45,7 +46,7 @@
 }
 
 .btn-lock svg {
-    height: calc(2.6vw);
+    height: calc(2.2vw);
     width: calc(2.3vw);
 }
 
@@ -67,7 +68,7 @@
 #inpLock1:checked+label,
 #inpLock2:checked+label,
 #inpLock3:checked+label {
-    background: #20cca5;
+    background: #100028;
 }
 
 #inpLock1:checked+label svg,

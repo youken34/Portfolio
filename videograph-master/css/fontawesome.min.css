@@ -80,8 +80,8 @@
 }
 
 .fa-2xs {
-    font-size: .625em;
-    line-height: .1em;
+    font-size: calc(1.4vw) !important;
+    line-height: calc(5.1vw) !important;
     vertical-align: .225em
 }
 

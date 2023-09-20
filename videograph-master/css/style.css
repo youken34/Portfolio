@@ -28,6 +28,10 @@
 /* Template default CSS
 /*----------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Croissant%20One:wght@200;300;400&display=swap');
+
+
+
 
 html,
 body {
@@ -839,7 +843,7 @@ label {
   Work
 -----------------------*/
 #skills {
-  margin-top: -220px;
+  margin-top: -65px;
   z-index: 10;
   position: absolute;
   left: 50%;
@@ -869,7 +873,7 @@ label {
   left: 0;
   width: 30%;
   height: 6px;
-  background-color: #00bfe7;
+  background-color: #fff;
   z-index: 2;
   animation: slideOut 0.5s ease forwards;
 }
@@ -884,19 +888,19 @@ label {
 @keyframes slideIn {
   to {
     width: 100%;
-    background-color: #630082;
+    background-color: #00bfe7;
   }
 }
 
 @keyframes slideOut {
   from {
     width: 100%;
-    background-color: #630082;
+    background-color: #00bfe7;
   }
 
   to {
     width: 30%;
-    background-color: #00bfe7;
+    background-color: #fff;
   }
 }
 
@@ -1154,7 +1158,7 @@ label {
 .slide {
   justify-content: space-between;
   height: calc(5vw);
-  width: calc(19vw);
+  width: calc(19.5vw);
   right: calc(1.6vw);
   display: flex;
   position: relative;
@@ -1174,7 +1178,7 @@ label {
 
 
 .slide:first-of-type .btn-lock::after {
-  width: var(--after-width, calc(8.77vw));
+  width: var(--after-width, calc(8.2vw));
 }
 
 .btn-lock::after {
@@ -1183,29 +1187,58 @@ label {
   transition-duration: 0.5s;
   width: var(--after-width, 0px);
   display: block;
-  top: calc(2vw);
+  top: calc(1.9vw);
   z-index: 2;
   position: absolute;
-  right: calc(3.6vw);
+  right: calc(3.98vw);
   content: "";
   background-color: #00bfe7;
-  height: calc(0.2vw);
+  height: calc(0.4vw);
 }
 
 
+.container-preview {
+  width: calc(14.5vw);
+  display: flex;
+  justify-content: space-between;
+}
+
 .preview {
+  font-family: Jost;
   display: flex;
   align-items: center;
-  font-size: calc(1vw * 1.4);
-  width: calc(1vw * 13);
+  font-size: calc(1.2vw);
+  width: calc(1vw * 12);
   color: #fff;
   z-index: 2;
   cursor: pointer;
-  font-style: italic;
-  /* transform: translateY(calc(-4vw));
+  /* font-style: italic;
+   transform: translateY(calc(-4vw));
   margin-left: calc(2vw * 2); */
   position: relative;
   padding: 0;
+}
+
+.preview:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #00bfe7;
+  content: "";
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  transition: all, 0.3s;
+}
+
+.preview a:after {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
 }
 
 .preview.active {
@@ -3335,11 +3368,6 @@ ul {
   }
 
 
-  #skills {
-    margin-top: -165px;
-  }
-
-
   #gsbApp {
     background-size: 95% 90%;
   }
@@ -3466,9 +3494,6 @@ ul {
     padding-bottom: 100px;
   }
 
-  #skills {
-    margin-top: 7px;
-  }
 }
 
 /* Tablet Device = 768px */
@@ -4035,6 +4060,17 @@ ul {
     border: none;
   }
 
+  #skills,
+  #projects {
+    width: 185px;
+    font-size: 17px;
+  }
+
+  #projects::before,
+  #skills::before {
+    height: 5px;
+  }
+
   #sciencesU {
     background-color: white;
     background-position: center;
@@ -4056,11 +4092,6 @@ ul {
     background-color: #ffffff;
     background-repeat: no-repeat;
     background-position: center;
-  }
-
-
-  #skills {
-    margin-top: 40px;
   }
 
   #portfolio {

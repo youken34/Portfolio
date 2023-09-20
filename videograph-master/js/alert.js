@@ -157,6 +157,7 @@ function hideAll(numberFlex) {
 /* Main page title animation */
 
 function titleAnimation() {
+  console.log(window.scrollY, $("skills"), $("projects"));
   const viewportWidth = document.documentElement.clientWidth;
   var limitPixels = [];
   switch (true) {
@@ -164,27 +165,27 @@ function titleAnimation() {
       limitPixels = [1100, 1850];
       break;
     case viewportWidth >= 750:
-      limitPixels = [1725, 2525];
+      limitPixels = [1200, 1800];
       break;
     case viewportWidth >= 559:
-      limitPixels = [1800, 2825];
+      limitPixels = [1400, 1900];
       break;
     case viewportWidth >= 465:
-      limitPixels = [2020, 3050];
+      limitPixels = [1700, 2000];
       break;
     default:
-      limitPixels = [2020, 3980];
+      limitPixels = [2020, 2380];
       break;
   }
   if (this.window.scrollY >= limitPixels[0]) {
-    $("projects").classList.add("animate");
+    $("skills").classList.add("animate");
     if (this.window.scrollY >= limitPixels[1]) {
-      $("skills").classList.add("animate");
+      $("projects").classList.add("animate");
     } else {
-      $("skills").classList.remove("animate");
+      $("projects").classList.remove("animate");
     }
   } else {
-    $("projects").classList.remove("animate");
+    $("skills").classList.remove("animate");
   }
 }
 

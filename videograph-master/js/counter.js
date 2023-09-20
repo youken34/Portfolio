@@ -49,7 +49,7 @@ function slide(number) {
   reset(text, preview, dotContainer);
   lockAnimation(currentSlide);
 
-  dotContainer[number].style.setProperty("--after-width", "calc(8.77vw)");
+  dotContainer[number].style.setProperty("--after-width", "calc(8.2vw)");
   dotContainer[number].style.setProperty("--transition-delay", "0.5s");
 
   text[number].classList.add("active");
