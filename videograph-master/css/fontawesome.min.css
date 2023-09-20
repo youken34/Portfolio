@@ -80,9 +80,13 @@
 }
 
 .fa-2xs {
+    text-align: center;
+    width: calc(3vw);
     font-size: calc(1.4vw) !important;
-    line-height: calc(5.1vw) !important;
-    vertical-align: .225em
+    line-height: calc(4.1vw) !important;
+    vertical-align: .225em;
+    border-right: calc(0.16vw) solid #fff;
+    background-color: transparent;
 }
 
 .fa-xs {
