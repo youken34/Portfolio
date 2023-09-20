@@ -157,7 +157,6 @@ function hideAll(numberFlex) {
 /* Main page title animation */
 
 function titleAnimation() {
-  console.log(window.scrollY, $("skills"), $("projects"));
   const viewportWidth = document.documentElement.clientWidth;
   var limitPixels = [];
   switch (true) {

@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", function () {
   );
 });
 
-function reset(text, preview, dotContainer) {
+function reset(text, preview, dotContainer, containerPreview, imagePreview) {
   Array.from(text).forEach((element) => {
     if (element.classList.contains("active")) {
       element.classList.remove("active");
@@ -26,6 +26,12 @@ function reset(text, preview, dotContainer) {
   Array.from(dotContainer).forEach((element) => {
     element.style.setProperty("--after-width", "0px");
     element.style.setProperty("--transition-delay", "0s");
+  });
+  Array.from(containerPreview).forEach((element) => {
+    element.style.border = "calc(0.16vw) solid #fff";
+  });
+  Array.from(imagePreview).forEach((element) => {
+    element.style.borderRight = "calc(0.16vw) solid #fff";
   });
 }
 
@@ -45,15 +51,17 @@ function slide(number) {
   var carouselText = all("carousel")[0];
   var text = all("text");
   var preview = all("preview");
+  var containerPreview = all("container-preview");
+  var imagePreview = all("img-preview");
 
-  reset(text, preview, dotContainer);
+  reset(text, preview, dotContainer, containerPreview, imagePreview);
   lockAnimation(currentSlide);
 
   dotContainer[number].style.setProperty("--after-width", "calc(8.2vw)");
   dotContainer[number].style.setProperty("--transition-delay", "0.5s");
-
   text[number].classList.add("active");
-  preview[number].classList.add("active");
+  containerPreview[number].style.border = "calc(0.16vw) solid #00bfe7";
+  imagePreview[number].style.borderRight = "calc(0.16vw) solid #00bfe7";
 
   switch (number) {
     case 0:
@@ -64,12 +72,12 @@ function slide(number) {
       break;
     case 1:
       carouselImage.style.transform = "translateY(-33.4%)";
-      carouselText.style.transform = "translateY(calc(8vw))";
+      carouselText.style.transform = "translateY(calc(7vw))";
       timeline.style.setProperty("--before-height", "calc(21vw)");
       break;
     case 2:
       carouselImage.style.transform = "translateY(-66.7%)";
-      carouselText.style.transform = "translateY(calc(17vw))";
+      carouselText.style.transform = "translateY(calc(16.5vw))";
       timeline.style.setProperty("--before-height", "calc(30vw)");
       break;
   }

@@ -1166,17 +1166,6 @@ label {
   align-self: flex-start;
 }
 
-/* .slide:first-of-type .dot {
-  background-color: #fff;
-  border: calc(1vw * 0.3) solid #00bfe7;
-} */
-
-/* .dot {
-  height: calc(1vw * 1);
-  width: calc(1vw * 1);
-} */
-
-
 
 .slide:first-of-type .btn-lock::after {
   width: var(--after-width, calc(8.2vw));
@@ -1224,9 +1213,6 @@ label {
   color: #fff;
   z-index: 2;
   cursor: pointer;
-  /* font-style: italic;
-   transform: translateY(calc(-4vw));
-  margin-left: calc(2vw * 2); */
   position: relative;
   padding: 0;
   justify-content: center;
@@ -1235,31 +1221,18 @@ label {
   border-bottom-right-radius: 23%;
 }
 
-.preview:after {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background: #00bfe7;
-  content: "";
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: all, 0.3s;
-  -o-transition: all, 0.3s;
-  transition: all, 0.3s;
+.slide:first-of-type .container-preview {
+  border: calc(0.16vw) solid #00bfe7;
 }
 
-.preview a:after {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
+.slide:first-of-type .preview {
+  border: calc(0.16vw) solid #00bfe7;
 }
 
-.preview.active {
-  color: #00bfe7;
+.slide:first-of-type .img-preview {
+  border-right: calc(0.16vw) solid #00bfe7;
 }
+
 
 
 /* Text / carousel section */
@@ -1272,7 +1245,7 @@ label {
   height: calc(2vw * 11);
   position: absolute;
   right: 25%;
-  top: calc(4.3vw);
+  top: calc(5.8vw);
 }
 
 .text {
