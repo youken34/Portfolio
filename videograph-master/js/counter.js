@@ -22,6 +22,7 @@ function reset(text, preview, dotContainer, containerPreview, imagePreview) {
     if (element.classList.contains("active")) {
       element.classList.remove("active");
     }
+    element.style.border = "none";
   });
   Array.from(dotContainer).forEach((element) => {
     element.style.setProperty("--after-width", "0px");
@@ -62,22 +63,25 @@ function slide(number) {
   text[number].classList.add("active");
   containerPreview[number].style.border = "calc(0.16vw) solid #00bfe7";
   imagePreview[number].style.borderRight = "calc(0.16vw) solid #00bfe7";
+  preview[number].style.border = "calc(0.16vw) solid #075c6d";
 
   switch (number) {
     case 0:
       carouselImage.style.transform = "translateY(0%)";
       carouselImage.style.setProperty("--after-transform", "translateX(0%)");
-      carouselText.style.transform = "translateY(0px)";
+      carouselText.style.transform = "rotate3d(1, 1, 1, 0deg) translateY(0px)";
       timeline.style.setProperty("--before-height", "calc(12vw)");
       break;
     case 1:
       carouselImage.style.transform = "translateY(-33.4%)";
-      carouselText.style.transform = "translateY(calc(7vw))";
+      carouselText.style.transform =
+        "rotate3d(1, 1, 1, 360deg) translateY(calc(9vw))";
       timeline.style.setProperty("--before-height", "calc(21vw)");
       break;
     case 2:
       carouselImage.style.transform = "translateY(-66.7%)";
-      carouselText.style.transform = "translateY(calc(16.5vw))";
+      carouselText.style.transform =
+        "rotate3d(1, 1, 1, 720deg) translateY(calc(16.5vw))";
       timeline.style.setProperty("--before-height", "calc(30vw)");
       break;
   }

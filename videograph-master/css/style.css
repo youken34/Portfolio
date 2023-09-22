@@ -1107,7 +1107,7 @@ label {
 .image__slide {
   background-color: rgb(0, 0, 0);
   position: relative;
-  height: calc(1vw * 46);
+  height: calc(137vw);
   width: 100%;
   object-fit: cover;
   object-position: center center;
@@ -1217,8 +1217,8 @@ label {
   padding: 0;
   justify-content: center;
   background-color: #1f1f1f;
-  border-top-right-radius: 23%;
-  border-bottom-right-radius: 23%;
+  border-top-right-radius: 21%;
+  border-bottom-right-radius: 21%;
 }
 
 .slide:first-of-type .container-preview {
@@ -1226,7 +1226,7 @@ label {
 }
 
 .slide:first-of-type .preview {
-  border: calc(0.16vw) solid #00bfe7;
+  border: calc(0.16vw) solid #075c6d;
 }
 
 .slide:first-of-type .img-preview {
