@@ -69,19 +69,17 @@ function slide(number) {
     case 0:
       carouselImage.style.transform = "translateY(0%)";
       carouselImage.style.setProperty("--after-transform", "translateX(0%)");
-      carouselText.style.transform = "rotate3d(1, 1, 1, 0deg) translateY(0px)";
+      carouselText.style.transform = "translateY(0px)";
       timeline.style.setProperty("--before-height", "calc(12vw)");
       break;
     case 1:
       carouselImage.style.transform = "translateY(-33.4%)";
-      carouselText.style.transform =
-        "rotate3d(1, 1, 1, 360deg) translateY(calc(9vw))";
+      carouselText.style.transform = "translateY(calc(9vw))";
       timeline.style.setProperty("--before-height", "calc(21vw)");
       break;
     case 2:
       carouselImage.style.transform = "translateY(-66.7%)";
-      carouselText.style.transform =
-        "rotate3d(1, 1, 1, 720deg) translateY(calc(16.5vw))";
+      carouselText.style.transform = "translateY(calc(16.5vw))";
       timeline.style.setProperty("--before-height", "calc(30vw)");
       break;
   }

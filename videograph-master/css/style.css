@@ -1089,7 +1089,7 @@ label {
 }
 
 
-
+/* 
 .carousel-image::after {
   transition: 1s;
   content: "";
@@ -1101,7 +1101,7 @@ label {
   width: calc(5vw);
   height: 100%;
   box-shadow: calc(-15vw) 0 calc(5vw) 60vw rgb(0 0 0 / 70%);
-}
+} */
 
 
 .image__slide {
