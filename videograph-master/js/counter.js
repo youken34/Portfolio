@@ -45,58 +45,97 @@ function lockAnimation(number) {
 }
 
 function slide(number) {
-  currentSlide = number;
-  const dotContainer = all("slide");
-  var carouselImage = all("carousel-image")[0];
-  var timeline = all("timeline")[0];
-  var carouselText = all("carousel")[0];
-  var text = all("text");
-  var preview = all("preview");
-  var containerPreview = all("container-preview");
-  var imagePreview = all("img-preview");
+  if (window.innerWidth > 760) {
+    currentSlide = number;
+    const dotContainer = all("slide");
+    var carouselImage = all("carousel-image")[0];
+    var timeline = all("timeline")[0];
+    var carouselText = all("carousel")[0];
+    var text = all("text");
+    var preview = all("preview");
+    var containerPreview = all("container-preview");
+    var imagePreview = all("img-preview");
 
-  reset(text, preview, dotContainer, containerPreview, imagePreview);
-  lockAnimation(currentSlide);
+    reset(text, preview, dotContainer, containerPreview, imagePreview);
+    lockAnimation(currentSlide);
 
-  dotContainer[number].style.setProperty("--after-width", "calc(8.2vw)");
-  dotContainer[number].style.setProperty("--transition-delay", "0.5s");
-  text[number].classList.add("active");
-  containerPreview[number].style.border = "calc(0.16vw) solid #00bfe7";
-  imagePreview[number].style.borderRight = "calc(0.16vw) solid #00bfe7";
-  preview[number].style.border = "calc(0.16vw) solid #075c6d";
+    dotContainer[number].style.setProperty("--after-width", "calc(8.2vw)");
+    dotContainer[number].style.setProperty("--transition-delay", "0.5s");
+    text[number].classList.add("active");
+    containerPreview[number].style.border = "calc(0.16vw) solid #00bfe7";
+    imagePreview[number].style.borderRight = "calc(0.16vw) solid #00bfe7";
+    preview[number].style.border = "calc(0.16vw) solid #075c6d";
 
-  switch (number) {
-    case 0:
-      carouselImage.style.transform = "translateY(0%)";
-      carouselImage.style.setProperty("--after-transform", "translateX(0%)");
-      carouselText.style.transform = "translateY(0px)";
-      timeline.style.setProperty("--before-height", "calc(12vw)");
-      break;
-    case 1:
-      carouselImage.style.transform = "translateY(-33.4%)";
-      carouselText.style.transform = "translateY(calc(9vw))";
-      timeline.style.setProperty("--before-height", "calc(21vw)");
-      break;
-    case 2:
-      carouselImage.style.transform = "translateY(-66.7%)";
-      carouselText.style.transform = "translateY(calc(16.5vw))";
-      timeline.style.setProperty("--before-height", "calc(30vw)");
-      break;
+    switch (number) {
+      case 0:
+        carouselImage.style.transform = "translateY(0%)";
+        carouselImage.style.setProperty("--after-transform", "translateX(0%)");
+        carouselText.style.transform = "translateY(0px)";
+        timeline.style.setProperty("--before-height", "calc(12vw)");
+        break;
+      case 1:
+        carouselImage.style.transform = "translateY(-33.4%)";
+        carouselText.style.transform = "translateY(calc(9vw))";
+        timeline.style.setProperty("--before-height", "calc(21vw)");
+        break;
+      case 2:
+        carouselImage.style.transform = "translateY(-66.7%)";
+        carouselText.style.transform = "translateY(calc(16.5vw))";
+        timeline.style.setProperty("--before-height", "calc(30vw)");
+        break;
+    }
   }
 }
 
-function slideByScroll(e) {
-  if (
-    (currentSlide !== 2 && e.deltaY > 0) ||
-    (currentSlide !== 0 && e.deltaY < 0)
-  ) {
-    e.preventDefault();
-  }
+var initialTimelinePosition;
 
-  if (e.deltaY > 0) {
-    handleScrollDown();
-  } else if (e.deltaY < 0) {
-    handleScrollUp();
+function initTimelinePosition() {
+  var timeline = document.querySelector(".timeline");
+  initialTimelinePosition =
+    timeline.getBoundingClientRect().top + window.scrollY;
+}
+
+function slideByScrollMobile() {
+  var timeline = document.querySelector(".timeline");
+  var timelineBeforeHeight = window.pageYOffset - initialTimelinePosition;
+
+  console.log(timelineBeforeHeight);
+
+  if (timelineBeforeHeight > 0) {
+    if (timelineBeforeHeight + 40 <= parseInt($("counter").style.height)) {
+      timeline.style.setProperty(
+        "--before-height",
+        `calc(${timelineBeforeHeight + 40}px + 20vw)`
+      );
+    }
+  } else {
+    timeline.style.setProperty("--before-height", `calc(20vw)`);
+  }
+}
+
+// Initialize the initialTimelinePosition when the page loads
+document.addEventListener("DOMContentLoaded", initTimelinePosition);
+
+// Listen for scroll events and update the timeline
+document.addEventListener("scroll", slideByScrollMobile);
+document.addEventListener("DOMContentLoaded", slideByScrollMobile);
+
+function slideByScroll(e) {
+  if (window.innerWidth > 760) {
+    if (
+      (currentSlide !== 2 && e.deltaY > 0) ||
+      (currentSlide !== 0 && e.deltaY < 0)
+    ) {
+      e.preventDefault();
+    }
+
+    if (e.deltaY > 0) {
+      handleScrollDown();
+    } else if (e.deltaY < 0) {
+      handleScrollUp();
+    }
+  } else {
+    slideByScrollMobile();
   }
 }
 
