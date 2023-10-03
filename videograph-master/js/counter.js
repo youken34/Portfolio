@@ -36,16 +36,37 @@ function reset(text, preview, dotContainer, containerPreview, imagePreview) {
   });
 }
 
-var currentSlide = 0;
-
 function lockAnimation(number) {
   Array.from(all("inpLock")).forEach((element, index, array) =>
     index <= number ? (element.checked = false) : (element.checked = true)
   );
 }
+function lockAnimationMobile(timeLineHeight) {
+  Array.from(all("inpLock")).forEach((element, index, array) =>
+    timeLineHeight >= element.parentElement.offsetTop || index == 0
+      ? (element.checked = false)
+      : (element.checked = true)
+  );
+}
+
+function vwToPixels(vw) {
+  const vwInPixels = window.innerWidth || document.documentElement.clientWidth;
+
+  const pixels = (vw * vwInPixels) / 100;
+
+  return pixels;
+}
+function pixelsTovw(pixels) {
+  const vwInPixels = window.innerWidth || document.documentElement.clientWidth;
+
+  const vw = (pixels * 100) / vwInPixels;
+  return vw;
+}
+
+var currentSlide = 0;
 
 function slide(number) {
-  if (window.innerWidth > 760) {
+  if (window.innerWidth > 765) {
     currentSlide = number;
     const dotContainer = all("slide");
     var carouselImage = all("carousel-image")[0];
@@ -95,33 +116,37 @@ function initTimelinePosition() {
     timeline.getBoundingClientRect().top + window.scrollY;
 }
 
-function slideByScrollMobile() {
+function slideByScrollMobile(vw) {
   var timeline = document.querySelector(".timeline");
   var timelineBeforeHeight = window.pageYOffset - initialTimelinePosition;
-
-  console.log(timelineBeforeHeight);
-
+  timelineSetHeight = timelineBeforeHeight + vwToPixels(vw);
+  console.log(vwToPixels(vw), $("counter").clientHeight);
   if (timelineBeforeHeight > 0) {
-    if (timelineBeforeHeight + 40 <= parseInt($("counter").style.height)) {
+    if (timelineSetHeight <= $("counter").clientHeight) {
       timeline.style.setProperty(
         "--before-height",
-        `calc(${timelineBeforeHeight + 40}px + 20vw)`
+        `calc(${timelineSetHeight}px)`
       );
+    } else {
+      timeline.style.setProperty("--before-height", `100%`);
     }
   } else {
     timeline.style.setProperty("--before-height", `calc(20vw)`);
   }
+  lockAnimationMobile(timelineSetHeight);
 }
 
-// Initialize the initialTimelinePosition when the page loads
-document.addEventListener("DOMContentLoaded", initTimelinePosition);
+if (document.window.clientWidth < 765) {
+  document.addEventListener("DOMContentLoaded", initTimelinePosition);
 
-// Listen for scroll events and update the timeline
-document.addEventListener("scroll", slideByScrollMobile);
-document.addEventListener("DOMContentLoaded", slideByScrollMobile);
+  // Listen for scroll events and update the timeline
+  document.addEventListener("scroll", slideByScrollMobile);
+  document.addEventListener("DOMContentLoaded", slideByScrollMobile);
+}
+// Initialize the initialTimelinePosition when the page loads
 
 function slideByScroll(e) {
-  if (window.innerWidth > 760) {
+  if (window.innerWidth > 765) {
     if (
       (currentSlide !== 2 && e.deltaY > 0) ||
       (currentSlide !== 0 && e.deltaY < 0)
@@ -135,7 +160,18 @@ function slideByScroll(e) {
       handleScrollUp();
     }
   } else {
-    slideByScrollMobile();
+    switch (true) {
+      case document.documentElement.clientWidth < 765:
+        var value = 32;
+        break;
+      case document.documentElement.clientWidth < 575.5:
+        var value = 27;
+        break;
+      case document.documentElement.clientWidth < 760:
+        var value = 32;
+        break;
+    }
+    slideByScrollMobile(value);
   }
 }
 

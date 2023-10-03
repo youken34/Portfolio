@@ -3485,8 +3485,6 @@ ul {
     margin-bottom: 90px;
   }
 
-
-
   #gsbApp {
     background-size: 100% 80%;
   }
@@ -3502,8 +3500,6 @@ ul {
     background-color: #017DC3;
     background-position: center;
   }
-
-
 
   .col-lg-3 .col-md-6 {
     padding-right: 0px;
@@ -3896,6 +3892,12 @@ ul {
   .creation {
     scale: 0.9;
   }
+
+
+  #counter {
+    overflow: hidden;
+  }
+
 
   #gsbApp {
     background-size: 90% 80%;
