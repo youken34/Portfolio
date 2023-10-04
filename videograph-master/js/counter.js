@@ -44,12 +44,16 @@ function lockAnimation(number) {
 function lockAnimationMobile(timeLineHeight) {
   console.log("test ---------------");
   Array.from(all("inpLock")).forEach((element, index, array) =>
-    // timeLineHeight >= element.parentElement.offsetTop || index == 0
-    //   ? (element.checked = false)
-    //   : (element.checked = true)
+    timeLineHeight >= element.parentElement.offsetTop || index == 0
+      ? (element.checked = false)
+      : (element.checked = true)
+  );
+  Array.from(all("inpLock")).forEach((element, index, array) =>
     console.log(
       timeLineHeight >= element.parentElement.offsetTop || index == 0,
-      element.checked
+      element.checked,
+      timeLineHeight,
+      element.parentElement.offsetTop
     )
   );
 }
