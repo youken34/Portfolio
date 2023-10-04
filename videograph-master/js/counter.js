@@ -42,25 +42,23 @@ function lockAnimation(number) {
   );
 }
 function lockAnimationMobile(timeLineHeight) {
+  console.log("test ---------------");
   Array.from(all("inpLock")).forEach((element, index, array) =>
-    timeLineHeight >= element.parentElement.offsetTop || index == 0
-      ? (element.checked = false)
-      : (element.checked = true)
+    // timeLineHeight >= element.parentElement.offsetTop || index == 0
+    //   ? (element.checked = false)
+    //   : (element.checked = true)
+    console.log(
+      timeLineHeight >= element.parentElement.offsetTop || index == 0,
+      element.checked
+    )
   );
 }
 
 function vwToPixels(vw) {
-  const vwInPixels = window.innerWidth || document.documentElement.clientWidth;
+  const vwInPixels = window.innerWidth;
 
   const pixels = (vw * vwInPixels) / 100;
-
   return pixels;
-}
-function pixelsTovw(pixels) {
-  const vwInPixels = window.innerWidth || document.documentElement.clientWidth;
-
-  const vw = (pixels * 100) / vwInPixels;
-  return vw;
 }
 
 var currentSlide = 0;
@@ -116,11 +114,11 @@ function initTimelinePosition() {
     timeline.getBoundingClientRect().top + window.scrollY;
 }
 
-function slideByScrollMobile(vw) {
+function slideByScrollMobile(vw = 32) {
   var timeline = document.querySelector(".timeline");
   var timelineBeforeHeight = window.pageYOffset - initialTimelinePosition;
   timelineSetHeight = timelineBeforeHeight + vwToPixels(vw);
-  console.log(vwToPixels(vw), $("counter").clientHeight);
+
   if (timelineBeforeHeight > 0) {
     if (timelineSetHeight <= $("counter").clientHeight) {
       timeline.style.setProperty(
@@ -136,12 +134,12 @@ function slideByScrollMobile(vw) {
   lockAnimationMobile(timelineSetHeight);
 }
 
-if (document.window.clientWidth < 765) {
+if (document.documentElement.clientWidth < 765) {
   document.addEventListener("DOMContentLoaded", initTimelinePosition);
 
   // Listen for scroll events and update the timeline
-  document.addEventListener("scroll", slideByScrollMobile);
-  document.addEventListener("DOMContentLoaded", slideByScrollMobile);
+  document.addEventListener("scroll", slideByScroll);
+  document.addEventListener("DOMContentLoaded", slideByScroll);
 }
 // Initialize the initialTimelinePosition when the page loads
 
@@ -161,14 +159,14 @@ function slideByScroll(e) {
     }
   } else {
     switch (true) {
-      case document.documentElement.clientWidth < 765:
+      case document.documentElement.clientWidth < 575.5:
         var value = 32;
         break;
-      case document.documentElement.clientWidth < 575.5:
+      case document.documentElement.clientWidth < 500:
         var value = 27;
         break;
-      case document.documentElement.clientWidth < 760:
-        var value = 32;
+      default:
+        var value = 35;
         break;
     }
     slideByScrollMobile(value);
