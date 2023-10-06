@@ -42,20 +42,20 @@ function lockAnimation(number) {
   );
 }
 function lockAnimationMobile(timeLineHeight) {
-  console.log("test ---------------");
+  // console.log("test ---------------");
   Array.from(all("inpLock")).forEach((element, index, array) =>
     timeLineHeight >= element.parentElement.offsetTop || index == 0
       ? (element.checked = false)
       : (element.checked = true)
   );
-  Array.from(all("inpLock")).forEach((element, index, array) =>
-    console.log(
-      timeLineHeight >= element.parentElement.offsetTop || index == 0,
-      element.checked,
-      timeLineHeight,
-      element.parentElement.offsetTop
-    )
-  );
+  // Array.from(all("inpLock")).forEach((element, index, array) =>
+  //   console.log(
+  //     timeLineHeight >= element.parentElement.offsetTop || index == 0,
+  //     element.checked,
+  //     timeLineHeight,
+  //     element.parentElement.offsetTop
+  //   )
+  //);
 }
 
 function vwToPixels(vw) {
@@ -66,12 +66,12 @@ function vwToPixels(vw) {
 }
 
 var currentSlide = 0;
+var carouselImage = all("carousel-image")[0];
 
 function slide(number) {
   if (window.innerWidth > 765) {
     currentSlide = number;
     const dotContainer = all("slide");
-    var carouselImage = all("carousel-image")[0];
     var timeline = all("timeline")[0];
     var carouselText = all("carousel")[0];
     var text = all("text");
@@ -118,8 +118,10 @@ function initTimelinePosition() {
     timeline.getBoundingClientRect().top + window.scrollY;
 }
 
+var timeline = document.querySelector(".timeline");
 function slideByScrollMobile(vw = 32) {
-  var timeline = document.querySelector(".timeline");
+  console.log("second function");
+
   var timelineBeforeHeight = window.pageYOffset - initialTimelinePosition;
   timelineSetHeight = timelineBeforeHeight + vwToPixels(vw);
 
@@ -173,6 +175,7 @@ function slideByScroll(e) {
         var value = 35;
         break;
     }
+    console.log("first function", value);
     slideByScrollMobile(value);
   }
 }
@@ -211,4 +214,18 @@ $("counter").addEventListener("touchmove", function (e) {
     handleScrollDown();
     startY = null;
   }
+});
+
+/* Resize function */
+let over765 = document.documentElement.clientWidth > 748 ? true : false;
+window.addEventListener("resize", function () {
+  if (document.documentElement.clientWidth > 748 && over765 == false) {
+    timeline.style.setProperty("--before-height", "calc(12vw)");
+    over765 = true;
+  } else {
+    carouselImage.style.transform = "translateY(0%)";
+    timeline.style.setProperty("--before-height", "calc(22vw)");
+    over765 = false;
+  }
+  lockAnimation(0);
 });

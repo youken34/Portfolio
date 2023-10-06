@@ -92,7 +92,7 @@ p {
 }
 
 img {
-  max-width: 100%;
+  max-width: 105%;
 }
 
 input:focus,
@@ -1118,7 +1118,7 @@ label {
   background-color: #ffffff;
 }
 
-.timeline::before {
+.timeline:before {
   transition: height 0.5s ease-in;
   content: "";
   position: absolute;
@@ -4124,6 +4124,10 @@ ul {
   /* .container-image {
     overflow-y: scroll !important;
   } */
+
+  .image__slide {
+    width: 105%;
+  }
 
   .counter__item.four__item {
     background-size: 95% 65%;
