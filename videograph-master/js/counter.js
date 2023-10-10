@@ -118,13 +118,16 @@ function initTimelinePosition() {
     timeline.getBoundingClientRect().top + window.scrollY;
 }
 
-var timeline = document.querySelector(".timeline");
-function slideByScrollMobile(vw = 32) {
-  console.log("second function");
-
+function slideByScrollMobile() {
+  initTimelinePosition();
+  var timeline = document.querySelector(".timeline");
   var timelineBeforeHeight = window.pageYOffset - initialTimelinePosition;
-  timelineSetHeight = timelineBeforeHeight + vwToPixels(vw);
-
+  timelineSetHeight = timelineBeforeHeight + vwToPixels(valueMobileScroll());
+  console.log(
+    timelineBeforeHeight > 0,
+    window.pageYOffset,
+    initialTimelinePosition
+  );
   if (timelineBeforeHeight > 0) {
     if (timelineSetHeight <= $("counter").clientHeight) {
       timeline.style.setProperty(
@@ -135,19 +138,27 @@ function slideByScrollMobile(vw = 32) {
       timeline.style.setProperty("--before-height", `100%`);
     }
   } else {
-    timeline.style.setProperty("--before-height", `calc(20vw)`);
+    timeline.style.setProperty("--before-height", `calc(22vw)`);
+    // Permet à la timeline de ne pas aller plus haut que le premier cadenas
   }
   lockAnimationMobile(timelineSetHeight);
 }
 
-if (document.documentElement.clientWidth < 765) {
-  document.addEventListener("DOMContentLoaded", initTimelinePosition);
-
-  // Listen for scroll events and update the timeline
-  document.addEventListener("scroll", slideByScroll);
-  document.addEventListener("DOMContentLoaded", slideByScroll);
+function valueMobileScroll() {
+  switch (true) {
+    case document.documentElement.clientWidth < 575.5 &&
+      document.documentElement.clientWidth > 500:
+      var value = 32;
+      break;
+    case document.documentElement.clientWidth < 500:
+      var value = 27;
+      break;
+    default:
+      var value = 35;
+      break;
+  }
+  return value;
 }
-// Initialize the initialTimelinePosition when the page loads
 
 function slideByScroll(e) {
   if (window.innerWidth > 765) {
@@ -163,20 +174,6 @@ function slideByScroll(e) {
     } else if (e.deltaY < 0) {
       handleScrollUp();
     }
-  } else {
-    switch (true) {
-      case document.documentElement.clientWidth < 575.5:
-        var value = 32;
-        break;
-      case document.documentElement.clientWidth < 500:
-        var value = 27;
-        break;
-      default:
-        var value = 35;
-        break;
-    }
-    console.log("first function", value);
-    slideByScrollMobile(value);
   }
 }
 
@@ -194,7 +191,20 @@ function handleScrollUp() {
   }
 }
 
+if (document.documentElement.clientWidth < 765) {
+  document.addEventListener("DOMContentLoaded", function () {
+    slideByScroll(valueMobileScroll());
+  });
+}
+
 $("counter").onwheel = slideByScroll;
+document.body.onwheel = function (event) {
+  if (document.documentElement.clientWidth > 765) {
+    event.preventDefault();
+  } else {
+    slideByScrollMobile(valueMobileScroll());
+  }
+};
 
 $("counter").addEventListener("touchstart", function (e) {
   startY = e.touches[0].clientY;
@@ -219,6 +229,7 @@ $("counter").addEventListener("touchmove", function (e) {
 /* Resize function */
 let over765 = document.documentElement.clientWidth > 748 ? true : false;
 window.addEventListener("resize", function () {
+  var timeline = document.querySelector(".timeline");
   if (document.documentElement.clientWidth > 748 && over765 == false) {
     timeline.style.setProperty("--before-height", "calc(12vw)");
     over765 = true;
@@ -229,3 +240,5 @@ window.addEventListener("resize", function () {
   }
   lockAnimation(0);
 });
+
+// Régler problème 765 px pour avoir une valeur + exacte
