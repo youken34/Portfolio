@@ -90,11 +90,6 @@ function hide(ElementDisplayed) {
   }
 }
 
-function fill() {
-  const creation = document.querySelector(".creation:before");
-  creation.classList.add("animation-done");
-}
-
 function redirection() {
   window.location.href = "/Portfolio/videograph-master/portfolio.html";
 }
@@ -194,16 +189,3 @@ window.addEventListener("scroll", function () {
 window.addEventListener("load", function () {
   titleAnimation();
 });
-
-// window.addEventListener("scroll", function () {
-//   var pixelsScrolled = window.scrollY;
-//   var surplus;
-//   switch (true) {
-//     case pixelsScrolled >= 1925:
-//       surplus = (pixelsScrolled - 1925) / 4;
-//       console.log(surplus);
-//       var rotationAngle = 45 + surplus;
-//       $("four__item").style.transform = `rotate(${rotationAngle.toFixed()}deg)`;
-//       break;
-//   }
-// });

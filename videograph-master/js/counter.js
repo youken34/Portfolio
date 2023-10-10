@@ -42,25 +42,17 @@ function lockAnimation(number) {
   );
 }
 function lockAnimationMobile(timeLineHeight) {
-  // console.log("test ---------------");
-  Array.from(all("inpLock")).forEach((element, index, array) =>
-    timeLineHeight >= element.parentElement.offsetTop || index == 0
-      ? (element.checked = false)
-      : (element.checked = true)
-  );
-  // Array.from(all("inpLock")).forEach((element, index, array) =>
-  //   console.log(
-  //     timeLineHeight >= element.parentElement.offsetTop || index == 0,
-  //     element.checked,
-  //     timeLineHeight,
-  //     element.parentElement.offsetTop
-  //   )
-  //);
+  setTimeout(function () {
+    Array.from(all("inpLock")).forEach((element, index, array) =>
+      timeLineHeight >= element.parentElement.offsetTop || index == 0
+        ? (element.checked = false)
+        : (element.checked = true)
+    );
+  }, 300);
 }
 
 function vwToPixels(vw) {
   const vwInPixels = window.innerWidth;
-
   const pixels = (vw * vwInPixels) / 100;
   return pixels;
 }
@@ -127,7 +119,6 @@ function slideByScrollMobile() {
     var timelineBeforeHeight = window.pageYOffset - initialTimelinePosition;
     var timelineSetHeight =
       timelineBeforeHeight + vwToPixels(valueMobileScroll());
-
     if (timelineBeforeHeight > -50) {
       if (timelineSetHeight <= $("counter").clientHeight) {
         timeline.style.setProperty(
@@ -148,17 +139,22 @@ function slideByScrollMobile() {
 
 function valueMobileScroll() {
   switch (true) {
-    case document.documentElement.clientWidth < 575.5 &&
-      document.documentElement.clientWidth > 500:
-      var value = 32;
-      break;
-    case document.documentElement.clientWidth < 500:
-      var value = 27;
-      break;
+    // case document.documentElement.clientWidth < 575.5 &&
+    //   document.documentElement.clientWidth > 500:
+    //   var value = 33.5;
+    //   break;
+    // case document.documentElement.clientWidth < 500 &&
+    //   document.documentElement.clientWidth > 400:
+    //   var value = 32;
+    //   break;
+    // case document.documentElement.clientWidth < 400:
+    //   var value = 30;
+    //   break;
     default:
-      var value = 35;
+      var value = 38;
       break;
   }
+  console.log(value);
   return value;
 }
 
@@ -207,22 +203,14 @@ document.body.onwheel = function () {
 };
 
 $("counter").addEventListener("touchstart", function (e) {
-  startY = e.touches[0].clientY;
+  if (document.documentElement.clientWidth < 765) {
+    slideByScrollMobile();
+  }
 });
 
 $("counter").addEventListener("touchmove", function (e) {
-  if (startY === null) {
-    return;
-  }
-
-  var deltaY = e.touches[0].clientY - startY;
-
-  if (deltaY > 50) {
-    handleScrollUp();
-    startY = null;
-  } else if (deltaY < -50) {
-    handleScrollDown();
-    startY = null;
+  if (document.documentElement.clientWidth < 765) {
+    slideByScrollMobile();
   }
 });
 
