@@ -110,38 +110,40 @@ function slide(number) {
   }
 }
 
-var initialTimelinePosition;
-
-function initTimelinePosition() {
+function initTimelinePosition(callback) {
   var timeline = document.querySelector(".timeline");
-  initialTimelinePosition =
-    timeline.getBoundingClientRect().top + window.scrollY;
+  var initialTimelinePosition;
+
+  setTimeout(function () {
+    initialTimelinePosition =
+      timeline.getBoundingClientRect().top + window.scrollY;
+    callback(initialTimelinePosition);
+  }, 200);
 }
 
 function slideByScrollMobile() {
-  initTimelinePosition();
   var timeline = document.querySelector(".timeline");
-  var timelineBeforeHeight = window.pageYOffset - initialTimelinePosition;
-  timelineSetHeight = timelineBeforeHeight + vwToPixels(valueMobileScroll());
-  console.log(
-    timelineBeforeHeight > 0,
-    window.pageYOffset,
-    initialTimelinePosition
-  );
-  if (timelineBeforeHeight > 0) {
-    if (timelineSetHeight <= $("counter").clientHeight) {
-      timeline.style.setProperty(
-        "--before-height",
-        `calc(${timelineSetHeight}px)`
-      );
+  initTimelinePosition(function (initialTimelinePosition) {
+    var timelineBeforeHeight = window.pageYOffset - initialTimelinePosition;
+    var timelineSetHeight =
+      timelineBeforeHeight + vwToPixels(valueMobileScroll());
+
+    if (timelineBeforeHeight > -50) {
+      if (timelineSetHeight <= $("counter").clientHeight) {
+        timeline.style.setProperty(
+          "--before-height",
+          `calc(${timelineSetHeight}px)`
+        );
+      } else {
+        timeline.style.setProperty("--before-height", `100%`);
+      }
     } else {
-      timeline.style.setProperty("--before-height", `100%`);
+      timeline.style.setProperty("--before-height", `calc(22vw)`);
+      // Permet à la timeline de ne pas aller plus haut que le premier cadenas
     }
-  } else {
-    timeline.style.setProperty("--before-height", `calc(22vw)`);
-    // Permet à la timeline de ne pas aller plus haut que le premier cadenas
-  }
-  lockAnimationMobile(timelineSetHeight);
+
+    lockAnimationMobile(timelineSetHeight);
+  });
 }
 
 function valueMobileScroll() {
@@ -191,18 +193,16 @@ function handleScrollUp() {
   }
 }
 
-if (document.documentElement.clientWidth < 765) {
-  document.addEventListener("DOMContentLoaded", function () {
-    slideByScroll(valueMobileScroll());
-  });
-}
+document.addEventListener("DOMContentLoaded", function () {
+  if (document.documentElement.clientWidth < 765) {
+    slideByScrollMobile();
+  }
+});
 
 $("counter").onwheel = slideByScroll;
-document.body.onwheel = function (event) {
-  if (document.documentElement.clientWidth > 765) {
-    event.preventDefault();
-  } else {
-    slideByScrollMobile(valueMobileScroll());
+document.body.onwheel = function () {
+  if (document.documentElement.clientWidth < 765) {
+    slideByScrollMobile();
   }
 };
 
