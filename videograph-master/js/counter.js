@@ -5,6 +5,9 @@ function all(element) {
 function $(element) {
   return document.getElementById(element);
 }
+function className(element) {
+  return document.querySelector(element);
+}
 
 window.addEventListener("DOMContentLoaded", function () {
   Array.from(all("inpLock")).forEach((element, index, array) =>
@@ -41,14 +44,14 @@ function lockAnimation(number) {
     index <= number ? (element.checked = false) : (element.checked = true)
   );
 }
-function lockAnimationMobile(timeLineHeight) {
+function lockAnimationMobile(timeLineHeight, timeout) {
   setTimeout(function () {
     Array.from(all("inpLock")).forEach((element, index, array) =>
       timeLineHeight >= element.parentElement.offsetTop || index == 0
         ? (element.checked = false)
         : (element.checked = true)
     );
-  }, 300);
+  }, timeout);
 }
 
 function vwToPixels(vw) {
@@ -58,19 +61,18 @@ function vwToPixels(vw) {
 }
 
 var currentSlide = 0;
-var carouselImage = all("carousel-image")[0];
+var carouselImage = className(".carousel-image");
+var carouselText = className(".carousel");
 
 function slide(number) {
-  if (window.innerWidth > 765) {
+  if (document.documentElement.clientWidth > 748) {
     currentSlide = number;
     const dotContainer = all("slide");
-    var timeline = all("timeline")[0];
-    var carouselText = all("carousel")[0];
+    var timeline = className(".timeline");
     var text = all("text");
     var preview = all("preview");
     var containerPreview = all("container-preview");
     var imagePreview = all("img-preview");
-
     reset(text, preview, dotContainer, containerPreview, imagePreview);
     lockAnimation(currentSlide);
 
@@ -84,7 +86,6 @@ function slide(number) {
     switch (number) {
       case 0:
         carouselImage.style.transform = "translateY(0%)";
-        carouselImage.style.setProperty("--after-transform", "translateX(0%)");
         carouselText.style.transform = "translateY(0px)";
         timeline.style.setProperty("--before-height", "calc(12vw)");
         break;
@@ -102,31 +103,30 @@ function slide(number) {
   }
 }
 
-function initTimelinePosition(callback) {
+function initTimelinePosition(callback, timeout) {
   var timeline = document.querySelector(".timeline");
   var initialTimelinePosition;
 
   setTimeout(function () {
+    console.log(timeout);
+
     initialTimelinePosition =
       timeline.getBoundingClientRect().top + window.scrollY;
     callback(initialTimelinePosition);
-  }, 200);
+  }, timeout);
 }
 
-function slideByScrollMobile() {
+function slideByScrollMobile(timeout = 200) {
   var timeline = document.querySelector(".timeline");
   initTimelinePosition(function (initialTimelinePosition) {
     var timelineBeforeHeight = window.pageYOffset - initialTimelinePosition;
-    var timelineSetHeight =
-      timelineBeforeHeight + vwToPixels(valueMobileScroll());
+    var timelineSetHeight = timelineBeforeHeight + vwToPixels(45);
     if (timelineBeforeHeight > -50) {
       if (timelineSetHeight <= $("counter").clientHeight) {
         timeline.style.setProperty(
           "--before-height",
           `calc(${timelineSetHeight}px)`
         );
-      } else {
-        timeline.style.setProperty("--before-height", `100%`);
       }
     } else {
       timeline.style.setProperty("--before-height", `calc(22vw)`);
@@ -134,32 +134,11 @@ function slideByScrollMobile() {
     }
 
     lockAnimationMobile(timelineSetHeight);
-  });
-}
-
-function valueMobileScroll() {
-  switch (true) {
-    // case document.documentElement.clientWidth < 575.5 &&
-    //   document.documentElement.clientWidth > 500:
-    //   var value = 33.5;
-    //   break;
-    // case document.documentElement.clientWidth < 500 &&
-    //   document.documentElement.clientWidth > 400:
-    //   var value = 32;
-    //   break;
-    // case document.documentElement.clientWidth < 400:
-    //   var value = 30;
-    //   break;
-    default:
-      var value = 38;
-      break;
-  }
-  console.log(value);
-  return value;
+  }, timeout);
 }
 
 function slideByScroll(e) {
-  if (window.innerWidth > 765) {
+  if (document.documentElement.clientWidth > 748) {
     if (
       (currentSlide !== 2 && e.deltaY > 0) ||
       (currentSlide !== 0 && e.deltaY < 0)
@@ -187,29 +166,30 @@ function handleScrollUp() {
     currentSlide--;
     slide(currentSlide);
   }
+  console.log("test -------------");
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  if (document.documentElement.clientWidth < 765) {
+  if (document.documentElement.clientWidth < 748) {
     slideByScrollMobile();
   }
 });
 
 $("counter").onwheel = slideByScroll;
 document.body.onwheel = function () {
-  if (document.documentElement.clientWidth < 765) {
+  if (document.documentElement.clientWidth < 748) {
     slideByScrollMobile();
   }
 };
 
 $("counter").addEventListener("touchstart", function (e) {
-  if (document.documentElement.clientWidth < 765) {
+  if (document.documentElement.clientWidth < 748) {
     slideByScrollMobile();
   }
 });
 
 $("counter").addEventListener("touchmove", function (e) {
-  if (document.documentElement.clientWidth < 765) {
+  if (document.documentElement.clientWidth < 748) {
     slideByScrollMobile();
   }
 });
@@ -220,13 +200,21 @@ window.addEventListener("resize", function () {
   var timeline = document.querySelector(".timeline");
   if (document.documentElement.clientWidth > 748 && over765 == false) {
     timeline.style.setProperty("--before-height", "calc(12vw)");
+    lockAnimation(0);
     over765 = true;
-  } else {
-    carouselImage.style.transform = "translateY(0%)";
-    timeline.style.setProperty("--before-height", "calc(22vw)");
-    over765 = false;
+  } else if (document.documentElement.clientWidth < 748) {
+    if (over765 == true) {
+      carouselImage.style.transform = "translateY(0%)";
+      timeline.style.setProperty("--before-height", "calc(22vw)");
+      carouselText.style.transform = "translateY(calc(0vw))";
+      lockAnimation(0);
+      over765 = false;
+    }
+    slideByScrollMobile(0);
   }
-  lockAnimation(0);
 });
 
-// Régler problème 765 px pour avoir une valeur + exacte
+// timeline ayant une hauteur compléte une fois l'écran revenue à sa taille maximale
+// Lock::after qui doit s'activer également au scroll sur mobile
+// Mauvais affichage border radius
+// Height mal généré pour timeline au lancement de la page
