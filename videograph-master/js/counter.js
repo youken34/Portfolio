@@ -108,8 +108,6 @@ function initTimelinePosition(callback, timeout) {
   var initialTimelinePosition;
 
   setTimeout(function () {
-    console.log(timeout);
-
     initialTimelinePosition =
       timeline.getBoundingClientRect().top + window.scrollY;
     callback(initialTimelinePosition);
@@ -166,7 +164,6 @@ function handleScrollUp() {
     currentSlide--;
     slide(currentSlide);
   }
-  console.log("test -------------");
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -214,7 +211,9 @@ window.addEventListener("resize", function () {
   }
 });
 
-// timeline ayant une hauteur compléte une fois l'écran revenue à sa taille maximale
-// Lock::after qui doit s'activer également au scroll sur mobile
 // Mauvais affichage border radius
-// Height mal généré pour timeline au lancement de la page
+// Lock::after qui doit changer ses dimensions quand resize
+// Lock::after qui doit s'activer également au scroll sur mobile
+// mauvais positionement de la section projet
+// Animation de slide pouvant être amélioré
+// Height mal généré pour timeline au lancement de la page ?

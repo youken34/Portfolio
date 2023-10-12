@@ -39,12 +39,35 @@
   });
 
   //Masonary
-  $(".work__gallery").masonry({
-    itemSelector: ".work__item",
-    columnWidth: ".grid-sizer",
-    gutter: 10,
+  function masonry() {
+    $(".work__gallery").masonry({
+      itemSelector: ".work__item",
+      columnWidth: ".grid-sizer",
+      gutter: 10,
+    });
+  }
+  $(window).on("resize", function () {
+    setTimeout(function () {
+      console.log("resize");
+      masonry();
+    }, 100);
+  });
+  $(window).on("visibilitychange", function () {
+    console.log("visibilitychange");
+    masonry();
+  });
+  $(window).on("load", function () {
+    console.log("load");
+    masonry();
+  });
+  $(window).on("fullscreenchange", function () {
+    console.log("fullscreenchange");
+    masonry();
   });
 
+  // setInterval(function () {
+  //   masonry();
+  // }, 200);
   /*------------------
 		Navigation
 	--------------------*/
