@@ -10,9 +10,11 @@ function className(element) {
 }
 
 window.addEventListener("DOMContentLoaded", function () {
-  Array.from(all("inpLock")).forEach((element, index, array) =>
-    index != 0 ? (element.checked = true) : (element.checked = false)
-  );
+  if (document.documentElement.clientWidth > 748) {
+    Array.from(all("inpLock")).forEach((element, index, array) =>
+      index != 0 ? (element.checked = true) : (element.checked = false)
+    );
+  }
 });
 
 function reset(text, preview, dotContainer, containerPreview, imagePreview) {
@@ -100,6 +102,9 @@ function slide(number) {
         timeline.style.setProperty("--before-height", "calc(30vw)");
         break;
     }
+    // Array.from(dotContainer).forEach((element) => {
+    //   element.style.setProperty("--transition-delay", "0");
+    // });
   }
 }
 
@@ -179,13 +184,13 @@ document.body.onwheel = function () {
   }
 };
 
-$("counter").addEventListener("touchstart", function (e) {
+document.body.addEventListener("touchstart", function (e) {
   if (document.documentElement.clientWidth < 748) {
     slideByScrollMobile();
   }
 });
 
-$("counter").addEventListener("touchmove", function (e) {
+document.body.addEventListener("touchmove", function (e) {
   if (document.documentElement.clientWidth < 748) {
     slideByScrollMobile();
   }
@@ -213,7 +218,8 @@ window.addEventListener("resize", function () {
 
 // Mauvais affichage border radius
 // Lock::after qui doit changer ses dimensions quand resize
-// Lock::after qui doit s'activer également au scroll sur mobile
-// mauvais positionement de la section projet
 // Animation de slide pouvant être amélioré
+
 // Height mal généré pour timeline au lancement de la page ?
+// Espace blanc sur la droite
+// mauvais positionement de la section projet

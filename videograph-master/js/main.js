@@ -1,12 +1,3 @@
-/*  ---------------------------------------------------
-    Template Name: Dreams
-    Description: Dreams wedding template
-    Author: Colorib
-    Author URI: https://colorlib.com/
-    Version: 1.0
-    Created: Colorib
----------------------------------------------------------  */
-
 "use strict";
 
 (function ($) {
@@ -46,22 +37,18 @@
       gutter: 10,
     });
   }
+
   $(window).on("resize", function () {
-    setTimeout(function () {
-      console.log("resize");
-      masonry();
-    }, 100);
+    if (document.documentElement.clientWidth > 742) {
+      setTimeout(function () {
+        console.log("resize");
+        masonry();
+      }, 800);
+    }
   });
-  $(window).on("visibilitychange", function () {
-    console.log("visibilitychange");
-    masonry();
-  });
+
   $(window).on("load", function () {
     console.log("load");
-    masonry();
-  });
-  $(window).on("fullscreenchange", function () {
-    console.log("fullscreenchange");
     masonry();
   });
 
