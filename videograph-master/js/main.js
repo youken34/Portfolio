@@ -41,14 +41,12 @@
   $(window).on("resize", function () {
     if (document.documentElement.clientWidth > 742) {
       setTimeout(function () {
-        console.log("resize");
         masonry();
       }, 800);
     }
   });
 
   $(window).on("load", function () {
-    console.log("load");
     masonry();
   });
 

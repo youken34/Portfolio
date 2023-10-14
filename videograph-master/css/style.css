@@ -1203,7 +1203,7 @@ label {
 .btn-lock::after {
   transition-timing-function: ease-out;
   transition-delay: var(--transition-delay, 0.5s);
-  transition-duration: 0.5s;
+  transition-duration: var(--transition-duration, 0.5s);
   width: var(--after-width, 0px);
   display: block;
   top: calc(1.9vw);
@@ -2990,11 +2990,6 @@ ul {
     height: 150px;
   }
 
-
-  .callto_one,
-  .callto_two {
-    width: 75%;
-  }
 
 }
 

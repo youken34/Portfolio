@@ -65,11 +65,11 @@ function vwToPixels(vw) {
 var currentSlide = 0;
 var carouselImage = className(".carousel-image");
 var carouselText = className(".carousel");
+const dotContainer = all("slide");
 
 function slide(number) {
   if (document.documentElement.clientWidth > 748) {
     currentSlide = number;
-    const dotContainer = all("slide");
     var timeline = className(".timeline");
     var text = all("text");
     var preview = all("preview");
@@ -102,11 +102,25 @@ function slide(number) {
         timeline.style.setProperty("--before-height", "calc(30vw)");
         break;
     }
-    // Array.from(dotContainer).forEach((element) => {
-    //   element.style.setProperty("--transition-delay", "0");
-    // });
   }
 }
+
+let timeoutId;
+
+window.addEventListener("resize", function () {
+  clearTimeout(timeoutId);
+
+  Array.from(dotContainer).forEach((element) => {
+    element.style.setProperty("--transition-delay", "0s");
+    element.style.setProperty("--transition-duration", "0s");
+  });
+
+  timeoutId = setTimeout(function () {
+    Array.from(dotContainer).forEach((element) => {
+      element.style.setProperty("--transition-duration", "0.5s");
+    });
+  }, 500);
+});
 
 function initTimelinePosition(callback, timeout) {
   var timeline = document.querySelector(".timeline");
@@ -217,7 +231,7 @@ window.addEventListener("resize", function () {
 });
 
 // Mauvais affichage border radius
-// Lock::after qui doit changer ses dimensions quand resize
+// carousel qui doit changer ses positions instantanément quand resize
 // Animation de slide pouvant être amélioré
 
 // Height mal généré pour timeline au lancement de la page ?
