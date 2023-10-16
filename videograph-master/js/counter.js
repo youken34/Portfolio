@@ -34,10 +34,10 @@ function reset(text, preview, dotContainer, containerPreview, imagePreview) {
     element.style.setProperty("--transition-delay", "0s");
   });
   Array.from(containerPreview).forEach((element) => {
-    element.style.border = "calc(0.16vw) solid #fff";
+    element.style.border = "4px solid #fff";
   });
   Array.from(imagePreview).forEach((element) => {
-    element.style.borderRight = "calc(0.16vw) solid #fff";
+    element.style.borderRight = "4px solid #fff";
   });
 }
 
@@ -66,11 +66,11 @@ var currentSlide = 0;
 var carouselImage = className(".carousel-image");
 var carouselText = className(".carousel");
 const dotContainer = all("slide");
+var timeline = className(".timeline");
 
 function slide(number) {
   if (document.documentElement.clientWidth > 748) {
     currentSlide = number;
-    var timeline = className(".timeline");
     var text = all("text");
     var preview = all("preview");
     var containerPreview = all("container-preview");
@@ -81,9 +81,9 @@ function slide(number) {
     dotContainer[number].style.setProperty("--after-width", "calc(8.2vw)");
     dotContainer[number].style.setProperty("--transition-delay", "0.5s");
     text[number].classList.add("active");
-    containerPreview[number].style.border = "calc(0.16vw) solid #00bfe7";
-    imagePreview[number].style.borderRight = "calc(0.16vw) solid #00bfe7";
-    preview[number].style.border = "calc(0.16vw) solid #075c6d";
+    containerPreview[number].style.border = "4px solid #00bfe7";
+    imagePreview[number].style.borderRight = "4px solid #00bfe7";
+    preview[number].style.border = "4px solid #075c6d";
 
     switch (number) {
       case 0:
@@ -115,15 +115,19 @@ window.addEventListener("resize", function () {
     element.style.setProperty("--transition-duration", "0s");
   });
 
+  timeline.style.setProperty("--timeline-transition", "0s");
+  carouselText.style.setProperty("--carousel-transition", "0s");
+
   timeoutId = setTimeout(function () {
     Array.from(dotContainer).forEach((element) => {
       element.style.setProperty("--transition-duration", "0.5s");
     });
+    timeline.style.setProperty("--timeline-transition", "0.5s");
+    carouselText.style.setProperty("--carousel-transition", "0.5s");
   }, 500);
 });
 
 function initTimelinePosition(callback, timeout) {
-  var timeline = document.querySelector(".timeline");
   var initialTimelinePosition;
 
   setTimeout(function () {
@@ -134,7 +138,6 @@ function initTimelinePosition(callback, timeout) {
 }
 
 function slideByScrollMobile(timeout = 200) {
-  var timeline = document.querySelector(".timeline");
   initTimelinePosition(function (initialTimelinePosition) {
     var timelineBeforeHeight = window.pageYOffset - initialTimelinePosition;
     var timelineSetHeight = timelineBeforeHeight + vwToPixels(45);
@@ -213,7 +216,6 @@ document.body.addEventListener("touchmove", function (e) {
 /* Resize function */
 let over765 = document.documentElement.clientWidth > 748 ? true : false;
 window.addEventListener("resize", function () {
-  var timeline = document.querySelector(".timeline");
   if (document.documentElement.clientWidth > 748 && over765 == false) {
     timeline.style.setProperty("--before-height", "calc(12vw)");
     lockAnimation(0);
@@ -231,6 +233,7 @@ window.addEventListener("resize", function () {
 });
 
 // Mauvais affichage border radius
+// blocace pour le scroll
 // carousel qui doit changer ses positions instantanément quand resize
 // Animation de slide pouvant être amélioré
 

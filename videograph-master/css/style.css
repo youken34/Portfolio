@@ -1162,7 +1162,9 @@ label {
 }
 
 .timeline:before {
-  transition: height 0.5s ease-in;
+  transition-timing-function: ease-in-out;
+  transition-property: height;
+  transition-duration: var(--timeline-transition, 0.5s);
   content: "";
   position: absolute;
   background-color: #00bfe7;
@@ -1217,11 +1219,12 @@ label {
 
 
 .container-preview {
-  background-color: #fff;
+  overflow: hidden;
+  background: linear-gradient(90deg, #fff 0%, rgba(7, 92, 109, 1) 100%);
   width: calc(16vw);
   display: flex;
   justify-content: space-between;
-  border: calc(0.16vw) solid #fff;
+  border: 4px solid #fff;
   border-radius: 22%;
 }
 
@@ -1230,7 +1233,8 @@ label {
   width: calc(3vw);
   height: calc(3vw);
   height: 100%;
-  border-right: calc(0.16vw) solid #fff;
+  border-right: 4px solid #fff;
+  background-color: #fff;
 }
 
 .preview {
@@ -1246,24 +1250,24 @@ label {
   padding: 0;
   justify-content: center;
   background-color: #1f1f1f;
-  border-top-right-radius: 21%;
-  border-bottom-right-radius: 21%;
+  border-top-right-radius: 22%;
+  border-bottom-right-radius: 22%;
 }
 
 .slide:first-of-type .container-preview {
-  border: calc(0.16vw) solid #00bfe7;
+  border: 4px solid #00bfe7;
 }
 
 .slide:first-of-type .preview {
-  border: calc(0.16vw) solid #075c6d;
+  border: 4px solid #075c6d;
 }
 
 .slide:first-of-type .img-preview {
-  border-right: calc(0.16vw) solid #00bfe7;
+  border-right: 4px solid #00bfe7;
 }
 
 .carousel {
-  transition: transform 1s ease;
+  transition: transform var(--carousel-transition, 0.5s) ease;
   display: flex;
   overflow: hidden;
   width: calc(2vw * 17);
@@ -2904,6 +2908,14 @@ ul {
 
   .creation {
     margin-top: -80px;
+  }
+
+  .preview {
+    border: 3px solid #fff;
+  }
+
+  .img-preview {
+    border-right: 3px solid #fff;
   }
 
   #gsbApp {
