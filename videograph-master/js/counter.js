@@ -14,6 +14,8 @@ window.addEventListener("DOMContentLoaded", function () {
     Array.from(all("inpLock")).forEach((element, index, array) =>
       index != 0 ? (element.checked = true) : (element.checked = false)
     );
+  } else {
+    slideByScrollMobile();
   }
 });
 
@@ -34,10 +36,10 @@ function reset(text, preview, dotContainer, containerPreview, imagePreview) {
     element.style.setProperty("--transition-delay", "0s");
   });
   Array.from(containerPreview).forEach((element) => {
-    element.style.border = "4px solid #fff";
+    element.style.border = "calc(0.40vw) solid #fff";
   });
   Array.from(imagePreview).forEach((element) => {
-    element.style.borderRight = "4px solid #fff";
+    element.style.borderRight = "calc(0.40vw) solid #fff";
   });
 }
 
@@ -48,11 +50,16 @@ function lockAnimation(number) {
 }
 function lockAnimationMobile(timeLineHeight, timeout) {
   setTimeout(function () {
+    var lastLockerChecked = -1;
     Array.from(all("inpLock")).forEach((element, index, array) =>
       timeLineHeight >= element.parentElement.offsetTop || index == 0
         ? (element.checked = false)
         : (element.checked = true)
     );
+    Array.from(all("inpLock")).forEach((element) =>
+      element.checked == false ? lastLockerChecked++ : undefined
+    );
+    applyProperties(lastLockerChecked);
   }, timeout);
 }
 
@@ -67,42 +74,88 @@ var carouselImage = className(".carousel-image");
 var carouselText = className(".carousel");
 const dotContainer = all("slide");
 var timeline = className(".timeline");
+var text = all("text");
+var containerPreview = all("container-preview");
+var imagePreview = all("img-preview");
+var preview = all("preview");
 
-function slide(number) {
-  if (document.documentElement.clientWidth > 748) {
-    currentSlide = number;
-    var text = all("text");
-    var preview = all("preview");
-    var containerPreview = all("container-preview");
-    var imagePreview = all("img-preview");
-    reset(text, preview, dotContainer, containerPreview, imagePreview);
+let canExecute = true;
+
+function slide(number, previousNumber, direction) {
+  if (canExecute && document.documentElement.clientWidth > 748) {
+    canExecute = false;
     lockAnimation(currentSlide);
+    applyPropertiesLargeDevice(number, previousNumber, direction);
 
-    dotContainer[number].style.setProperty("--after-width", "calc(8.2vw)");
-    dotContainer[number].style.setProperty("--transition-delay", "0.5s");
-    text[number].classList.add("active");
-    containerPreview[number].style.border = "4px solid #00bfe7";
-    imagePreview[number].style.borderRight = "4px solid #00bfe7";
-    preview[number].style.border = "4px solid #075c6d";
-
-    switch (number) {
-      case 0:
-        carouselImage.style.transform = "translateY(0%)";
-        carouselText.style.transform = "translateY(0px)";
-        timeline.style.setProperty("--before-height", "calc(12vw)");
-        break;
-      case 1:
-        carouselImage.style.transform = "translateY(-33.4%)";
-        carouselText.style.transform = "translateY(calc(9vw))";
-        timeline.style.setProperty("--before-height", "calc(21vw)");
-        break;
-      case 2:
-        carouselImage.style.transform = "translateY(-66.7%)";
-        carouselText.style.transform = "translateY(calc(16.5vw))";
-        timeline.style.setProperty("--before-height", "calc(30vw)");
-        break;
-    }
+    // Set a timeout to reset the flag after a certain interval (e.g., 1000 milliseconds or 1 second)
+    setTimeout(() => {
+      currentSlide = number;
+      canExecute = true;
+    }, 200);
   }
+}
+
+function applyPropertiesLargeDevice(number, previousNumber, direction) {
+  applyProperties(number);
+
+  switch (previousNumber) {
+    case 0:
+      document.documentElement.style.setProperty("--slide-depart", "0%");
+      document.documentElement.style.setProperty("--slide-stop-by", "5%");
+      break;
+    case 1:
+      document.documentElement.style.setProperty("--slide-depart", "-33.4%");
+      document.documentElement.style.setProperty("--slide-stop-by", "-28.4%");
+      break;
+    case 2:
+      document.documentElement.style.setProperty("--slide-depart", "-66.7%");
+      document.documentElement.style.setProperty("--slide-stop-by", "-71.7%");
+      break;
+  }
+
+  switch (number) {
+    case 0:
+      document.documentElement.style.setProperty("--slide-destination", "0%");
+      carouselImage.style.transform = "translateY(0%)";
+      carouselText.style.transform = "translateY(0px)";
+      timeline.style.setProperty("--before-height", "calc(12vw)");
+      break;
+    case 1:
+      document.documentElement.style.setProperty(
+        "--slide-destination",
+        "-33.4%"
+      );
+      carouselImage.style.transform = "translateY(-33.4%)";
+      carouselText.style.transform = "translateY(calc(9vw))";
+      timeline.style.setProperty("--before-height", "calc(21vw)");
+      break;
+    case 2:
+      document.documentElement.style.setProperty(
+        "--slide-destination",
+        "-66.7%"
+      );
+      carouselImage.style.transform = "translateY(-66.7%)";
+      carouselText.style.transform = "translateY(calc(16.5vw))";
+      timeline.style.setProperty("--before-height", "calc(30vw)");
+      break;
+  }
+  carouselImage.classList.toggle("active");
+  console.log(
+    window
+      .getComputedStyle(document.documentElement)
+      .getPropertyValue("--slide-stop-by")
+  );
+}
+
+function applyProperties(number) {
+  reset(text, preview, dotContainer, containerPreview, imagePreview);
+
+  dotContainer[number].style.setProperty("--after-width", "calc(8.2vw)");
+  dotContainer[number].style.setProperty("--transition-delay", "0.5s");
+  text[number].classList.add("active");
+  containerPreview[number].style.border = "calc(0.40vw) solid #00bfe7";
+  imagePreview[number].style.borderRight = "calc(0.40vw) solid #00bfe7";
+  preview[number].style.border = "calc(0.40vw) solid #075c6d";
 }
 
 let timeoutId;
@@ -177,22 +230,16 @@ function slideByScroll(e) {
 function handleScrollDown() {
   if (currentSlide < 2) {
     currentSlide++;
-    slide(currentSlide);
+    slide(currentSlide, currentSlide - 1, false);
   }
 }
 
 function handleScrollUp() {
   if (currentSlide > 0) {
     currentSlide--;
-    slide(currentSlide);
+    slide(currentSlide, currentSlide + 1, true);
   }
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  if (document.documentElement.clientWidth < 748) {
-    slideByScrollMobile();
-  }
-});
 
 $("counter").onwheel = slideByScroll;
 document.body.onwheel = function () {
@@ -218,7 +265,7 @@ let over765 = document.documentElement.clientWidth > 748 ? true : false;
 window.addEventListener("resize", function () {
   if (document.documentElement.clientWidth > 748 && over765 == false) {
     timeline.style.setProperty("--before-height", "calc(12vw)");
-    lockAnimation(0);
+    slide(0);
     over765 = true;
   } else if (document.documentElement.clientWidth < 748) {
     if (over765 == true) {
@@ -232,9 +279,6 @@ window.addEventListener("resize", function () {
   }
 });
 
-// Mauvais affichage border radius
-// blocace pour le scroll
-// carousel qui doit changer ses positions instantanément quand resize
 // Animation de slide pouvant être amélioré
 
 // Height mal généré pour timeline au lancement de la page ?
