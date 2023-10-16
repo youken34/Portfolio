@@ -1053,8 +1053,9 @@ label {
   Services
 -----------------------*/
 .services {
+  position: relative;
   background: #100028;
-  padding-bottom: 60px;
+  padding-bottom: 100px;
 }
 
 .services__title p {
@@ -1112,6 +1113,7 @@ label {
 #counter {
   position: relative;
   width: 100%;
+  background-color: #100028;
 }
 
 /* Image properties */
@@ -1237,7 +1239,7 @@ label {
 }
 
 .carousel-image.active {
-  animation: smoothSlide 0.5s ease-in-out;
+  animation: smoothSlide 1s ease-in-out;
 }
 
 .preview {
@@ -1268,7 +1270,7 @@ label {
     transform: translateY(var(--slide-depart));
   }
 
-  50% {
+  40% {
     transform: translateY(var(--slide-stop-by));
   }
 

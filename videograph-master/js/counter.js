@@ -140,11 +140,6 @@ function applyPropertiesLargeDevice(number, previousNumber, direction) {
       break;
   }
   carouselImage.classList.toggle("active");
-  console.log(
-    window
-      .getComputedStyle(document.documentElement)
-      .getPropertyValue("--slide-stop-by")
-  );
 }
 
 function applyProperties(number) {
@@ -175,8 +170,8 @@ window.addEventListener("resize", function () {
     Array.from(dotContainer).forEach((element) => {
       element.style.setProperty("--transition-duration", "0.5s");
     });
-    timeline.style.setProperty("--timeline-transition", "0.5s");
-    carouselText.style.setProperty("--carousel-transition", "0.5s");
+    timeline.style.setProperty("--timeline-transition", "0.5");
+    carouselText.style.setProperty("--carousel-transition", "1s");
   }, 500);
 });
 
@@ -279,7 +274,7 @@ window.addEventListener("resize", function () {
   }
 });
 
-// Animation de slide pouvant être amélioré
+// Animation de slide pouvant être amélioré ?
 
 // Height mal généré pour timeline au lancement de la page ?
 // Espace blanc sur la droite
