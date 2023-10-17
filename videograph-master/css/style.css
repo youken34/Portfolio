@@ -1132,7 +1132,6 @@ label {
   display: flex;
   overflow: hidden;
   position: relative;
-  transition: transform 1s ease;
 }
 
 
@@ -1145,9 +1144,7 @@ label {
   object-position: center center;
 }
 
-.image__slide:nth-child(2) {
-  object-position: 0% 43%;
-}
+
 
 .timeline {
   top: 0;

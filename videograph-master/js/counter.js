@@ -81,17 +81,19 @@ var preview = all("preview");
 
 let canExecute = true;
 
-function slide(number, previousNumber, direction) {
+function slide(number, previousNumber = currentSlide, direction) {
   if (canExecute && document.documentElement.clientWidth > 748) {
     canExecute = false;
-    lockAnimation(currentSlide);
+    previousNumber == currentSlide
+      ? lockAnimation(number)
+      : lockAnimation(currentSlide);
     applyPropertiesLargeDevice(number, previousNumber, direction);
 
     // Set a timeout to reset the flag after a certain interval (e.g., 1000 milliseconds or 1 second)
     setTimeout(() => {
       currentSlide = number;
       canExecute = true;
-    }, 200);
+    }, 1000);
   }
 }
 
@@ -105,7 +107,28 @@ function applyPropertiesLargeDevice(number, previousNumber, direction) {
       break;
     case 1:
       document.documentElement.style.setProperty("--slide-depart", "-33.4%");
-      document.documentElement.style.setProperty("--slide-stop-by", "-28.4%");
+      if (direction) {
+        direction == true
+          ? document.documentElement.style.setProperty(
+              "--slide-stop-by",
+              "-38.4%"
+            )
+          : document.documentElement.style.setProperty(
+              "--slide-stop-by",
+              "-28.4%"
+            );
+      } else {
+        previousNumber > number
+          ? document.documentElement.style.setProperty(
+              "--slide-stop-by",
+              "-38.4%"
+            )
+          : document.documentElement.style.setProperty(
+              "--slide-stop-by",
+              "-28.4%"
+            );
+      }
+
       break;
     case 2:
       document.documentElement.style.setProperty("--slide-depart", "-66.7%");
@@ -139,7 +162,11 @@ function applyPropertiesLargeDevice(number, previousNumber, direction) {
       timeline.style.setProperty("--before-height", "calc(30vw)");
       break;
   }
+
   carouselImage.classList.toggle("active");
+  setTimeout(function () {
+    carouselImage.classList.remove("active");
+  }, 1000);
 }
 
 function applyProperties(number) {
@@ -259,6 +286,7 @@ document.body.addEventListener("touchmove", function (e) {
 let over765 = document.documentElement.clientWidth > 748 ? true : false;
 window.addEventListener("resize", function () {
   if (document.documentElement.clientWidth > 748 && over765 == false) {
+    currentSlide = 0;
     timeline.style.setProperty("--before-height", "calc(12vw)");
     slide(0);
     over765 = true;
@@ -273,8 +301,6 @@ window.addEventListener("resize", function () {
     slideByScrollMobile(0);
   }
 });
-
-// Animation de slide pouvant être amélioré ?
 
 // Height mal généré pour timeline au lancement de la page ?
 // Espace blanc sur la droite
