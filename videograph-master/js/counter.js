@@ -171,13 +171,12 @@ function applyPropertiesLargeDevice(number, previousNumber, direction) {
 
 function applyProperties(number) {
   reset(text, preview, dotContainer, containerPreview, imagePreview);
-
   dotContainer[number].style.setProperty("--after-width", "calc(8.2vw)");
   dotContainer[number].style.setProperty("--transition-delay", "0.5s");
   text[number].classList.add("active");
   containerPreview[number].style.border = "calc(0.40vw) solid #00bfe7";
   imagePreview[number].style.borderRight = "calc(0.40vw) solid #00bfe7";
-  preview[number].style.border = "calc(0.40vw) solid #075c6d";
+  preview[number].style.border = "calc(0.3vw) solid #075c6d";
 }
 
 let timeoutId;
@@ -233,19 +232,30 @@ function slideByScrollMobile(timeout = 200) {
 }
 
 function slideByScroll(e) {
-  if (document.documentElement.clientWidth > 748) {
-    if (
-      (currentSlide !== 2 && e.deltaY > 0) ||
-      (currentSlide !== 0 && e.deltaY < 0)
-    ) {
-      e.preventDefault();
-    }
+  if (
+    (currentSlide !== 2 && e.deltaY > 0) ||
+    (currentSlide !== 0 && e.deltaY < 0)
+  ) {
+    e.preventDefault();
+  }
 
-    if (e.deltaY > 0) {
-      handleScrollDown();
-    } else if (e.deltaY < 0) {
-      handleScrollUp();
-    }
+  if (e.deltaY > 0) {
+    handleScrollDown();
+  } else if (e.deltaY < 0) {
+    handleScrollUp();
+  }
+}
+var deltaYfistValue = 0;
+var execute = true;
+function slideByScrollLargeMobile(e) {
+  if (execute == true) {
+    execute = false;
+    const deltaY = e.touches[0].clientY;
+    deltaY > deltaYfistValue ? handleScrollUp() : handleScrollDown();
+    var timeout = setTimeout(() => {
+      deltaYfistValue = deltaY;
+      execute = true;
+    }, 100);
   }
 }
 
@@ -263,22 +273,31 @@ function handleScrollUp() {
   }
 }
 
-$("counter").onwheel = slideByScroll;
-document.body.onwheel = function () {
-  if (document.documentElement.clientWidth < 748) {
-    slideByScrollMobile();
-  }
-};
+document.body.addEventListener(
+  "wheel",
+  function (e) {
+    if (document.documentElement.clientWidth < 748) {
+      slideByScrollMobile();
+    } else {
+      slideByScroll(e);
+    }
+  },
+  { passive: false }
+);
 
 document.body.addEventListener("touchstart", function (e) {
   if (document.documentElement.clientWidth < 748) {
     slideByScrollMobile();
+  } else {
+    slideByScrollLargeMobile(e);
   }
 });
 
 document.body.addEventListener("touchmove", function (e) {
   if (document.documentElement.clientWidth < 748) {
     slideByScrollMobile();
+  } else {
+    slideByScrollLargeMobile(e);
   }
 });
 
@@ -301,7 +320,7 @@ window.addEventListener("resize", function () {
     slideByScrollMobile(0);
   }
 });
-
+// Regler probleme scroll mobile sur large appareils et transition retardement lorsque écran retourné ou resize immédiate
 // Height mal généré pour timeline au lancement de la page ?
 // Espace blanc sur la droite
 // mauvais positionement de la section projet

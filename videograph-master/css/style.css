@@ -1243,7 +1243,7 @@ label {
   font-family: Jost;
   display: flex;
   align-items: center;
-  font-size: calc(1.2vw);
+  font-size: calc(1.1vw);
   width: 100%;
   color: #fff;
   z-index: 2;
@@ -1277,15 +1277,15 @@ label {
 }
 
 .slide:first-of-type .container-preview {
-  border: calc(0.40vw) solid #00bfe7;
+  border: calc(0.4vw) solid #00bfe7;
 }
 
 .slide:first-of-type .preview {
-  border: calc(0.40vw) solid #075c6d;
+  border: calc(0.3vw) solid #075c6d;
 }
 
 .slide:first-of-type .img-preview {
-  border-right: calc(0.40vw) solid #00bfe7;
+  border-right: calc(0.4vw) solid #00bfe7;
 }
 
 .carousel {
@@ -1293,7 +1293,7 @@ label {
   display: flex;
   overflow: hidden;
   width: calc(2vw * 17);
-  height: calc(2vw * 11);
+  height: calc(2vw * 12);
   position: absolute;
   right: 25%;
   top: calc(5.8vw);
@@ -2947,6 +2947,29 @@ ul {
 
 }
 
+/* 3D item */
+
+@media all and (min-width: 1180px) {
+  .hero__text h2 {
+    max-width: 50%;
+  }
+}
+
+@media all and (max-width: 1180px) {
+
+
+
+  #progress-bar,
+  .progress-bar-container,
+  .progress-bar-container label {
+    display: none;
+  }
+
+  #hero canvas {
+    display: none !important;
+  }
+}
+
 
 /* Medium Device = 1200px */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -3358,10 +3381,6 @@ ul {
     scale: 0.9;
   }
 
-
-
-
-
   #gsbApp {
     background-size: 90% 80%;
   }
@@ -3400,28 +3419,6 @@ ul {
 
 }
 
-/* 3D item */
-
-@media all and (min-width: 1180px) {
-  .hero__text h2 {
-    max-width: 50%;
-  }
-}
-
-@media all and (max-width: 1180px) {
-
-
-
-  #progress-bar,
-  .progress-bar-container,
-  .progress-bar-container label {
-    display: none;
-  }
-
-  #hero canvas {
-    display: none !important;
-  }
-}
 
 
 @media only screen and (max-width: 575.5px) {
@@ -3447,16 +3444,11 @@ ul {
     padding-left: 40px;
   }
 
-  .callto_one,
-  .callto_two {
-    height: 360px;
-  }
 
   .centered {
     margin: auto;
     width: 290px;
   }
-
 
   .container {
     margin: auto;
@@ -3466,11 +3458,10 @@ ul {
     background-size: cover;
   }
 
-  .callto_one,
-  .callto_two {
-    height: 355px;
-    width: 100%;
-    border: none;
+
+  .creation {
+    scale: 0.8;
+    margin-top: -115px;
   }
 
   #skills,
