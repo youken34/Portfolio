@@ -79,21 +79,15 @@ var containerPreview = all("container-preview");
 var imagePreview = all("img-preview");
 var preview = all("preview");
 
-let canExecute = true;
-
 function slide(number, previousNumber = currentSlide, direction) {
-  if (canExecute && document.documentElement.clientWidth > 748) {
-    canExecute = false;
+  if (document.documentElement.clientWidth > 748) {
     previousNumber == currentSlide
       ? lockAnimation(number)
       : lockAnimation(currentSlide);
+    currentSlide = number;
     applyPropertiesLargeDevice(number, previousNumber, direction);
 
     // Set a timeout to reset the flag after a certain interval (e.g., 1000 milliseconds or 1 second)
-    setTimeout(() => {
-      currentSlide = number;
-      canExecute = true;
-    }, 1000);
   }
 }
 
@@ -231,18 +225,38 @@ function slideByScrollMobile(timeout = 200) {
   }, timeout);
 }
 
+let canExecute = true;
+let passThrough = false;
 function slideByScroll(e) {
   if (
     (currentSlide !== 2 && e.deltaY > 0) ||
-    (currentSlide !== 0 && e.deltaY < 0)
+    (currentSlide !== 0 && e.deltaY < 0) ||
+    (canExecute == false && passThrough == false)
   ) {
     e.preventDefault();
   }
-
-  if (e.deltaY > 0) {
-    handleScrollDown();
-  } else if (e.deltaY < 0) {
-    handleScrollUp();
+  if (canExecute == true || passThrough == true) {
+    canExecute = false;
+    if (
+      passThrough == true &&
+      ((currentSlide == 2 && e.deltaY < 0) ||
+        (currentSlide == 0 && e.deltaY > 0))
+    ) {
+      passThrough = false;
+      setTimeout(() => {
+        canExecute = true;
+      }, 1000);
+    } else if (
+      (currentSlide == 2 && e.deltaY > 0) ||
+      (currentSlide == 0 && e.deltaY < 0)
+    ) {
+      passThrough = true;
+    } else {
+      setTimeout(() => {
+        canExecute = true;
+      }, 1000);
+    }
+    e.deltaY > 0 ? handleScrollDown() : handleScrollUp();
   }
 }
 var deltaYfistValue = 0;
@@ -255,7 +269,7 @@ function slideByScrollLargeMobile(e) {
     var timeout = setTimeout(() => {
       deltaYfistValue = deltaY;
       execute = true;
-    }, 100);
+    }, 1000);
   }
 }
 
@@ -273,7 +287,7 @@ function handleScrollUp() {
   }
 }
 
-document.body.addEventListener(
+$("counter").addEventListener(
   "wheel",
   function (e) {
     if (document.documentElement.clientWidth < 748) {
@@ -285,15 +299,7 @@ document.body.addEventListener(
   { passive: false }
 );
 
-document.body.addEventListener("touchstart", function (e) {
-  if (document.documentElement.clientWidth < 748) {
-    slideByScrollMobile();
-  } else {
-    slideByScrollLargeMobile(e);
-  }
-});
-
-document.body.addEventListener("touchmove", function (e) {
+$("counter").addEventListener("touchmove", function (e) {
   if (document.documentElement.clientWidth < 748) {
     slideByScrollMobile();
   } else {
