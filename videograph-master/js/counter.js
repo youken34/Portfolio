@@ -19,6 +19,26 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+const targetElement = $("counter");
+
+const options = {
+  root: null, // Use the viewport as the root
+  rootMargin: "0px", // No margin
+  threshold: 0.8, // Trigger when the 70% of the target is visible
+};
+let visible = false;
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      visible = true;
+    } else {
+      visible = false;
+    }
+  });
+}, options);
+
+observer.observe(targetElement);
+
 function reset(text, preview, dotContainer, containerPreview, imagePreview) {
   Array.from(text).forEach((element) => {
     if (element.classList.contains("active")) {
@@ -226,7 +246,7 @@ function slideByScrollMobile(timeout = 200) {
 }
 
 let canExecute = true;
-let passThrough = false;
+let passThrough = true;
 function slideByScroll(e) {
   if (
     (currentSlide !== 2 && e.deltaY > 0) ||
@@ -234,8 +254,10 @@ function slideByScroll(e) {
     (canExecute == false && passThrough == false)
   ) {
     e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
   }
-  if (canExecute == true || passThrough == true) {
+  if (canExecute || passThrough) {
     canExecute = false;
     if (
       passThrough == true &&
@@ -287,22 +309,34 @@ function handleScrollUp() {
   }
 }
 
-$("counter").addEventListener(
+function handleScroll(event) {
+  if (passThrough !== true) {
+    event.preventDefault();
+    event.stopPropagation();
+    window.addEventListener("scroll", function (e) {
+      e.stopImmediatePropagation();
+    });
+    console.log("test --");
+  }
+}
+
+document.body.addEventListener(
   "wheel",
   function (e) {
     if (document.documentElement.clientWidth < 748) {
       slideByScrollMobile();
-    } else {
+    } else if (visible == true) {
       slideByScroll(e);
+      handleScroll(e);
     }
   },
   { passive: false }
 );
 
-$("counter").addEventListener("touchmove", function (e) {
+document.body.addEventListener("touchmove", function (e) {
   if (document.documentElement.clientWidth < 748) {
     slideByScrollMobile();
-  } else {
+  } else if (visible == true) {
     slideByScrollLargeMobile(e);
   }
 });
@@ -326,6 +360,8 @@ window.addEventListener("resize", function () {
     slideByScrollMobile(0);
   }
 });
+
+// Déclencher animation non pas au scroll mais lorsque la section est affiché entièrement
 // Regler probleme scroll mobile sur large appareils et transition retardement lorsque écran retourné ou resize immédiate
 // Height mal généré pour timeline au lancement de la page ?
 // Espace blanc sur la droite
