@@ -938,7 +938,6 @@ label {
 .work {
   padding-top: 35px;
   padding-bottom: 95px;
-  overflow: hidden;
   background: #100028;
 }
 
@@ -964,6 +963,20 @@ label {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.work__item__hover {
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  height: 100px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: -110px;
+  width: 100%;
+  padding: 25px 30px 20px;
+  transition: bottom 0.5s ease;
 }
 
 .work__item:hover .work__item__hover {
@@ -1002,19 +1015,6 @@ label {
 
 .grid-sizer {
   width: calc(16.67% - 10px);
-}
-
-.work__item__hover {
-  justify-content: center;
-  flex-direction: column;
-  display: flex;
-  height: 100px;
-  background: #fff;
-  position: absolute;
-  left: 0;
-  bottom: -200px;
-  width: 100%;
-  padding: 25px 30px 20px;
 }
 
 .work__item__hover h4 {
@@ -2242,6 +2242,10 @@ ul {
 
 .adjustments {
   cursor: pointer;
+}
+
+.adjustments:hover {
+  cursor: zoom-in;
 }
 
 .flex {

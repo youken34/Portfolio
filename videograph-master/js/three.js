@@ -29,13 +29,13 @@ loader.setDRACOLoader(dracoLoader);
 const mainScene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(70, 2.56, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ alpha: true });
-renderer.setSize(1228.8, 565.6);
-document.getElementById("hero").appendChild(renderer.domElement);
+renderer.setSize(615, 280);
+document.getElementById("laptop").appendChild(renderer.domElement);
 
 let gltfObject; // Declare a variable to hold the loaded GLTF object
 
 loader.load(
-  "/Portfolio/videograph-master/gltf/laptop.glb",
+  "/../videograph-master/gltf/gaming_laptop.glb",
   function (gltf) {
     gltfObject = gltf.scene; // Store the loaded object for later access
     gltfObject.position.set(0, 0, 0);
