@@ -899,7 +899,7 @@ label {
 }
 
 #audi {
-  background-color: #000;
+  background-color: #02172f;
   background-position: center;
   background-size: 70% 50%;
 }
@@ -908,9 +908,9 @@ label {
   background-size: 70% 60%;
 }
 
-#gsbWeb {
+#vlevents {
   background-position: center;
-  background-color: #02172f;
+  background-color: #000;
   background-size: contain;
 }
 
