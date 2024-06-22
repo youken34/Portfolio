@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8">
@@ -75,6 +75,17 @@
                                 <i class="fa"> <img
                                         src="https://assets.leetcode.com/static_assets/public/icons/favicon.ico"
                                         alt="LeetCode Icon" style="height: calc(1vw * 0.9);;margin-bottom: 5px;">
+                                </i>
+                            </a>
+                            <a onclick="setLanguage('fr')" class="afa french-flag">
+                                <i class="fa"> <img src="/videograph-master/img/icons/french-flag.png" alt="French flag"
+                                        style="height: calc(1vw * 0.9);;margin-bottom: 5px;">
+                                </i>
+                            </a>
+                            <a onclick="location.reload()" class="afa">
+                                <i class="fa"> <img src="/videograph-master/img/icons/uk-flag.png"
+                                        alt="United Kingdom's flag"
+                                        style="height: calc(1vw * 0.9);;margin-bottom: 5px;">
                                 </i>
                             </a>
                         </div>
@@ -180,7 +191,7 @@
                                 </div>
                                 <h4>Database Management</h4>
                                 <p>My skills also include database design and development using SQL
-                                    servers such as MySQL and MSSQLl. I am actively involved in working with APIs and
+                                    servers such as MySQL and MSSQL. I am actively involved in working with APIs and
                                     integrating third-party
                                     services into web applications using JSON.</p>
                             </div>
@@ -672,7 +683,7 @@
     <section>
         <div class="d-flex align-items-center">
             <div class="creation" onclick="redirection()">
-                <p>Adobe creations</p>
+                <p>Miscellaneous work</p>
             </div>
         </div>
     </section>
@@ -690,8 +701,8 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="footer__top__social">
                             <a href="https://github.com/youken34"><i class="fa fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/c%C3%B4me-bonal-a620b11ab/"><i
-                                    class="fa fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/in/c%C3%B4me-bonal-a620b11ab/">
+                                <i class="fa fa-linkedin"></i></a>
                             <a href="https://leetcode.com/Rollome/">
                                 <i class="fa">
                                     <img src="https://assets.leetcode.com/static_assets/public/icons/favicon.ico"
@@ -737,6 +748,28 @@
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
     <script src="/videograph-master/js/vanta.js"></script>
+    <script type="text/javascript">
+
+        function setLanguage(lang) {
+            new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: '' }, 'google_translate_element');
+            const translateSelect = document.querySelector('.goog-te-combo');
+            const frenchflag = document.querySelector('.french-flag');
+            frenchflag.addEventListener("onclick", function (lang) {
+                translateSelect.value = lang;
+                translateSelect.dispatchEvent(new Event('change'));
+                const closeButton = document.getElementById(':1.close');
+                if (closeButton) {
+                    closeButton.click();
+                }
+            })
+        }
+
+
+
+    </script>
+
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <!-- 
     <script src="three.r134.min.js"></script>
     <script src="p5.min.js"></script> 
