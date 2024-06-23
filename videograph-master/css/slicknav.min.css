@@ -77,9 +77,17 @@
     clear: both
 }
 
-.slicknav_nav li,
+.slicknav_nav li {
+    display: flex
+}
+
 .slicknav_nav ul {
-    display: block
+    display: block;
+}
+
+.icons_responsive {
+    display: none !important;
+    justify-content: space-evenly;
 }
 
 .slicknav_nav .slicknav_arrow {
