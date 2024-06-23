@@ -674,6 +674,11 @@ code span {
   height: 100%;
 }
 
+.row_header {
+  padding-inline: 0% !important;
+  margin-right: 10%;
+}
+
 /*---------------------
   Hero
 -----------------------*/
@@ -2767,6 +2772,9 @@ ul {
 }
 
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
+@media all and (max-width: 1638) {}
+
+
 
 @media all and (min-width: 1537px) {
   .header {
@@ -2841,13 +2849,17 @@ ul {
 
   .header__logo a {
     font-weight: 700;
-    font-size: 13px;
+    font-size: 17px;
   }
 
   .header__nav__option .header__nav__menu ul li a,
   .header__nav__option .header__nav__social a i,
   .header__nav__option .header__nav__social a i img {
-    font-size: 12px;
+    font-size: 16px;
+  }
+
+  .fa img {
+    height: calc(2vw* 0.9) !important;
   }
 
   #hero {
@@ -3046,6 +3058,58 @@ ul {
 
 }
 
+@media only screen and (min-width: 765px) and (max-width: 1084px) {
+  .slicknav_menu {
+    background: transparent;
+    padding: 0;
+    display: block;
+  }
+
+  .slicknav_nav ul {
+    margin: 0;
+    padding: 10px 30px;
+  }
+
+  .slicknav_nav .slicknav_row,
+  .slicknav_nav a {
+    padding: 7px 0;
+    margin: 0;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .slicknav_nav .slicknav_row:hover {
+    border-radius: 0;
+    background: transparent;
+    color: #111111;
+  }
+
+  .slicknav_nav a:hover {
+    border-radius: 0;
+    background: transparent;
+    color: #111111;
+  }
+
+  .slicknav_nav {
+    background: #222222;
+  }
+
+  .slicknav_btn {
+    position: absolute;
+    right: 10px;
+    top: 26px;
+    background: #00bfe7;
+  }
+
+  .header .container {
+    position: relative;
+  }
+
+  .header__nav__option {
+    display: none;
+  }
+}
+
 /* Tablet Device = 768px */
 @media only screen and (min-width: 765px) and (max-width: 992px) {
 
@@ -3127,55 +3191,7 @@ ul {
     padding: 6px 15px;
   }
 
-  .slicknav_menu {
-    background: transparent;
-    padding: 0;
-    display: block;
-  }
 
-  .slicknav_nav ul {
-    margin: 0;
-    padding: 10px 30px;
-  }
-
-  .slicknav_nav .slicknav_row,
-  .slicknav_nav a {
-    padding: 7px 0;
-    margin: 0;
-    color: #ffffff;
-    font-weight: 600;
-  }
-
-  .slicknav_nav .slicknav_row:hover {
-    border-radius: 0;
-    background: transparent;
-    color: #111111;
-  }
-
-  .slicknav_nav a:hover {
-    border-radius: 0;
-    background: transparent;
-    color: #111111;
-  }
-
-  .slicknav_nav {
-    background: #222222;
-  }
-
-  .slicknav_btn {
-    position: absolute;
-    right: 10px;
-    top: 26px;
-    background: #00bfe7;
-  }
-
-  .header .container {
-    position: relative;
-  }
-
-  .header__nav__option {
-    display: none;
-  }
 
 
 }
