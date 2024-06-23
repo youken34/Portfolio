@@ -493,7 +493,7 @@ code span {
   color: green;
 }
 
-.full-height {
+.full_height {
   height: 100%;
 }
 
@@ -3040,7 +3040,7 @@ ul {
 @media only screen and (max-width: 1088px) {
 
   .icons_responsive {
-    display: block !important;
+    display: inline-flex !important;
   }
 
   .icons {
