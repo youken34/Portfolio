@@ -59,7 +59,6 @@
                     <div class="header__nav__option">
                         <nav class="header__nav__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="./index.html">Home</a></li>
                                 <li><a href="#projects">Projects</a></li>
                                 <li><a href="/videograph-master/portfolio.html">Miscellaneous work</a>
                                 </li>
@@ -77,17 +76,23 @@
                                         alt="LeetCode Icon" style="height: calc(1vw * 0.9);;margin-bottom: 5px;">
                                 </i>
                             </a>
-                            <a onclick="setLanguage('fr')" class="afa french-flag">
+                            <a onclick="translatePage('fr')" class="afa french-flag">
                                 <i class="fa"> <img src="/videograph-master/img/icons/french-flag.png" alt="French flag"
                                         style="height: calc(1vw * 0.9);;margin-bottom: 5px;">
                                 </i>
                             </a>
-                            <a onclick="location.reload()" class="afa">
+                            <a onclick="translatePage('en')" class="afa">
                                 <i class="fa"> <img src="/videograph-master/img/icons/uk-flag.png"
                                         alt="United Kingdom's flag"
                                         style="height: calc(1vw * 0.9);;margin-bottom: 5px;">
                                 </i>
                             </a>
+                            <a onclick="translatePage('es')" class="afa">
+                                <i class="fa"> <img src="/videograph-master/img/icons/spanish-flag.png"
+                                        alt="Spanish flag" style="height: calc(1vw * 0.9);;margin-bottom: 5px;">
+                                </i>
+                            </a>
+                            <div id="google_translate_element" style="display: none;"></div>
                         </div>
                     </div>
                 </div>
@@ -161,7 +166,7 @@
                             <span>My services</span>
                             <h2>My technical skills</h2>
                         </div>
-                        <p>I am a entry-level full-stack developer who is used to work both in team or alone with over 3
+                        <p>I am a entry-level full-stack developer who is used to work both in team or alone with over 4
                             years
                             of prior programming experience on various projects.</p>
                         <a href="#" class="primary-btn">View all services</a>
@@ -526,7 +531,7 @@
                                     </ul>
                                     <div class="sanofi">
                                         <a href="https://www.sanofi.us/" class="afa">
-                                            <h4>Sanofi Pasteur</h4>
+                                            <h4 style="background-color: black;">Sanofi Pasteur</h4>
                                         </a>
                                         <p>Vaccines and pharmaceuticals company</p>
                                         <div class="team__item__social">
@@ -748,27 +753,31 @@
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
     <script src="/videograph-master/js/vanta.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: '',
+                includedLanguages: 'en,fr,es',
+                layout: google.translate.TranslateElement
+            }, 'google_translate_element');
+        }
+    </script>
     <script type="text/javascript"
         src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'fr' }, 'google_translate_element');
+        function translatePage(languageCode) {
+            var combo = document.querySelector('.goog-te-combo');
+            if (combo) {
+                combo.value = languageCode;
+                var event = document.createEvent("HTMLEvents");
+                event.initEvent("change", true, true);
+                combo.dispatchEvent(event);
+                document.body.style.top = "0px";
+            }
         }
 
-        function setLanguage(lang) {
-            const translateSelect = document.querySelector('.goog-te-combo');
-            const frenchflag = document.querySelector('.french-flag');
-            frenchflag.addEventListener("onclick", function (lang) {
-                translateSelect.value = lang;
-                translateSelect.dispatchEvent(new Event('change'));
-                const closeButton = document.getElementById(':1.close');
-                if (closeButton) {
-                    closeButton.click();
-                }
-            })
-        }
+
     </script>
-
     <!-- 
     <script src="three.r134.min.js"></script>
     <script src="p5.min.js"></script> 
