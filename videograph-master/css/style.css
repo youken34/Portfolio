@@ -3120,7 +3120,9 @@ ul {
     height: 150px;
   }
 
-
+  .work__item__hover {
+    bottom: -116px;
+  }
 
 }
 
@@ -3242,7 +3244,7 @@ ul {
   .container-image,
   .dot__container,
   .carousel {
-    height: calc(132vw);
+    height: calc(160vw);
   }
 
   .carousel {
@@ -3250,6 +3252,12 @@ ul {
     flex-direction: column;
     top: 0;
     justify-content: space-around;
+    right: 39%;
+  }
+
+
+  .text.active {
+    transform: scale(1.9);
   }
 
   .text {
@@ -3364,6 +3372,10 @@ ul {
 
   .grid-sizer {
     width: calc(50% - 10px);
+  }
+
+  .work {
+    padding-top: 70px;
   }
 
   .work__item.wide__item {
