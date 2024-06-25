@@ -3244,7 +3244,7 @@ ul {
   .container-image,
   .dot__container,
   .carousel {
-    height: calc(160vw);
+    height: calc(180vw);
   }
 
   .carousel {
