@@ -844,6 +844,14 @@ label {
 }
 
 
+#profil-pic {
+  border-radius: 100%;
+  border: 5px solid #000;
+  top: 10vw;
+  right: 10vw;
+  position: absolute !important;
+}
+
 
 /*---------------------
   Work
@@ -2871,6 +2879,10 @@ ul {
     height: 589px;
   }
 
+  #profil-pic {
+    transform: scale(0.7);
+    top: 8vw;
+  }
 }
 
 
@@ -2976,6 +2988,8 @@ ul {
   .hero__text h2 {
     max-width: 50%;
   }
+
+
 }
 
 @media all and (max-width: 1180px) {
@@ -2990,6 +3004,20 @@ ul {
 
   #hero canvas {
     display: none !important;
+  }
+
+  .hero,
+  .vanta-canvas {
+    height: 800px !important;
+  }
+
+  #profil-pic {
+    top: 42%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
   }
 }
 
@@ -3616,6 +3644,12 @@ ul {
     margin-left: 5%
   }
 
+  #profil-pic {
+    top: 50%;
+    width: 300px;
+    height: 300px;
+  }
+
 }
 
 @media all and (max-width: 380px) {
@@ -3634,5 +3668,11 @@ ul {
   #projects,
   #skills {
     width: 235px !important;
+  }
+
+  #profil-pic {
+    top: 55%;
+    width: 250px;
+    height: 250px;
   }
 }
