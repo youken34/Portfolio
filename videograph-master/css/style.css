@@ -851,7 +851,30 @@ label {
   right: 10vw;
   position: absolute !important;
   object-fit: fill;
+  overflow: hidden;
+  z-index: 99;
 }
+
+#profil-pic:hover {
+  border: 5px solid #fff;
+}
+
+#profil1 {
+  display: block;
+}
+
+#profil2 {
+  display: none;
+}
+
+#profil-pic:hover #profil1 {
+  display: none;
+}
+
+#profil-pic:hover #profil2 {
+  display: block;
+}
+
 
 
 /*---------------------
@@ -2883,7 +2906,10 @@ ul {
   #profil-pic {
     transform: scale(0.7);
     top: 8vw;
+
   }
+
+
 }
 
 
