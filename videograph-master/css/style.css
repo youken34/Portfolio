@@ -850,6 +850,7 @@ label {
   top: 10vw;
   right: 10vw;
   position: absolute !important;
+  object-fit: fill;
 }
 
 
