@@ -223,6 +223,7 @@ img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost
   letter-spacing: 2px;
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
 .primary-btn:hover:before,
@@ -867,6 +868,12 @@ label {
   display: none;
 }
 
+#profil1,
+#profil2 {
+  height: 100%;
+  width: 100%;
+}
+
 #profil-pic:hover #profil1 {
   display: none;
 }
@@ -874,6 +881,7 @@ label {
 #profil-pic:hover #profil2 {
   display: block;
 }
+
 
 
 
@@ -987,6 +995,7 @@ label {
 
 .work__gallery {
   margin-right: -10px;
+  height: 643px;
 }
 
 .work__item {
@@ -2815,6 +2824,163 @@ ul {
 @media all and (min-width: 1537px) {
   .header {
     height: calc(1vw * 6.9);
+  }
+
+
+  #profil-pic {
+    width: 23vw;
+    height: 23vw;
+    border: 0.3vw solid #000;
+  }
+
+  #profil-pic:hover {
+
+    border: 0.3vw solid #fff;
+  }
+
+
+  .spad {
+    padding-top: 4.5vw;
+  }
+
+  .services {
+    padding-bottom: 4.5vw;
+  }
+
+  .container {
+    max-width: 61vw !important;
+  }
+
+  .section-title {
+    margin-bottom: 2.8vw;
+  }
+
+  .section-title span {
+    font-size: 0.9vw;
+  }
+
+  .section-title h2 {
+    font-size: 1.2vw;
+    padding-bottom: 1.3vw;
+  }
+
+  .section-title h2:after {
+    width: 4vw;
+    height: 0.3vw;
+  }
+
+  .services__item__icon {
+    width: 3.4vw;
+    height: 3.4vw;
+    line-height: 3.4vw;
+    padding: 0px 0.15vw 0.15vw 0.15vw;
+  }
+
+
+  .services__item__icon img {
+    width: 75%;
+    height: 75%;
+  }
+
+  .services__item__icon:after {
+    border: 0.15vw solid #00bfe7;
+  }
+
+  .services__item h4 {
+    font-size: 1.15vw;
+    margin-top: 1.4vw;
+    margin-bottom: 1.2vw;
+  }
+
+  .services__title p {
+    margin-bottom: 2.3vw;
+  }
+
+  .services__item p,
+  p {
+    margin-bottom: 2.5vw;
+    font-size: 0.83vw;
+    line-height: 1.3vw;
+  }
+
+  .services__title .primary-btn {
+    font-size: 0.78vw;
+    padding: 0.7vw 1vw 0.7vw;
+    width: 13vw;
+  }
+
+  .services__title .primary-btn:before {
+    border-left: 0.18vw solid #00bfe7;
+    border-top: 0.18vw solid #00bfe7;
+  }
+
+  .services__title .primary-btn:after {
+    border-right: 0.18vw solid #00bfe7;
+    border-bottom: 0.18vw solid #00bfe7;
+  }
+
+  .services__title .primary-btn:before,
+  .services__title .primary-btn:after {
+    height: 1.5vw;
+    width: 1.5vw;
+  }
+
+
+  #skills,
+  #projects {
+    font-size: 1.5vw;
+    width: 15vw;
+    height: 2.8vw;
+  }
+
+  #skills {
+    margin-top: -3vw;
+  }
+
+  #projects::before,
+  #skills::before {
+    height: 0.25vw;
+  }
+
+
+  .work__gallery {
+    height: 33.5vw !important;
+  }
+
+  .work__item.large__item {
+    height: 100%;
+  }
+
+  .work__item.wide__item {
+    height: 50%;
+    top: 50%;
+  }
+
+  .work__item.wide__item:hover {
+    height: 35% !important;
+  }
+
+  .work__item.large__item:hover {
+    height: 90% !important;
+  }
+
+  .work__item:hover .work__item__hover {
+    bottom: -4.8vw;
+  }
+
+  .work__item__hover {
+    height: 5vw;
+    bottom: -6vw;
+    padding: 1vw 1.5vw 1vw;
+  }
+
+  .work__item__hover h4 {
+    font-size: 1vw;
+    height: 2vw;
+  }
+
+  .work__item__hover ul li {
+    font-size: 0.75vw;
   }
 
   #audi,

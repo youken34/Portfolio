@@ -11476,3 +11476,13 @@ a.text-dark:hover {
         border-color: #dee2e6
     }
 }
+
+@media all and (min-width: 1537px) {
+
+    .col-lg-4,
+    .col-lg-8,
+    .col-md6,
+    .col-sm-6 {
+        padding-inline: 0.9vw;
+    }
+}
