@@ -2819,7 +2819,11 @@ ul {
 
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
-
+@media all and (min-width: 3000px) {
+  .centered {
+    padding-top: 4.5vw;
+  }
+}
 
 @media all and (min-width: 1537px) {
   .header {
@@ -2840,7 +2844,7 @@ ul {
 
 
   .spad {
-    padding-top: 4.5vw;
+    padding-top: 6.5vw;
   }
 
   .services {
@@ -2933,6 +2937,10 @@ ul {
     height: 2.8vw;
   }
 
+  #projects {
+    margin-bottom: 2vw;
+  }
+
   #skills {
     margin-top: -3vw;
   }
@@ -2942,6 +2950,9 @@ ul {
     height: 0.25vw;
   }
 
+  .work {
+    padding-top: 3vw;
+  }
 
   .work__gallery {
     height: 33.5vw !important;
@@ -2961,7 +2972,7 @@ ul {
   }
 
   .work__item.large__item:hover {
-    height: 90% !important;
+    height: 85.5% !important;
   }
 
   .work__item:hover .work__item__hover {
@@ -2986,6 +2997,123 @@ ul {
   #audi,
   #audi:hover {
     background-size: contain;
+  }
+
+  .team__background {
+    height: 45vw;
+  }
+
+  .team.spad {
+    height: 100%;
+  }
+
+  .flip-card {
+    width: 13vw;
+    height: 20.3vw;
+    perspective: 50vw;
+  }
+
+  .flip-card-inner {
+    width: 100%;
+  }
+
+
+
+  .team__item.team__item--second {
+    margin-top: -2.5vw;
+  }
+
+  .team__item.team__item--third {
+    margin-top: -5vw;
+  }
+
+  .team__item.team__item--four {
+    margin-top: -7.5vw;
+  }
+
+  #ucla,
+  #ucla-back,
+  #sciencesU,
+  #sciencesU-back,
+  #implid,
+  #implid-back,
+  #sanofiPasteur,
+  #sanofiPasteur-back {
+    height: 20.3vw;
+    width: 100%;
+  }
+
+  #implid-back h3,
+  #sanofiPasteur-back h3 {
+    font-size: 0.9vw;
+  }
+
+
+  .team__item {
+    border-radius: 1.5vw;
+  }
+
+  .team__item h2 {
+    padding-top: 1.5vw;
+    font-size: 1vw;
+  }
+
+  .team__item ul li {
+    font-size: 0.8vw;
+  }
+
+  ul {
+    padding-left: 1.25vw;
+  }
+
+  .team__item hr {
+    border-top: 0.2vw solid #000;
+  }
+
+  hr {
+    margin-block: 0.5vw;
+  }
+
+  .team__item__social button i {
+    font-size: 1vw;
+  }
+
+  .team__item__text h4,
+  .sanofi h4 {
+    font-size: 1.1vw;
+    margin-bottom: 0.5vw;
+  }
+
+  /* .team__item__text:before {
+    top: 2vw;
+  }
+
+  .sanofi:before {
+    top: 3.4vw;
+  } */
+
+  .blog__item {
+    padding: 2vw 2.5vw 1.75vw 1.5vw;
+  }
+
+  .blog__item h4 {
+    font-size: 1.2vw;
+    line-height: 1.4vw;
+  }
+
+  .blog__item p {
+    line-height: 1.4vw;
+  }
+
+  .blog__item ul li,
+  .blog__item a,
+  .blog__item a span {
+    font-size: 0.9vw;
+  }
+
+  .blog__item a span {
+    top: 0.2vw;
+    margin-left: 0.2vw;
   }
 
 }
