@@ -2847,6 +2847,10 @@ ul {
     padding-top: 6.5vw;
   }
 
+  .latest {
+    padding-bottom: 6vw;
+  }
+
   .services {
     padding-bottom: 4.5vw;
   }
@@ -3059,7 +3063,7 @@ ul {
   }
 
   .team__item ul li {
-    font-size: 0.8vw;
+    font-size: 0.75vw;
   }
 
   ul {
@@ -3074,7 +3078,8 @@ ul {
     margin-block: 0.5vw;
   }
 
-  .team__item__social button i {
+  .team__item__social button i,
+  .team__item__social i {
     font-size: 1vw;
   }
 
@@ -3084,13 +3089,17 @@ ul {
     margin-bottom: 0.5vw;
   }
 
-  /* .team__item__text:before {
-    top: 2vw;
+  .team__item__text:before,
+  .sanofi:before {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
   }
 
-  .sanofi:before {
-    top: 3.4vw;
-  } */
+  .team__item__text,
+  .sanofi {
+    padding-block: 1vw;
+  }
+
 
   .blog__item {
     padding: 2vw 2.5vw 1.75vw 1.5vw;
@@ -3114,6 +3123,80 @@ ul {
   .blog__item a span {
     top: 0.2vw;
     margin-left: 0.2vw;
+  }
+
+  .latest__slider.owl-carousel .owl-dots button {
+    height: 0.6vw;
+    width: 0.6vw;
+  }
+
+  .latest__slider.owl-carousel .owl-dots button {
+    margin-right: 0.4vw;
+  }
+
+  .creation {
+    width: 10vw;
+    height: 10vw;
+    margin-top: 0;
+    border: 0.25vw solid #0A0119;
+  }
+
+  .creation:before {
+    width: 20vw;
+    height: 20vw;
+    left: 5vw;
+  }
+
+  .creation p {
+    font-size: 0.9vw;
+    height: 100%;
+    display: grid;
+    align-items: center;
+  }
+
+
+  .footer {
+    height: 19vw;
+  }
+
+  .footer__top {
+    padding-block: 1.5vw;
+  }
+
+  .footer__option__item h5 {
+    font-size: 0.95vw;
+    margin-bottom: 1.75vw;
+  }
+
+  .footer__option__item a {
+    font-size: 0.8vw;
+  }
+
+  .footer__top__social a {
+    height: 2vw;
+    width: 2vw;
+  }
+
+  .footer__top__social a i {
+    font-size: 2vw;
+    transform: scale(0.5);
+  }
+
+  .fa img {
+    height: 2.1vw !important;
+    margin-top: -0.4vw !important;
+  }
+
+  @keyframes fill {
+    from {
+      top: 15vw;
+      transform: translateX(-50%) rotate(0deg);
+    }
+
+    to {
+      top: -2vw;
+      transform: translateX(-50%) rotate(360deg);
+    }
   }
 
 }
