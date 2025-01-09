@@ -2843,7 +2843,7 @@ ul {
   }
 
 
-  .spad {
+  .spad:first-of-type {
     padding-top: 6.5vw;
   }
 
@@ -3021,8 +3021,6 @@ ul {
     width: 100%;
   }
 
-
-
   .team__item.team__item--second {
     margin-top: -2.5vw;
   }
@@ -3152,6 +3150,7 @@ ul {
     height: 100%;
     display: grid;
     align-items: center;
+    margin-bottom: 0;
   }
 
 
@@ -3182,7 +3181,7 @@ ul {
     transform: scale(0.5);
   }
 
-  .fa img {
+  #leetcode_icon {
     height: 2.1vw !important;
     margin-top: -0.4vw !important;
   }
