@@ -2177,6 +2177,10 @@ ul {
   margin-bottom: 28px;
 }
 
+.three_d {
+  height: 240px;
+}
+
 .portfolio__item__video .play-btn {
   display: inline-block;
   color: #ffffff;
@@ -3994,8 +3998,14 @@ ul {
     background-size: 95% 50%;
   }
 
+}
 
+@media all and (max-width: 575px) {
 
+  .portfolio__item__video,
+  .three_d {
+    height: 390px;
+  }
 }
 
 
