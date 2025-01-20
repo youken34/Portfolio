@@ -23,22 +23,25 @@ loadingManager.onLoad = function () {
 };
 
 const loader = new GLTFLoader(loadingManager);
-
 loader.setDRACOLoader(dracoLoader);
 
 const mainScene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(70, 2.56, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(70, 1, 0.1, 1000); // Use 1 for initial aspect ratio, it will update later
 const renderer = new THREE.WebGLRenderer({ alpha: true });
-renderer.setSize(615, 280);
-document.getElementById("laptop").appendChild(renderer.domElement);
 
+// Initially set size to 100% width and height
+renderer.setSize("100%", "100%");
+
+document.getElementById("laptop").appendChild(renderer.domElement);
+renderer.domElement.style.position = "relative";
+renderer.domElement.style.backgroundColor = "rgb(88, 44, 193)";
 let gltfObject; // Declare a variable to hold the loaded GLTF object
 
 loader.load(
   "/../videograph-master/gltf/gaming_laptop.glb",
   function (gltf) {
     gltfObject = gltf.scene; // Store the loaded object for later access
-    gltfObject.position.set(0, 0, 0);
+    gltfObject.position.set(0, -1, 0);
 
     mainScene.add(gltfObject);
 
@@ -61,7 +64,6 @@ loader.load(
   function (error) {
     console.log(error);
   }
-  // Progress and error handlers...
 );
 
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -69,6 +71,7 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.05;
 controls.enableZoom = false; // Disable zoom
 controls.enablePan = false; // Disable panning
+controls.enableRotate = false;
 
 const rotateSpeed = 0.005; // Adjust the rotation speed as needed
 
@@ -82,5 +85,26 @@ const animate = () => {
   renderer.render(mainScene, camera);
 };
 
+// Function to update renderer size
+const updateRendererSize = () => {
+  const container = document.getElementById("laptop"); // Get the container element
+
+  const containerWidth = container.clientWidth;
+  const containerHeight = container.clientHeight;
+
+  // Set renderer size based on the container's width and height
+  renderer.setSize(containerWidth, containerHeight);
+
+  // Update camera aspect ratio based on the container's dimensions
+  camera.aspect = containerWidth / containerHeight;
+  camera.updateProjectionMatrix(); // Update the camera's projection matrix to match the new aspect ratio
+};
+
+// Initial size update
+updateRendererSize();
+
+// Update size on window resize
+window.addEventListener("resize", updateRendererSize);
+
 animate();
-renderer.setClearColor(0x000000, 0); // the default
+renderer.setClearColor(0x000000, 0); // Set default clear color

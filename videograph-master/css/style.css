@@ -953,7 +953,7 @@ label {
 #audi {
   background-color: #02172f;
   background-position: center;
-  background-size: 70% 50%;
+  background-size: contain;
 }
 
 #audi:hover {
@@ -2253,6 +2253,27 @@ ul {
   border: none;
 }
 
+
+/* laptop properties */
+
+#laptop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+
+}
+
+#laptopCanvas {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 .pagination__option {
   text-align: center;
   padding-top: 20px;
@@ -3328,13 +3349,6 @@ ul {
   #hero canvas {
     left: 22%;
   }
-
-  #audi {
-    background-size: contain !important;
-  }
-
-
-
 }
 
 @media only screen and (max-width: 1300px) {

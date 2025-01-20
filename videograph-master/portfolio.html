@@ -34,32 +34,87 @@
 
     <!-- Header Section Begin -->
     <header class="header">
-        <div class="container">
-            <div class="row">
+        <div class="row_header full_height">
+            <div class="row full_height">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="/index.html">Côme Bonal</a>
+                        <a href="../index.html">Côme Bonal</a>
                     </div>
                 </div>
                 <div class="col-lg-10">
                     <div class="header__nav__option">
                         <nav class="header__nav__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="./portfolio.html">Miscellaneous work</a></li>
-                                <!-- <li><a href="./services.html">Services</a></li> -->
-                                <li><a href="./contact.html">Contact</a></li>
+                                <li><a href="/videograph-master/portfolio.html">Miscellaneous work</a>
+                                </li>
+                                <li><a href="/videograph-master/contact.html">Contact</a></li>
+                                <li class="icons_responsive">
+                                    <a href="https://github.com/youken34" class="afa" target="_blank"><i
+                                            class="fa fa-github"></i></a>
+                                    <a href="https://gitlab.com/comebonal" class="afa" target="_blank"><i
+                                            class="fa fa-gitlab"></i></a>
+                                    <a href="https://www.linkedin.com/in/c%C3%B4me-bonal-a620b11ab/" class="afa"
+                                        target="_blank">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                    <a href="https://leetcode.com/Rollome/" class="afa">
+                                        <i class="fa"> <img
+                                                src="https://assets.leetcode.com/static_assets/public/icons/favicon.ico"
+                                                alt="LeetCode Icon"
+                                                style="height: calc(1vw * 0.9);;margin-bottom: 5px;">
+                                        </i>
+                                    </a>
+                                    <a onclick="translatePage('fr')" class="afa french-flag">
+                                        <i class="fa"> <img src="/videograph-master/img/icons/french-flag.png"
+                                                alt="French flag" style="height: calc(1vw * 0.9);;margin-bottom: 5px;">
+                                        </i>
+                                    </a>
+                                    <a onclick="translatePage('en')" class="afa">
+                                        <i class="fa"> <img src="/videograph-master/img/icons/uk-flag.png"
+                                                alt="United Kingdom's flag"
+                                                style="height: calc(1vw * 0.9);;margin-bottom: 5px;">
+                                        </i>
+                                    </a>
+                                    <a onclick="translatePage('es')" class="afa">
+                                        <i class="fa"> <img src="/videograph-master/img/icons/spanish-flag.png"
+                                                alt="Spanish flag" style="height: calc(1vw * 0.9);;margin-bottom: 5px;">
+                                        </i>
+                                    </a>
+                                </li>
                             </ul>
                         </nav>
-                        <div class="header__nav__social">
-                            <a href="https://github.com/youken34"><i class="fa fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/c%C3%B4me-bonal-a620b11ab/"><i
-                                    class="fa fa-linkedin"></i></a>
-                            <a href="https://leetcode.com/Rollome/">
+                        <div class="header__nav__social icons">
+                            <a href="https://github.com/youken34" class="afa" target="_blank"><i
+                                    class="fa fa-github"></i></a>
+                            <a href="https://gitlab.com/comebonal" class="afa"><i class=" fa fa-gitlab"
+                                    aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/in/c%C3%B4me-bonal-a620b11ab/" class="afa"
+                                target="_blank">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a href="https://leetcode.com/Rollome/" class="afa" target="_blank">
                                 <i class="fa"> <img
                                         src="https://assets.leetcode.com/static_assets/public/icons/favicon.ico"
-                                        alt="LeetCode Icon" style="height: 20px;margin-bottom: 5px;">
+                                        alt="LeetCode Icon" style="height: calc(1vw * 0.9);;margin-bottom: 5px;">
                                 </i>
                             </a>
+                            <a onclick="translatePage('fr')" class="afa french-flag">
+                                <i class="fa"> <img src="/videograph-master/img/icons/french-flag.png" alt="French flag"
+                                        style="height: calc(1vw * 0.9);;margin-bottom: 5px;">
+                                </i>
+                            </a>
+                            <a onclick="translatePage('en')" class="afa">
+                                <i class="fa"> <img src="/videograph-master/img/icons/uk-flag.png"
+                                        alt="United Kingdom's flag"
+                                        style="height: calc(1vw * 0.9);;margin-bottom: 5px;">
+                                </i>
+                            </a>
+                            <a onclick="translatePage('es')" class="afa">
+                                <i class="fa"> <img src="/videograph-master/img/icons/spanish-flag.png"
+                                        alt="Spanish flag" style="height: calc(1vw * 0.9);;margin-bottom: 5px;">
+                                </i>
+                            </a>
+                            <div id="google_translate_element" style="display: none;"></div>
                         </div>
                     </div>
                 </div>
@@ -96,10 +151,25 @@
                         <li class="active" data-filter="*">All</li>
                         <li data-filter=".gif">GIF</li>
                         <li data-filter=".adjustments">Adjustments</li>
+                        <li data-filter=".three_d">3 dimensions object</li>
                     </ul>
                 </div>
             </div>
             <div class="row portfolio__gallery">
+                <div class="col-lg-4 col-md-6 col-sm-6 mix adjustments">
+                    <div class="portfolio__item">
+                        <div class="portfolio__item__video">
+                            <video autoplay loop muted playsinline style="width: 100%; height: 100%; display: block;">
+                                <source src="img/Photoshop/kortle_logo.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <!-- Text container -->
+                        <div class="portfolio__item__text">
+                            <h4>Logo adjustments</h4>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 mix gif">
                     <div class="portfolio__item">
                         <div class="portfolio__item__video set-bg" data-setbg="img/Photoshop/zoom-down-CômeBonal.gif"
@@ -146,18 +216,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 mix gif">
+                <div class="col-lg-4 col-md-6 col-sm-6 mix three_d" style="height: 240px; ">
                     <div class="portfolio__item" id="laptop">
                         <div class="progress-bar-container">
                             <label for="progress-bar">Loading 3D Model</label>
                             <progress id="progress-bar" value="0" max="100"></progress>
                         </div>
-                        <div class=" portfolio__item__text">
+                        <div class="portfolio__item__text" style="position: absolute; bottom: -60px">
                             <h4>3D Laptop</h4>
                         </div>
+                        <canvas id="laptopCanvas" style="position: absolute;"></canvas>
+
                     </div>
                 </div>
-
     </section>
     <!-- Portfolio Section End -->
 
@@ -222,7 +293,30 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
     <!-- <script src="js/alert.js"></script> -->
-    <script type="module" src="/../videograph-master/js/three.js"></script> -->
+    <script type="module" src="/../videograph-master/js/three.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: '',
+                includedLanguages: 'en,fr,es',
+                layout: google.translate.TranslateElement
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function translatePage(languageCode) {
+            var combo = document.querySelector('.goog-te-combo');
+            if (combo) {
+                combo.value = languageCode;
+                var event = document.createEvent("HTMLEvents");
+                event.initEvent("change", true, true);
+                combo.dispatchEvent(event);
+                document.body.style.top = "0px";
+            }
+        }
+    </script>
 
 
 </body>
