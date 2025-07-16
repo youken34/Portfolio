@@ -2,7 +2,7 @@ var buttons = document.querySelectorAll(".owl-dots button");
 var firstThreeButtons = Array.from(buttons).slice(0, 3);
 var [firstButton, secondButton, thirdButton] = firstThreeButtons;
 
-var animation = VANTA.NET({
+var animation = VANTA.WAVES({
   el: "#vanta",
   mouseControls: true,
   touchControls: true,
@@ -11,29 +11,10 @@ var animation = VANTA.NET({
   minWidth: 200.0,
   scale: 1.0,
   scaleMobile: 1.0,
-  color: 0x00bfe7,
-  backgroundColor: 0x100028,
-  points: 14.0,
+  color: 0x100028,
 });
 
 firstButton.addEventListener("click", function () {
-  animation.destroy();
-  animation = VANTA.NET({
-    el: "#vanta",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.0,
-    minWidth: 200.0,
-    scale: 1.0,
-    scaleMobile: 1.0,
-    color: 0x00bfe7,
-    backgroundColor: 0x100028,
-    points: 14.0,
-  });
-});
-
-secondButton.addEventListener("click", function () {
   animation.destroy();
   animation = VANTA.WAVES({
     el: "#vanta",
@@ -47,6 +28,22 @@ secondButton.addEventListener("click", function () {
     color: 0x100028,
   });
 });
+
+secondButton.addEventListener("click", function () {
+  animation.destroy();
+  animation = VANTA.CELLS({
+    el: "#vanta",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.0,
+    minWidth: 200.0,
+    scale: 1.0,
+    color1: 0x100538,
+    color2: 0x100538,
+  });
+});
+
 thirdButton.addEventListener("click", function () {
   animation.destroy();
   animation = VANTA.FOG({
