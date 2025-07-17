@@ -2,7 +2,7 @@ var buttons = document.querySelectorAll(".owl-dots button");
 var firstThreeButtons = Array.from(buttons).slice(0, 3);
 var [firstButton, secondButton, thirdButton] = firstThreeButtons;
 
-var animation = VANTA.WAVES({
+var animation = VANTA.DOTS({
   el: "#vanta",
   mouseControls: true,
   touchControls: true,
@@ -11,12 +11,14 @@ var animation = VANTA.WAVES({
   minWidth: 200.0,
   scale: 1.0,
   scaleMobile: 1.0,
-  color: 0x100028,
+  color: 0x00bfe7,
+  color2: 0x00bfe7,
+  backgroundColor: 0x100028,
 });
 
 firstButton.addEventListener("click", function () {
   animation.destroy();
-  animation = VANTA.WAVES({
+  animation = VANTA.DOTS({
     el: "#vanta",
     mouseControls: true,
     touchControls: true,
@@ -25,7 +27,9 @@ firstButton.addEventListener("click", function () {
     minWidth: 200.0,
     scale: 1.0,
     scaleMobile: 1.0,
-    color: 0x100028,
+    color: 0x00bfe7,
+    color2: 0x00bfe7,
+    backgroundColor: 0x100028,
   });
 });
 

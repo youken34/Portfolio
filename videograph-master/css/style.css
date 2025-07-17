@@ -727,6 +727,31 @@ code span {
   background-color: #100028;
 }
 
+
+#counter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, #100028 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+#counter::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to top, #100028 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
 /* Image properties */
 
 .container-image {
@@ -1015,8 +1040,7 @@ ul {
 }
 
 #sanofiPasteur {
-  background-size: 75% 40%;
-  /* 75% 40% pour local / 75% 80% pour site web */
+  background-size: contain;
   background-position: center;
   background-color: #FFF;
 }
@@ -1089,8 +1113,32 @@ ul {
   background-clip: padding-box;
   clip-path: polygon(0 12%, 100% 6%, 100% 88%, 0 94%);
   padding-top: 125px;
-  background-image: url(../img/team-bg.jpg) !important;
+  background-image: url(../img/team-bg.webp) !important;
   background-attachment: fixed;
+}
+
+.team::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, #100028 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.team::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to top, #100028 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 
@@ -1127,7 +1175,7 @@ ul {
 
 .team__item:hover .team__item__text,
 .team__item:hover .sanofi {
-  bottom: -26px;
+  bottom: -10px;
 }
 
 
@@ -1172,7 +1220,7 @@ ul {
   border: 0px solid transparent;
   position: absolute;
   left: 0;
-  top: 28px;
+  top: -10px;
   height: 100%;
   width: 100%;
   background: url(../img/team/team-hover.png);
@@ -3119,7 +3167,7 @@ ul {
     margin-top: -50px;
     margin-bottom: -50px;
     padding-top: 175px;
-    background-image: url(../img/team-bg-resp.jpg) !important;
+    background-image: url(../img/team-bg-resp.webp) !important;
   }
 
   .team>.container>.row:first-of-type {

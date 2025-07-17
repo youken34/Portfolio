@@ -83,7 +83,19 @@ label {
     font-size: 2rem;
 }
 
-
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    /* Ajuste selon la hauteur souhaitée du dégradé */
+    background: linear-gradient(to top, #100028 0%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+    /* pour ne pas bloquer les clics */
+}
 
 .hero__slider {
     height: 100%;
